@@ -32,6 +32,7 @@ extension JuiceSeleTableViewController :NSTableViewDelegate{
         var view = tableView.makeView(withIdentifier: key, owner: self)
         if (view == nil){
             view = NSView()
+            
         }
         //判断当前列的标识符是哪一列
         let item = juiceTypeArr[row]
