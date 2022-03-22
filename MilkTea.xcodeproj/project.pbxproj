@@ -1,0 +1,1157 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		190150E327C7599B002D826A /* CustomerOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150E227C7599B002D826A /* CustomerOrderViewController.swift */; };
+		190150E527C759C1002D826A /* JuiceMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150E427C759C1002D826A /* JuiceMaterialViewController.swift */; };
+		190150E727C75A91002D826A /* JuiceRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150E627C75A91002D826A /* JuiceRankViewController.swift */; };
+		190150E927C75ACC002D826A /* OwnerInputExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150E827C75ACC002D826A /* OwnerInputExpensesViewController.swift */; };
+		190150EB27C75AF9002D826A /* ExcelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150EA27C75AF9002D826A /* ExcelViewController.swift */; };
+		190150ED27C75B4C002D826A /* GraphicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150EC27C75B4C002D826A /* GraphicViewController.swift */; };
+		190150EF27C75B62002D826A /* AlertViewController(Exowner).swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150EE27C75B62002D826A /* AlertViewController(Exowner).swift */; };
+		190150F127C75B75002D826A /* OwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150F027C75B75002D826A /* OwnerViewController.swift */; };
+		190150F327C75CDD002D826A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150F227C75CDD002D826A /* WelcomeViewController.swift */; };
+		1902455F27DE08C0006EF982 /* OwnerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902455E27DE08C0006EF982 /* OwnerInfo.swift */; };
+		1902456027DE08C0006EF982 /* OwnerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902455E27DE08C0006EF982 /* OwnerInfo.swift */; };
+		1902456227DE0BF1006EF982 /* AlertViewController(owner).swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902456127DE0BF1006EF982 /* AlertViewController(owner).swift */; };
+		1902456327DE0BF1006EF982 /* AlertViewController(owner).swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902456127DE0BF1006EF982 /* AlertViewController(owner).swift */; };
+		1902456627DE1650006EF982 /* QueryPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902456527DE1650006EF982 /* QueryPopOver.swift */; };
+		1902456727DE1650006EF982 /* QueryPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902456527DE1650006EF982 /* QueryPopOver.swift */; };
+		191CF5E727E4A781009440A1 /* Array+encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5E627E4A781009440A1 /* Array+encoding.swift */; };
+		191CF5E827E4A781009440A1 /* Array+encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5E627E4A781009440A1 /* Array+encoding.swift */; };
+		191CF5EB27E4B208009440A1 /* RegisterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5EA27E4B208009440A1 /* RegisterProtocol.swift */; };
+		191CF5EC27E4B208009440A1 /* RegisterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5EA27E4B208009440A1 /* RegisterProtocol.swift */; };
+		191CF5EE27E4BD9F009440A1 /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5ED27E4BD9F009440A1 /* LoginProtocol.swift */; };
+		191CF5EF27E4BD9F009440A1 /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5ED27E4BD9F009440A1 /* LoginProtocol.swift */; };
+		191CF5F427E5EEA4009440A1 /* AddOrderPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5F327E5EEA4009440A1 /* AddOrderPopOver.swift */; };
+		191CF5F527E5EEA4009440A1 /* AddOrderPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5F327E5EEA4009440A1 /* AddOrderPopOver.swift */; };
+		191CF5F727E6EE2E009440A1 /* AddMaterialPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5F627E6EE2E009440A1 /* AddMaterialPopOver.swift */; };
+		191CF5F827E6EE2E009440A1 /* AddMaterialPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5F627E6EE2E009440A1 /* AddMaterialPopOver.swift */; };
+		191CF5FA27E850F8009440A1 /* CalendarPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5F927E850F8009440A1 /* CalendarPopOver.swift */; };
+		191CF5FB27E850F8009440A1 /* CalendarPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5F927E850F8009440A1 /* CalendarPopOver.swift */; };
+		191CF5FD27E8680F009440A1 /* OrderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5FC27E8680F009440A1 /* OrderProtocol.swift */; };
+		191CF5FE27E8680F009440A1 /* OrderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5FC27E8680F009440A1 /* OrderProtocol.swift */; };
+		191CF60027E86DFC009440A1 /* OrderMutiSelePopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5FF27E86DFC009440A1 /* OrderMutiSelePopOver.swift */; };
+		191CF60127E86DFC009440A1 /* OrderMutiSelePopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5FF27E86DFC009440A1 /* OrderMutiSelePopOver.swift */; };
+		1926ACBB27BCDB9600DDBA64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACBA27BCDB9600DDBA64 /* AppDelegate.swift */; };
+		1926ACBD27BCDB9700DDBA64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1926ACBC27BCDB9700DDBA64 /* Assets.xcassets */; };
+		1926ACC827BCDBBB00DDBA64 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACC727BCDBBB00DDBA64 /* main.swift */; };
+		1926ACCA27BCDC2000DDBA64 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACC927BCDC2000DDBA64 /* WindowManager.swift */; };
+		1926ACCE27BCDC7700DDBA64 /* LRWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACCD27BCDC7700DDBA64 /* LRWindowController.swift */; };
+		1926ACD027BCDCA100DDBA64 /* LRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACCF27BCDCA100DDBA64 /* LRViewController.swift */; };
+		1926ACD627BCDFF100DDBA64 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACD527BCDFF100DDBA64 /* LoginViewController.swift */; };
+		1926ACD827BCE0EA00DDBA64 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACD727BCE0EA00DDBA64 /* RegisterViewController.swift */; };
+		1926ACE027BCE36400DDBA64 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1926ACDF27BCE36400DDBA64 /* SnapKit */; };
+		1934079F27C3383A009DD096 /* TitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1934079E27C3383A009DD096 /* TitleBar.swift */; };
+		193407A127C33965009DD096 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193407A027C33965009DD096 /* MainMenuViewController.swift */; };
+		193407A327C38AE1009DD096 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193407A227C38AE1009DD096 /* DetailViewController.swift */; };
+		193407A527C38B57009DD096 /* FunctionBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193407A427C38B57009DD096 /* FunctionBarViewController.swift */; };
+		193A9DEF27CD050100858ED6 /* ContentSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9DEE27CD050100858ED6 /* ContentSplitViewController.swift */; };
+		193A9DF527CE08F000858ED6 /* CustomerOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9DF427CE08F000858ED6 /* CustomerOrder.swift */; };
+		193A9DF727CE091C00858ED6 /* JuiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9DF627CE091C00858ED6 /* JuiceType.swift */; };
+		193A9DF927CE094300858ED6 /* JuiceRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9DF827CE094300858ED6 /* JuiceRank.swift */; };
+		193A9DFB27CE0B5E00858ED6 /* JuiceMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9DFA27CE0B5E00858ED6 /* JuiceMaterial.swift */; };
+		193A9DFD27CE0B7100858ED6 /* OwnerInputExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9DFC27CE0B7100858ED6 /* OwnerInputExpenses.swift */; };
+		193A9E0027CE43BE00858ED6 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 193A9DFF27CE43BE00858ED6 /* Charts */; };
+		193A9E0227CE597C00858ED6 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9E0127CE597C00858ED6 /* BaseModel.swift */; };
+		193A9E0627CF895800858ED6 /* BaseNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9E0527CF895800858ED6 /* BaseNetWork.swift */; };
+		193A9E0827D0FAC900858ED6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9E0727D0FAC900858ED6 /* UserModel.swift */; };
+		193A9E0C27D5E3E200858ED6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9E0B27D5E3E200858ED6 /* Alert.swift */; };
+		19886E8E27D9AA52005B9D9D /* JuiceTypeCollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988FD7D27D99DE0001E6CB5 /* JuiceTypeCollectionItemView.swift */; };
+		1988FD3827D89AF9001E6CB5 /* JuiceTypeSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988FD3727D89AF9001E6CB5 /* JuiceTypeSummaryViewController.swift */; };
+		1988FD3A27D89BA9001E6CB5 /* JuiceTypeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988FD3927D89BA9001E6CB5 /* JuiceTypeDetailViewController.swift */; };
+		1988FD3C27D89C95001E6CB5 /* JuiceTypeSummaryViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988FD3B27D89C95001E6CB5 /* JuiceTypeSummaryViewItem.swift */; };
+		1988FD3E27D8B0F4001E6CB5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988FD3D27D8B0F4001E6CB5 /* Utils.swift */; };
+		1988FD4827D8B4AB001E6CB5 /* OwnerInputExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150E827C75ACC002D826A /* OwnerInputExpensesViewController.swift */; };
+		1988FD4927D8B4AB001E6CB5 /* GraphicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150EC27C75B4C002D826A /* GraphicViewController.swift */; };
+		1988FD4A27D8B4AB001E6CB5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACD527BCDFF100DDBA64 /* LoginViewController.swift */; };
+		1988FD4B27D8B4AB001E6CB5 /* FunctionBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193407A427C38B57009DD096 /* FunctionBarViewController.swift */; };
+		1988FD4C27D8B4AB001E6CB5 /* CustomerOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150E227C7599B002D826A /* CustomerOrderViewController.swift */; };
+		1988FD4D27D8B4AB001E6CB5 /* JuiceTypeSummaryViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988FD3B27D89C95001E6CB5 /* JuiceTypeSummaryViewItem.swift */; };
+		1988FD4E27D8B4AB001E6CB5 /* ExcelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150EA27C75AF9002D826A /* ExcelViewController.swift */; };
+		1988FD4F27D8B4AB001E6CB5 /* String+subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A2AFEE27D6FA9800039226 /* String+subscript.swift */; };
+		1988FD5027D8B4AB001E6CB5 /* MsgHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B9F63127D700AB003BFA42 /* MsgHelper.swift */; };
+		1988FD5127D8B4AB001E6CB5 /* TitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1934079E27C3383A009DD096 /* TitleBar.swift */; };
+		1988FD5227D8B4AB001E6CB5 /* AlertViewController(Exowner).swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150EE27C75B62002D826A /* AlertViewController(Exowner).swift */; };
+		1988FD5327D8B4AB001E6CB5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACC727BCDBBB00DDBA64 /* main.swift */; };
+		1988FD5427D8B4AB001E6CB5 /* MainMenuWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB52D327BD27E6007FBED2 /* MainMenuWindowController.swift */; };
+		1988FD5527D8B4AB001E6CB5 /* JuiceMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9DFA27CE0B5E00858ED6 /* JuiceMaterial.swift */; };
+		1988FD5627D8B4AB001E6CB5 /* OwnerInputExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9DFC27CE0B7100858ED6 /* OwnerInputExpenses.swift */; };
+		1988FD5727D8B4AB001E6CB5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988FD3D27D8B0F4001E6CB5 /* Utils.swift */; };
+		1988FD5827D8B4AB001E6CB5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACD727BCE0EA00DDBA64 /* RegisterViewController.swift */; };
+		1988FD5927D8B4AB001E6CB5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9E0B27D5E3E200858ED6 /* Alert.swift */; };
+		1988FD5A27D8B4AB001E6CB5 /* CustomerOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9DF427CE08F000858ED6 /* CustomerOrder.swift */; };
+		1988FD5B27D8B4AB001E6CB5 /* CustomerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F4FE1727C4DDB900D96FD1 /* CustomerInfoViewController.swift */; };
+		1988FD5C27D8B4AB001E6CB5 /* BaseNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9E0527CF895800858ED6 /* BaseNetWork.swift */; };
+		1988FD5D27D8B4AB001E6CB5 /* JuiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9DF627CE091C00858ED6 /* JuiceType.swift */; };
+		1988FD5E27D8B4AB001E6CB5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9E0727D0FAC900858ED6 /* UserModel.swift */; };
+		1988FD5F27D8B4AB001E6CB5 /* JuiceTypeSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EA1DBF27C60F27001C09A3 /* JuiceTypeSplitViewController.swift */; };
+		1988FD6027D8B4AB001E6CB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACBA27BCDB9600DDBA64 /* AppDelegate.swift */; };
+		1988FD6127D8B4AB001E6CB5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193407A227C38AE1009DD096 /* DetailViewController.swift */; };
+		1988FD6227D8B4AB001E6CB5 /* JuiceTypeSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988FD3727D89AF9001E6CB5 /* JuiceTypeSummaryViewController.swift */; };
+		1988FD6327D8B4AB001E6CB5 /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EA1DC127C65F16001C09A3 /* CustomerInfo.swift */; };
+		1988FD6427D8B4AB001E6CB5 /* JuiceRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150E627C75A91002D826A /* JuiceRankViewController.swift */; };
+		1988FD6527D8B4AB001E6CB5 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193407A027C33965009DD096 /* MainMenuViewController.swift */; };
+		1988FD6627D8B4AB001E6CB5 /* ContentSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9DEE27CD050100858ED6 /* ContentSplitViewController.swift */; };
+		1988FD6827D8B4AB001E6CB5 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACC927BCDC2000DDBA64 /* WindowManager.swift */; };
+		1988FD6927D8B4AB001E6CB5 /* LRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACCF27BCDCA100DDBA64 /* LRViewController.swift */; };
+		1988FD6A27D8B4AB001E6CB5 /* JuiceMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150E427C759C1002D826A /* JuiceMaterialViewController.swift */; };
+		1988FD6B27D8B4AB001E6CB5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150F227C75CDD002D826A /* WelcomeViewController.swift */; };
+		1988FD6C27D8B4AB001E6CB5 /* JuiceTypeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988FD3927D89BA9001E6CB5 /* JuiceTypeDetailViewController.swift */; };
+		1988FD6D27D8B4AB001E6CB5 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9E0127CE597C00858ED6 /* BaseModel.swift */; };
+		1988FD6E27D8B4AB001E6CB5 /* OwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150F027C75B75002D826A /* OwnerViewController.swift */; };
+		1988FD6F27D8B4AB001E6CB5 /* LRWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926ACCD27BCDC7700DDBA64 /* LRWindowController.swift */; };
+		1988FD7027D8B4AB001E6CB5 /* JuiceRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9DF827CE094300858ED6 /* JuiceRank.swift */; };
+		1988FD7227D8B4AB001E6CB5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1988FD4027D8B4AB001E6CB5 /* SnapKit */; };
+		1988FD7327D8B4AB001E6CB5 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 1988FD4427D8B4AB001E6CB5 /* Charts */; };
+		1988FD7427D8B4AB001E6CB5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1988FD4227D8B4AB001E6CB5 /* Alamofire */; };
+		1988FD7527D8B4AB001E6CB5 /* Pods_MilkTea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4C1202292269E9C0DD0F85 /* Pods_MilkTea.framework */; };
+		1988FD7727D8B4AB001E6CB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1926ACBC27BCDB9700DDBA64 /* Assets.xcassets */; };
+		1988FD7E27D99DE0001E6CB5 /* JuiceTypeCollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988FD7D27D99DE0001E6CB5 /* JuiceTypeCollectionItemView.swift */; };
+		19A2AFEF27D6FA9800039226 /* String+subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A2AFEE27D6FA9800039226 /* String+subscript.swift */; };
+		19B9F63227D700AB003BFA42 /* MsgHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B9F63127D700AB003BFA42 /* MsgHelper.swift */; };
+		19D86FDD27DA2A4C00503EAE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D86FDC27DA2A4C00503EAE /* Notifications.swift */; };
+		19D86FDE27DA2A4C00503EAE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D86FDC27DA2A4C00503EAE /* Notifications.swift */; };
+		19DB52D427BD27E6007FBED2 /* MainMenuWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB52D327BD27E6007FBED2 /* MainMenuWindowController.swift */; };
+		19DB9E1527DB3F4A00EAADED /* EXOwnerInputExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB9E1427DB3F4A00EAADED /* EXOwnerInputExpensesViewController.swift */; };
+		19DB9E1627DB3F4A00EAADED /* EXOwnerInputExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB9E1427DB3F4A00EAADED /* EXOwnerInputExpensesViewController.swift */; };
+		19DB9E1827DB418D00EAADED /* EXOwnerInputExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB9E1727DB418D00EAADED /* EXOwnerInputExpenses.swift */; };
+		19DB9E1927DB418D00EAADED /* EXOwnerInputExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB9E1727DB418D00EAADED /* EXOwnerInputExpenses.swift */; };
+		19DB9E1C27DB6C6F00EAADED /* DefaultExOwnerBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB9E1B27DB6C6F00EAADED /* DefaultExOwnerBarChart.swift */; };
+		19DB9E1D27DB6C6F00EAADED /* DefaultExOwnerBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB9E1B27DB6C6F00EAADED /* DefaultExOwnerBarChart.swift */; };
+		19DB9E1F27DB6C8000EAADED /* DefaultOwnerBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB9E1E27DB6C8000EAADED /* DefaultOwnerBarChart.swift */; };
+		19DB9E2027DB6C8000EAADED /* DefaultOwnerBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB9E1E27DB6C8000EAADED /* DefaultOwnerBarChart.swift */; };
+		19DB9E2227DB6D6200EAADED /* DetailOwnerPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB9E2127DB6D6200EAADED /* DetailOwnerPieChart.swift */; };
+		19DB9E2327DB6D6200EAADED /* DetailOwnerPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB9E2127DB6D6200EAADED /* DetailOwnerPieChart.swift */; };
+		19EA1DC027C60F27001C09A3 /* JuiceTypeSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EA1DBF27C60F27001C09A3 /* JuiceTypeSplitViewController.swift */; };
+		19EA1DC227C65F16001C09A3 /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EA1DC127C65F16001C09A3 /* CustomerInfo.swift */; };
+		19F4FE1827C4DDB900D96FD1 /* CustomerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F4FE1727C4DDB900D96FD1 /* CustomerInfoViewController.swift */; };
+		19F4FE1B27C5149900D96FD1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 19F4FE1A27C5149900D96FD1 /* Alamofire */; };
+		CA595C2129F3B40ADA9B1951 /* Pods_MilkTea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4C1202292269E9C0DD0F85 /* Pods_MilkTea.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		190150E227C7599B002D826A /* CustomerOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerOrderViewController.swift; sourceTree = "<group>"; };
+		190150E427C759C1002D826A /* JuiceMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMaterialViewController.swift; sourceTree = "<group>"; };
+		190150E627C75A91002D826A /* JuiceRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceRankViewController.swift; sourceTree = "<group>"; };
+		190150E827C75ACC002D826A /* OwnerInputExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerInputExpensesViewController.swift; sourceTree = "<group>"; };
+		190150EA27C75AF9002D826A /* ExcelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelViewController.swift; sourceTree = "<group>"; };
+		190150EC27C75B4C002D826A /* GraphicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicViewController.swift; sourceTree = "<group>"; };
+		190150EE27C75B62002D826A /* AlertViewController(Exowner).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertViewController(Exowner).swift"; sourceTree = "<group>"; };
+		190150F027C75B75002D826A /* OwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerViewController.swift; sourceTree = "<group>"; };
+		190150F227C75CDD002D826A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		1902455E27DE08C0006EF982 /* OwnerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerInfo.swift; sourceTree = "<group>"; };
+		1902456127DE0BF1006EF982 /* AlertViewController(owner).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertViewController(owner).swift"; sourceTree = "<group>"; };
+		1902456527DE1650006EF982 /* QueryPopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryPopOver.swift; sourceTree = "<group>"; };
+		191CF5E627E4A781009440A1 /* Array+encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+encoding.swift"; sourceTree = "<group>"; };
+		191CF5EA27E4B208009440A1 /* RegisterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocol.swift; sourceTree = "<group>"; };
+		191CF5ED27E4BD9F009440A1 /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
+		191CF5F327E5EEA4009440A1 /* AddOrderPopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderPopOver.swift; sourceTree = "<group>"; };
+		191CF5F627E6EE2E009440A1 /* AddMaterialPopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMaterialPopOver.swift; sourceTree = "<group>"; };
+		191CF5F927E850F8009440A1 /* CalendarPopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopOver.swift; sourceTree = "<group>"; };
+		191CF5FC27E8680F009440A1 /* OrderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProtocol.swift; sourceTree = "<group>"; };
+		191CF5FF27E86DFC009440A1 /* OrderMutiSelePopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMutiSelePopOver.swift; sourceTree = "<group>"; };
+		1926ACB727BCDB9600DDBA64 /* MilkTeaOwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MilkTeaOwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1926ACBA27BCDB9600DDBA64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1926ACBC27BCDB9700DDBA64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1926ACC127BCDB9700DDBA64 /* MilkTea.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MilkTea.entitlements; sourceTree = "<group>"; };
+		1926ACC727BCDBBB00DDBA64 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1926ACC927BCDC2000DDBA64 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
+		1926ACCD27BCDC7700DDBA64 /* LRWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRWindowController.swift; sourceTree = "<group>"; };
+		1926ACCF27BCDCA100DDBA64 /* LRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRViewController.swift; sourceTree = "<group>"; };
+		1926ACD527BCDFF100DDBA64 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1926ACD727BCE0EA00DDBA64 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1934079E27C3383A009DD096 /* TitleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBar.swift; sourceTree = "<group>"; };
+		193407A027C33965009DD096 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		193407A227C38AE1009DD096 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		193407A427C38B57009DD096 /* FunctionBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionBarViewController.swift; sourceTree = "<group>"; };
+		193A9DEE27CD050100858ED6 /* ContentSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSplitViewController.swift; sourceTree = "<group>"; };
+		193A9DF427CE08F000858ED6 /* CustomerOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerOrder.swift; sourceTree = "<group>"; };
+		193A9DF627CE091C00858ED6 /* JuiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceType.swift; sourceTree = "<group>"; };
+		193A9DF827CE094300858ED6 /* JuiceRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceRank.swift; sourceTree = "<group>"; };
+		193A9DFA27CE0B5E00858ED6 /* JuiceMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMaterial.swift; sourceTree = "<group>"; };
+		193A9DFC27CE0B7100858ED6 /* OwnerInputExpenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerInputExpenses.swift; sourceTree = "<group>"; };
+		193A9E0127CE597C00858ED6 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		193A9E0527CF895800858ED6 /* BaseNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetWork.swift; sourceTree = "<group>"; };
+		193A9E0727D0FAC900858ED6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		193A9E0B27D5E3E200858ED6 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		1988FD3727D89AF9001E6CB5 /* JuiceTypeSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceTypeSummaryViewController.swift; sourceTree = "<group>"; };
+		1988FD3927D89BA9001E6CB5 /* JuiceTypeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceTypeDetailViewController.swift; sourceTree = "<group>"; };
+		1988FD3B27D89C95001E6CB5 /* JuiceTypeSummaryViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceTypeSummaryViewItem.swift; sourceTree = "<group>"; };
+		1988FD3D27D8B0F4001E6CB5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		1988FD7C27D8B4AB001E6CB5 /* MilkTeaExOwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MilkTeaExOwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1988FD7D27D99DE0001E6CB5 /* JuiceTypeCollectionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceTypeCollectionItemView.swift; sourceTree = "<group>"; };
+		19A2AFEE27D6FA9800039226 /* String+subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+subscript.swift"; sourceTree = "<group>"; };
+		19A82DF327D62BAB00E9DEF2 /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
+		19B9F63127D700AB003BFA42 /* MsgHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgHelper.swift; sourceTree = "<group>"; };
+		19D86FDC27DA2A4C00503EAE /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		19DB52D327BD27E6007FBED2 /* MainMenuWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuWindowController.swift; sourceTree = "<group>"; };
+		19DB9E1427DB3F4A00EAADED /* EXOwnerInputExpensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EXOwnerInputExpensesViewController.swift; path = MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/EXOwnerInputExpensesViewController.swift; sourceTree = SOURCE_ROOT; };
+		19DB9E1727DB418D00EAADED /* EXOwnerInputExpenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXOwnerInputExpenses.swift; sourceTree = "<group>"; };
+		19DB9E1B27DB6C6F00EAADED /* DefaultExOwnerBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExOwnerBarChart.swift; sourceTree = "<group>"; };
+		19DB9E1E27DB6C8000EAADED /* DefaultOwnerBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOwnerBarChart.swift; sourceTree = "<group>"; };
+		19DB9E2127DB6D6200EAADED /* DetailOwnerPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOwnerPieChart.swift; sourceTree = "<group>"; };
+		19EA1DBF27C60F27001C09A3 /* JuiceTypeSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceTypeSplitViewController.swift; sourceTree = "<group>"; };
+		19EA1DC127C65F16001C09A3 /* CustomerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
+		19F4FE1727C4DDB900D96FD1 /* CustomerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfoViewController.swift; sourceTree = "<group>"; };
+		35455A91406B1240152ACEB2 /* Pods-MilkTea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkTea.release.xcconfig"; path = "Target Support Files/Pods-MilkTea/Pods-MilkTea.release.xcconfig"; sourceTree = "<group>"; };
+		5E4C1202292269E9C0DD0F85 /* Pods_MilkTea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MilkTea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CCAA91F316507CDC52B116 /* Pods-MilkTea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkTea.debug.xcconfig"; path = "Target Support Files/Pods-MilkTea/Pods-MilkTea.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1926ACB427BCDB9600DDBA64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1926ACE027BCE36400DDBA64 /* SnapKit in Frameworks */,
+				193A9E0027CE43BE00858ED6 /* Charts in Frameworks */,
+				19F4FE1B27C5149900D96FD1 /* Alamofire in Frameworks */,
+				CA595C2129F3B40ADA9B1951 /* Pods_MilkTea.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1988FD7127D8B4AB001E6CB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1988FD7227D8B4AB001E6CB5 /* SnapKit in Frameworks */,
+				1988FD7327D8B4AB001E6CB5 /* Charts in Frameworks */,
+				1988FD7427D8B4AB001E6CB5 /* Alamofire in Frameworks */,
+				1988FD7527D8B4AB001E6CB5 /* Pods_MilkTea.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		191CF5E927E4B1FB009440A1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				191CF5EA27E4B208009440A1 /* RegisterProtocol.swift */,
+				191CF5ED27E4BD9F009440A1 /* LoginProtocol.swift */,
+				191CF5FC27E8680F009440A1 /* OrderProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		1926ACAE27BCDB9600DDBA64 = {
+			isa = PBXGroup;
+			children = (
+				1926ACB927BCDB9600DDBA64 /* MilkTea */,
+				1926ACB827BCDB9600DDBA64 /* Products */,
+				EB2ECB386410B759D0EF94EE /* Pods */,
+				AF4DF74EAE020F0DB2B27029 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1926ACB827BCDB9600DDBA64 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1926ACB727BCDB9600DDBA64 /* MilkTeaOwner.app */,
+				1988FD7C27D8B4AB001E6CB5 /* MilkTeaExOwner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1926ACB927BCDB9600DDBA64 /* MilkTea */ = {
+			isa = PBXGroup;
+			children = (
+				191CF5E927E4B1FB009440A1 /* Protocol */,
+				19B9F63027D7008D003BFA42 /* Common */,
+				19A2AFED27D6FA7400039226 /* Extension */,
+				19F4FE1C27C514E200D96FD1 /* Model */,
+				1926ACD127BCDCC900DDBA64 /* NetWork */,
+				1926ACCC27BCDC5200DDBA64 /* MainWindow */,
+				1926ACCB27BCDC4700DDBA64 /* LoginRegister */,
+				1926ACBA27BCDB9600DDBA64 /* AppDelegate.swift */,
+				1926ACC927BCDC2000DDBA64 /* WindowManager.swift */,
+				1926ACBC27BCDB9700DDBA64 /* Assets.xcassets */,
+				1926ACC127BCDB9700DDBA64 /* MilkTea.entitlements */,
+				1926ACC727BCDBBB00DDBA64 /* main.swift */,
+				19A82DF327D62BAB00E9DEF2 /* Bridge-Header.h */,
+			);
+			path = MilkTea;
+			sourceTree = "<group>";
+		};
+		1926ACCB27BCDC4700DDBA64 /* LoginRegister */ = {
+			isa = PBXGroup;
+			children = (
+				1926ACD527BCDFF100DDBA64 /* LoginViewController.swift */,
+				1926ACCD27BCDC7700DDBA64 /* LRWindowController.swift */,
+				1926ACCF27BCDCA100DDBA64 /* LRViewController.swift */,
+				1926ACD727BCE0EA00DDBA64 /* RegisterViewController.swift */,
+			);
+			path = LoginRegister;
+			sourceTree = "<group>";
+		};
+		1926ACCC27BCDC5200DDBA64 /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				193407A027C33965009DD096 /* MainMenuViewController.swift */,
+				19DB52D327BD27E6007FBED2 /* MainMenuWindowController.swift */,
+				1934079C27C3379E009DD096 /* TitleBar */,
+				193A9DF027CD052D00858ED6 /* ContentSplitView */,
+			);
+			path = MainWindow;
+			sourceTree = "<group>";
+		};
+		1926ACD127BCDCC900DDBA64 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				193A9E0527CF895800858ED6 /* BaseNetWork.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		1934079B27C3377D009DD096 /* FuntionBar */ = {
+			isa = PBXGroup;
+			children = (
+				193407A427C38B57009DD096 /* FunctionBarViewController.swift */,
+			);
+			path = FuntionBar;
+			sourceTree = "<group>";
+		};
+		1934079C27C3379E009DD096 /* TitleBar */ = {
+			isa = PBXGroup;
+			children = (
+				1934079E27C3383A009DD096 /* TitleBar.swift */,
+			);
+			path = TitleBar;
+			sourceTree = "<group>";
+		};
+		1934079D27C337B9009DD096 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				193407A227C38AE1009DD096 /* DetailViewController.swift */,
+				190150F227C75CDD002D826A /* WelcomeViewController.swift */,
+				19F4FE1627C4DD7900D96FD1 /* FuncTabs */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		193A9DF027CD052D00858ED6 /* ContentSplitView */ = {
+			isa = PBXGroup;
+			children = (
+				193A9DEE27CD050100858ED6 /* ContentSplitViewController.swift */,
+				1934079B27C3377D009DD096 /* FuntionBar */,
+				1934079D27C337B9009DD096 /* DetailView */,
+			);
+			path = ContentSplitView;
+			sourceTree = "<group>";
+		};
+		193A9E0327CF5F0A00858ED6 /* FuncModel */ = {
+			isa = PBXGroup;
+			children = (
+				193A9E0727D0FAC900858ED6 /* UserModel.swift */,
+				19EA1DC127C65F16001C09A3 /* CustomerInfo.swift */,
+				193A9DF427CE08F000858ED6 /* CustomerOrder.swift */,
+				193A9DF627CE091C00858ED6 /* JuiceType.swift */,
+				193A9DF827CE094300858ED6 /* JuiceRank.swift */,
+				193A9DFA27CE0B5E00858ED6 /* JuiceMaterial.swift */,
+				193A9DFC27CE0B7100858ED6 /* OwnerInputExpenses.swift */,
+				19DB9E1727DB418D00EAADED /* EXOwnerInputExpenses.swift */,
+				193A9E0B27D5E3E200858ED6 /* Alert.swift */,
+				1902455E27DE08C0006EF982 /* OwnerInfo.swift */,
+			);
+			path = FuncModel;
+			sourceTree = "<group>";
+		};
+		1988FD3627D89879001E6CB5 /* JuiceType */ = {
+			isa = PBXGroup;
+			children = (
+				19EA1DBF27C60F27001C09A3 /* JuiceTypeSplitViewController.swift */,
+				1988FD3727D89AF9001E6CB5 /* JuiceTypeSummaryViewController.swift */,
+				1988FD3B27D89C95001E6CB5 /* JuiceTypeSummaryViewItem.swift */,
+				1988FD7D27D99DE0001E6CB5 /* JuiceTypeCollectionItemView.swift */,
+				1988FD3927D89BA9001E6CB5 /* JuiceTypeDetailViewController.swift */,
+			);
+			path = JuiceType;
+			sourceTree = "<group>";
+		};
+		19A2AFED27D6FA7400039226 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				19A2AFEE27D6FA9800039226 /* String+subscript.swift */,
+				191CF5E627E4A781009440A1 /* Array+encoding.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		19B9F63027D7008D003BFA42 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				19B9F63127D700AB003BFA42 /* MsgHelper.swift */,
+				1988FD3D27D8B0F4001E6CB5 /* Utils.swift */,
+				19D86FDC27DA2A4C00503EAE /* Notifications.swift */,
+				1902456527DE1650006EF982 /* QueryPopOver.swift */,
+				191CF5F327E5EEA4009440A1 /* AddOrderPopOver.swift */,
+				191CF5F627E6EE2E009440A1 /* AddMaterialPopOver.swift */,
+				191CF5F927E850F8009440A1 /* CalendarPopOver.swift */,
+				191CF5FF27E86DFC009440A1 /* OrderMutiSelePopOver.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		19DB9E1A27DB4D9900EAADED /* Graphic */ = {
+			isa = PBXGroup;
+			children = (
+				190150EC27C75B4C002D826A /* GraphicViewController.swift */,
+				19DB9E2527DB6D7D00EAADED /* ExOwner */,
+				19DB9E2427DB6D7000EAADED /* Owner */,
+			);
+			path = Graphic;
+			sourceTree = "<group>";
+		};
+		19DB9E2427DB6D7000EAADED /* Owner */ = {
+			isa = PBXGroup;
+			children = (
+				19DB9E1E27DB6C8000EAADED /* DefaultOwnerBarChart.swift */,
+				19DB9E2127DB6D6200EAADED /* DetailOwnerPieChart.swift */,
+			);
+			path = Owner;
+			sourceTree = "<group>";
+		};
+		19DB9E2527DB6D7D00EAADED /* ExOwner */ = {
+			isa = PBXGroup;
+			children = (
+				19DB9E1B27DB6C6F00EAADED /* DefaultExOwnerBarChart.swift */,
+			);
+			path = ExOwner;
+			sourceTree = "<group>";
+		};
+		19F4FE1627C4DD7900D96FD1 /* FuncTabs */ = {
+			isa = PBXGroup;
+			children = (
+				19F4FE1727C4DDB900D96FD1 /* CustomerInfoViewController.swift */,
+				190150E227C7599B002D826A /* CustomerOrderViewController.swift */,
+				1988FD3627D89879001E6CB5 /* JuiceType */,
+				190150E427C759C1002D826A /* JuiceMaterialViewController.swift */,
+				190150E627C75A91002D826A /* JuiceRankViewController.swift */,
+				19DB9E1427DB3F4A00EAADED /* EXOwnerInputExpensesViewController.swift */,
+				190150E827C75ACC002D826A /* OwnerInputExpensesViewController.swift */,
+				190150EA27C75AF9002D826A /* ExcelViewController.swift */,
+				19DB9E1A27DB4D9900EAADED /* Graphic */,
+				190150EE27C75B62002D826A /* AlertViewController(Exowner).swift */,
+				1902456127DE0BF1006EF982 /* AlertViewController(owner).swift */,
+				190150F027C75B75002D826A /* OwnerViewController.swift */,
+			);
+			path = FuncTabs;
+			sourceTree = "<group>";
+		};
+		19F4FE1C27C514E200D96FD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				193A9E0127CE597C00858ED6 /* BaseModel.swift */,
+				193A9E0327CF5F0A00858ED6 /* FuncModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF4DF74EAE020F0DB2B27029 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E4C1202292269E9C0DD0F85 /* Pods_MilkTea.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB2ECB386410B759D0EF94EE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4CCAA91F316507CDC52B116 /* Pods-MilkTea.debug.xcconfig */,
+				35455A91406B1240152ACEB2 /* Pods-MilkTea.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1926ACB627BCDB9600DDBA64 /* MilkTeaOwner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1926ACC427BCDB9700DDBA64 /* Build configuration list for PBXNativeTarget "MilkTeaOwner" */;
+			buildPhases = (
+				B6DEB29DA93534134A8AE5A6 /* [CP] Check Pods Manifest.lock */,
+				1926ACB327BCDB9600DDBA64 /* Sources */,
+				1926ACB427BCDB9600DDBA64 /* Frameworks */,
+				1926ACB527BCDB9600DDBA64 /* Resources */,
+				1B112D159A3E0607328FB41C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MilkTeaOwner;
+			packageProductDependencies = (
+				1926ACDF27BCE36400DDBA64 /* SnapKit */,
+				19F4FE1A27C5149900D96FD1 /* Alamofire */,
+				193A9DFF27CE43BE00858ED6 /* Charts */,
+			);
+			productName = MilkTea;
+			productReference = 1926ACB727BCDB9600DDBA64 /* MilkTeaOwner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1988FD3F27D8B4AB001E6CB5 /* MilkTeaExOwner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1988FD7927D8B4AB001E6CB5 /* Build configuration list for PBXNativeTarget "MilkTeaExOwner" */;
+			buildPhases = (
+				1988FD4627D8B4AB001E6CB5 /* [CP] Check Pods Manifest.lock */,
+				1988FD4727D8B4AB001E6CB5 /* Sources */,
+				1988FD7127D8B4AB001E6CB5 /* Frameworks */,
+				1988FD7627D8B4AB001E6CB5 /* Resources */,
+				1988FD7827D8B4AB001E6CB5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MilkTeaExOwner;
+			packageProductDependencies = (
+				1988FD4027D8B4AB001E6CB5 /* SnapKit */,
+				1988FD4227D8B4AB001E6CB5 /* Alamofire */,
+				1988FD4427D8B4AB001E6CB5 /* Charts */,
+			);
+			productName = MilkTea;
+			productReference = 1988FD7C27D8B4AB001E6CB5 /* MilkTeaExOwner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1926ACAF27BCDB9600DDBA64 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					1926ACB627BCDB9600DDBA64 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 1926ACB227BCDB9600DDBA64 /* Build configuration list for PBXProject "MilkTea" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1926ACAE27BCDB9600DDBA64;
+			packageReferences = (
+				1926ACDE27BCE36400DDBA64 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				19F4FE1927C5149900D96FD1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				193A9DFE27CE43BE00858ED6 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
+			productRefGroup = 1926ACB827BCDB9600DDBA64 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1926ACB627BCDB9600DDBA64 /* MilkTeaOwner */,
+				1988FD3F27D8B4AB001E6CB5 /* MilkTeaExOwner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1926ACB527BCDB9600DDBA64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1926ACBD27BCDB9700DDBA64 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1988FD7627D8B4AB001E6CB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1988FD7727D8B4AB001E6CB5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1988FD4627D8B4AB001E6CB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MilkTea-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1988FD7827D8B4AB001E6CB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MilkTea/Pods-MilkTea-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MilkTea/Pods-MilkTea-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MilkTea/Pods-MilkTea-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B112D159A3E0607328FB41C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MilkTea/Pods-MilkTea-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MilkTea/Pods-MilkTea-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MilkTea/Pods-MilkTea-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6DEB29DA93534134A8AE5A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MilkTea-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1926ACB327BCDB9600DDBA64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				191CF5E727E4A781009440A1 /* Array+encoding.swift in Sources */,
+				1988FD7E27D99DE0001E6CB5 /* JuiceTypeCollectionItemView.swift in Sources */,
+				19DB9E1827DB418D00EAADED /* EXOwnerInputExpenses.swift in Sources */,
+				190150E927C75ACC002D826A /* OwnerInputExpensesViewController.swift in Sources */,
+				19D86FDD27DA2A4C00503EAE /* Notifications.swift in Sources */,
+				190150ED27C75B4C002D826A /* GraphicViewController.swift in Sources */,
+				1926ACD627BCDFF100DDBA64 /* LoginViewController.swift in Sources */,
+				193407A527C38B57009DD096 /* FunctionBarViewController.swift in Sources */,
+				190150E327C7599B002D826A /* CustomerOrderViewController.swift in Sources */,
+				1988FD3C27D89C95001E6CB5 /* JuiceTypeSummaryViewItem.swift in Sources */,
+				1902456627DE1650006EF982 /* QueryPopOver.swift in Sources */,
+				190150EB27C75AF9002D826A /* ExcelViewController.swift in Sources */,
+				19A2AFEF27D6FA9800039226 /* String+subscript.swift in Sources */,
+				19B9F63227D700AB003BFA42 /* MsgHelper.swift in Sources */,
+				1934079F27C3383A009DD096 /* TitleBar.swift in Sources */,
+				190150EF27C75B62002D826A /* AlertViewController(Exowner).swift in Sources */,
+				1926ACC827BCDBBB00DDBA64 /* main.swift in Sources */,
+				19DB52D427BD27E6007FBED2 /* MainMenuWindowController.swift in Sources */,
+				193A9DFB27CE0B5E00858ED6 /* JuiceMaterial.swift in Sources */,
+				193A9DFD27CE0B7100858ED6 /* OwnerInputExpenses.swift in Sources */,
+				191CF5EB27E4B208009440A1 /* RegisterProtocol.swift in Sources */,
+				19DB9E2227DB6D6200EAADED /* DetailOwnerPieChart.swift in Sources */,
+				1988FD3E27D8B0F4001E6CB5 /* Utils.swift in Sources */,
+				1926ACD827BCE0EA00DDBA64 /* RegisterViewController.swift in Sources */,
+				193A9E0C27D5E3E200858ED6 /* Alert.swift in Sources */,
+				193A9DF527CE08F000858ED6 /* CustomerOrder.swift in Sources */,
+				1902456227DE0BF1006EF982 /* AlertViewController(owner).swift in Sources */,
+				19F4FE1827C4DDB900D96FD1 /* CustomerInfoViewController.swift in Sources */,
+				19DB9E1C27DB6C6F00EAADED /* DefaultExOwnerBarChart.swift in Sources */,
+				193A9E0627CF895800858ED6 /* BaseNetWork.swift in Sources */,
+				191CF60027E86DFC009440A1 /* OrderMutiSelePopOver.swift in Sources */,
+				193A9DF727CE091C00858ED6 /* JuiceType.swift in Sources */,
+				193A9E0827D0FAC900858ED6 /* UserModel.swift in Sources */,
+				19EA1DC027C60F27001C09A3 /* JuiceTypeSplitViewController.swift in Sources */,
+				1926ACBB27BCDB9600DDBA64 /* AppDelegate.swift in Sources */,
+				193407A327C38AE1009DD096 /* DetailViewController.swift in Sources */,
+				1988FD3827D89AF9001E6CB5 /* JuiceTypeSummaryViewController.swift in Sources */,
+				19DB9E1527DB3F4A00EAADED /* EXOwnerInputExpensesViewController.swift in Sources */,
+				19EA1DC227C65F16001C09A3 /* CustomerInfo.swift in Sources */,
+				190150E727C75A91002D826A /* JuiceRankViewController.swift in Sources */,
+				19DB9E1F27DB6C8000EAADED /* DefaultOwnerBarChart.swift in Sources */,
+				191CF5F727E6EE2E009440A1 /* AddMaterialPopOver.swift in Sources */,
+				193407A127C33965009DD096 /* MainMenuViewController.swift in Sources */,
+				191CF5EE27E4BD9F009440A1 /* LoginProtocol.swift in Sources */,
+				1902455F27DE08C0006EF982 /* OwnerInfo.swift in Sources */,
+				193A9DEF27CD050100858ED6 /* ContentSplitViewController.swift in Sources */,
+				1926ACCA27BCDC2000DDBA64 /* WindowManager.swift in Sources */,
+				1926ACD027BCDCA100DDBA64 /* LRViewController.swift in Sources */,
+				190150E527C759C1002D826A /* JuiceMaterialViewController.swift in Sources */,
+				190150F327C75CDD002D826A /* WelcomeViewController.swift in Sources */,
+				1988FD3A27D89BA9001E6CB5 /* JuiceTypeDetailViewController.swift in Sources */,
+				193A9E0227CE597C00858ED6 /* BaseModel.swift in Sources */,
+				190150F127C75B75002D826A /* OwnerViewController.swift in Sources */,
+				191CF5F427E5EEA4009440A1 /* AddOrderPopOver.swift in Sources */,
+				191CF5FA27E850F8009440A1 /* CalendarPopOver.swift in Sources */,
+				1926ACCE27BCDC7700DDBA64 /* LRWindowController.swift in Sources */,
+				191CF5FD27E8680F009440A1 /* OrderProtocol.swift in Sources */,
+				193A9DF927CE094300858ED6 /* JuiceRank.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1988FD4727D8B4AB001E6CB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				191CF5E827E4A781009440A1 /* Array+encoding.swift in Sources */,
+				19886E8E27D9AA52005B9D9D /* JuiceTypeCollectionItemView.swift in Sources */,
+				19DB9E1927DB418D00EAADED /* EXOwnerInputExpenses.swift in Sources */,
+				1988FD4827D8B4AB001E6CB5 /* OwnerInputExpensesViewController.swift in Sources */,
+				19D86FDE27DA2A4C00503EAE /* Notifications.swift in Sources */,
+				1988FD4927D8B4AB001E6CB5 /* GraphicViewController.swift in Sources */,
+				1988FD4A27D8B4AB001E6CB5 /* LoginViewController.swift in Sources */,
+				1988FD4B27D8B4AB001E6CB5 /* FunctionBarViewController.swift in Sources */,
+				1988FD4C27D8B4AB001E6CB5 /* CustomerOrderViewController.swift in Sources */,
+				1988FD4D27D8B4AB001E6CB5 /* JuiceTypeSummaryViewItem.swift in Sources */,
+				1902456727DE1650006EF982 /* QueryPopOver.swift in Sources */,
+				1988FD4E27D8B4AB001E6CB5 /* ExcelViewController.swift in Sources */,
+				1988FD4F27D8B4AB001E6CB5 /* String+subscript.swift in Sources */,
+				1988FD5027D8B4AB001E6CB5 /* MsgHelper.swift in Sources */,
+				1988FD5127D8B4AB001E6CB5 /* TitleBar.swift in Sources */,
+				1988FD5227D8B4AB001E6CB5 /* AlertViewController(Exowner).swift in Sources */,
+				1988FD5327D8B4AB001E6CB5 /* main.swift in Sources */,
+				1988FD5427D8B4AB001E6CB5 /* MainMenuWindowController.swift in Sources */,
+				1988FD5527D8B4AB001E6CB5 /* JuiceMaterial.swift in Sources */,
+				1988FD5627D8B4AB001E6CB5 /* OwnerInputExpenses.swift in Sources */,
+				191CF5EC27E4B208009440A1 /* RegisterProtocol.swift in Sources */,
+				19DB9E2327DB6D6200EAADED /* DetailOwnerPieChart.swift in Sources */,
+				1988FD5727D8B4AB001E6CB5 /* Utils.swift in Sources */,
+				1988FD5827D8B4AB001E6CB5 /* RegisterViewController.swift in Sources */,
+				1988FD5927D8B4AB001E6CB5 /* Alert.swift in Sources */,
+				1988FD5A27D8B4AB001E6CB5 /* CustomerOrder.swift in Sources */,
+				1902456327DE0BF1006EF982 /* AlertViewController(owner).swift in Sources */,
+				1988FD5B27D8B4AB001E6CB5 /* CustomerInfoViewController.swift in Sources */,
+				19DB9E1D27DB6C6F00EAADED /* DefaultExOwnerBarChart.swift in Sources */,
+				1988FD5C27D8B4AB001E6CB5 /* BaseNetWork.swift in Sources */,
+				191CF60127E86DFC009440A1 /* OrderMutiSelePopOver.swift in Sources */,
+				1988FD5D27D8B4AB001E6CB5 /* JuiceType.swift in Sources */,
+				1988FD5E27D8B4AB001E6CB5 /* UserModel.swift in Sources */,
+				1988FD5F27D8B4AB001E6CB5 /* JuiceTypeSplitViewController.swift in Sources */,
+				1988FD6027D8B4AB001E6CB5 /* AppDelegate.swift in Sources */,
+				1988FD6127D8B4AB001E6CB5 /* DetailViewController.swift in Sources */,
+				1988FD6227D8B4AB001E6CB5 /* JuiceTypeSummaryViewController.swift in Sources */,
+				19DB9E1627DB3F4A00EAADED /* EXOwnerInputExpensesViewController.swift in Sources */,
+				1988FD6327D8B4AB001E6CB5 /* CustomerInfo.swift in Sources */,
+				1988FD6427D8B4AB001E6CB5 /* JuiceRankViewController.swift in Sources */,
+				19DB9E2027DB6C8000EAADED /* DefaultOwnerBarChart.swift in Sources */,
+				191CF5F827E6EE2E009440A1 /* AddMaterialPopOver.swift in Sources */,
+				1988FD6527D8B4AB001E6CB5 /* MainMenuViewController.swift in Sources */,
+				191CF5EF27E4BD9F009440A1 /* LoginProtocol.swift in Sources */,
+				1902456027DE08C0006EF982 /* OwnerInfo.swift in Sources */,
+				1988FD6627D8B4AB001E6CB5 /* ContentSplitViewController.swift in Sources */,
+				1988FD6827D8B4AB001E6CB5 /* WindowManager.swift in Sources */,
+				1988FD6927D8B4AB001E6CB5 /* LRViewController.swift in Sources */,
+				1988FD6A27D8B4AB001E6CB5 /* JuiceMaterialViewController.swift in Sources */,
+				1988FD6B27D8B4AB001E6CB5 /* WelcomeViewController.swift in Sources */,
+				1988FD6C27D8B4AB001E6CB5 /* JuiceTypeDetailViewController.swift in Sources */,
+				1988FD6D27D8B4AB001E6CB5 /* BaseModel.swift in Sources */,
+				1988FD6E27D8B4AB001E6CB5 /* OwnerViewController.swift in Sources */,
+				191CF5F527E5EEA4009440A1 /* AddOrderPopOver.swift in Sources */,
+				191CF5FB27E850F8009440A1 /* CalendarPopOver.swift in Sources */,
+				1988FD6F27D8B4AB001E6CB5 /* LRWindowController.swift in Sources */,
+				191CF5FE27E8680F009440A1 /* OrderProtocol.swift in Sources */,
+				1988FD7027D8B4AB001E6CB5 /* JuiceRank.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1926ACC227BCDB9700DDBA64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridge-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1926ACC327BCDB9700DDBA64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridge-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		1926ACC527BCDB9700DDBA64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4CCAA91F316507CDC52B116 /* Pods-MilkTea.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MilkTea/MilkTea.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A6QLU8NCW8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"OWNER=1",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-DOWNER";
+				PRODUCT_BUNDLE_IDENTIFIER = qhr.MilkTea;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/tiger/Desktop/MilkTea/MilkTea/Bridge-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1926ACC627BCDB9700DDBA64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35455A91406B1240152ACEB2 /* Pods-MilkTea.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MilkTea/MilkTea.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A6QLU8NCW8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-DOWNER";
+				PRODUCT_BUNDLE_IDENTIFIER = qhr.MilkTea;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/tiger/Desktop/MilkTea/MilkTea/Bridge-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1988FD7A27D8B4AB001E6CB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4CCAA91F316507CDC52B116 /* Pods-MilkTea.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MilkTea/MilkTea.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A6QLU8NCW8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"EXOWNER=2",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-DEXOWNER";
+				PRODUCT_BUNDLE_IDENTIFIER = qhr.MilkTea;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/tiger/Desktop/MilkTea/MilkTea/Bridge-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1988FD7B27D8B4AB001E6CB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35455A91406B1240152ACEB2 /* Pods-MilkTea.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MilkTea/MilkTea.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A6QLU8NCW8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-DEXOWNER";
+				PRODUCT_BUNDLE_IDENTIFIER = qhr.MilkTea;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/tiger/Desktop/MilkTea/MilkTea/Bridge-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1926ACB227BCDB9600DDBA64 /* Build configuration list for PBXProject "MilkTea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1926ACC227BCDB9700DDBA64 /* Debug */,
+				1926ACC327BCDB9700DDBA64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1926ACC427BCDB9700DDBA64 /* Build configuration list for PBXNativeTarget "MilkTeaOwner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1926ACC527BCDB9700DDBA64 /* Debug */,
+				1926ACC627BCDB9700DDBA64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1988FD7927D8B4AB001E6CB5 /* Build configuration list for PBXNativeTarget "MilkTeaExOwner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1988FD7A27D8B4AB001E6CB5 /* Debug */,
+				1988FD7B27D8B4AB001E6CB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1926ACDE27BCE36400DDBA64 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = 5.0.1;
+				kind = branch;
+			};
+		};
+		193A9DFE27CE43BE00858ED6 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		1988FD4127D8B4AB001E6CB5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = 5.0.1;
+				kind = branch;
+			};
+		};
+		1988FD4327D8B4AB001E6CB5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+		1988FD4527D8B4AB001E6CB5 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		19F4FE1927C5149900D96FD1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1926ACDF27BCE36400DDBA64 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1926ACDE27BCE36400DDBA64 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		193A9DFF27CE43BE00858ED6 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 193A9DFE27CE43BE00858ED6 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+		1988FD4027D8B4AB001E6CB5 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1988FD4127D8B4AB001E6CB5 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		1988FD4227D8B4AB001E6CB5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1988FD4327D8B4AB001E6CB5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		1988FD4427D8B4AB001E6CB5 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1988FD4527D8B4AB001E6CB5 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+		19F4FE1A27C5149900D96FD1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19F4FE1927C5149900D96FD1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1926ACAF27BCDB9600DDBA64 /* Project object */;
+}

@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CE2B7F3E-BD4D-4911-8814-689088026F55"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D5E7B81-286E-40E6-89F8-B88EAAF2FFAF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/LoginRegister/LRViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "setupView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FCE16426-64A2-4FB9-92D5-AB78ADA58C4A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/LoginRegister/LRViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "registerController(_sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3353AF2-8819-4C68-B12C-0D310ADFFDEA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/TitleBar/TitleBar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "pushLoginUser(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "615AA2CD-DA2D-4566-8121-68DBE826CCFC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/DetailView/DetailViewItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "tabView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B80EF27-0468-4D68-9256-D13F5EBCDF3B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/FuntionBar/FunctionBarViewItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "outlineView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "7B80EF27-0468-4D68-9256-D13F5EBCDF3B - 5f004cffe751e74f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.FunctionBarViewItem.funcTable.getter : __C.NSTableView"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/FuntionBar/FunctionBarViewItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "7B80EF27-0468-4D68-9256-D13F5EBCDF3B - 9d1200c9f4b28b43"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.FunctionBarViewItem.funcTable.setter : __C.NSTableView"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/FuntionBar/FunctionBarViewItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "7B80EF27-0468-4D68-9256-D13F5EBCDF3B - 38c1cd6f8acd3006"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.FunctionBarViewItem.funcTable.modify : __C.NSTableView"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/FuntionBar/FunctionBarViewItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "7B80EF27-0468-4D68-9256-D13F5EBCDF3B - c73f3b2d0f520177"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.FunctionBarViewItem.funcTable.modify : __C.NSTableView with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/FuntionBar/FunctionBarViewItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "7B80EF27-0468-4D68-9256-D13F5EBCDF3B - ac78ffdf1211afe5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.FunctionBarViewItem.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; MilkTea.FunctionBarViewItem"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/FuntionBar/FunctionBarViewItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "7B80EF27-0468-4D68-9256-D13F5EBCDF3B - 86f1e49009de9b1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.FunctionBarViewItem.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MilkTea.FunctionBarViewItem&gt;"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/FuntionBar/FunctionBarViewItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "7B80EF27-0468-4D68-9256-D13F5EBCDF3B - 3ebd6e49cd3ad972"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __C.NSTableView in MilkTea.FunctionBarViewItem.funcTable.getter : __C.NSTableView"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/FuntionBar/FunctionBarViewItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA78AAAE-B626-42E9-BB39-03398708B029"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/FuntionBar/FunctionBarViewItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42E2073E-78A3-4AA0-8178-927DCBEC43CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/FuntionBar/FunctionBarViewItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "outlineView(_:numberOfChildrenOfItem:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A7E0CB6-3580-4909-842D-38381E963FBD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/FuntionBar/FunctionBarViewItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1217FAE9-9325-423C-97EF-7D5898C8BDA0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/FuntionBar/FunctionBarViewItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "outlineView(_:heightOfRowByItem:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B312C8F-DB02-4EDC-9481-87E480AD47B1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/DetailView/DetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9F3EF22-92B1-4BB4-93F4-733D642559EF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/FuntionBar/FunctionBarViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "outLineView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43A87F97-73D9-4E1B-A6F1-71F5910CAE89"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/DetailView/FuncTabs/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "UserInfoViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38B20176-3625-4A4A-80DB-3E1CED8B3F21"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/DetailView/FuncTabs/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "tableView(_:viewFor:row:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F6A13D9-2092-40F5-AD9E-7C7341CC2DFB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/DetailView/FuncTabs/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "userInfoTable"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7D8985E-2B11-49BC-812C-89C48E53D822"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/DetailView/FuncTabs/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "userInfoTable"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "B7D8985E-2B11-49BC-812C-89C48E53D822 - d52801e92b640b36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.UserInfoViewController.userInfoTable.getter : __C.NSTableView"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "B7D8985E-2B11-49BC-812C-89C48E53D822 - 9c75ac5c1ce4b0aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.UserInfoViewController.userInfoTable.setter : __C.NSTableView"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "B7D8985E-2B11-49BC-812C-89C48E53D822 - 49fbabe3c16158ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.UserInfoViewController.userInfoTable.modify : __C.NSTableView"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "B7D8985E-2B11-49BC-812C-89C48E53D822 - 3e9d4d36b098ce47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.UserInfoViewController.userInfoTable.modify : __C.NSTableView with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "B7D8985E-2B11-49BC-812C-89C48E53D822 - a0259e48430cf024"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.UserInfoViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; MilkTea.UserInfoViewController"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  uuid = "B7D8985E-2B11-49BC-812C-89C48E53D822 - a19011104f482223"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.UserInfoViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MilkTea.UserInfoViewController&gt;"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "392">
+               </Location>
+               <Location
+                  uuid = "B7D8985E-2B11-49BC-812C-89C48E53D822 - ebfab08c6abf83b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __C.NSTableView in MilkTea.UserInfoViewController.userInfoTable.getter : __C.NSTableView"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "988990A4-2114-4248-AF29-23FAFD4A4DEE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "tableView(_:viewFor:row:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99C097C0-476A-416F-AFBD-3EE2A318E10B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "loadView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C6FFEE9-7F5E-435B-A159-D48C2B0EB0FD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/NetWork/login/loginRequest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "sendRegisterRequest(user:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D2B654A-23D5-4BCD-A9AB-D8F155CBA126"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/NetWork/login/loginRequest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "sendRegisterRequest(user:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "379D2508-8627-40A7-B67C-FF55BCB24B86"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "tableView(_:viewFor:row:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1564689C-D0BA-4C29-BA02-E2ADC4FDEED5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "UserInfoViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "1564689C-D0BA-4C29-BA02-E2ADC4FDEED5 - c91915c54375bcb4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.UserInfoViewController.addInfoBtn.getter : __C.NSButton"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "1564689C-D0BA-4C29-BA02-E2ADC4FDEED5 - 4b46f8bcba5ccca0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.UserInfoViewController.addInfoBtn.setter : __C.NSButton"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "1564689C-D0BA-4C29-BA02-E2ADC4FDEED5 - 8b24aeecbd04f16a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.UserInfoViewController.addInfoBtn.modify : __C.NSButton"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "1564689C-D0BA-4C29-BA02-E2ADC4FDEED5 - d5a0e9309ec4df7b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.UserInfoViewController.addInfoBtn.modify : __C.NSButton with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "1564689C-D0BA-4C29-BA02-E2ADC4FDEED5 - f623c9d5b7e11969"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.UserInfoViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; MilkTea.UserInfoViewController"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "652">
+               </Location>
+               <Location
+                  uuid = "1564689C-D0BA-4C29-BA02-E2ADC4FDEED5 - f796468dbba5cb6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MilkTea.UserInfoViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MilkTea.UserInfoViewController&gt;"
+                  moduleName = "MilkTea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiger/Desktop/MilkTea/MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "628">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A18A81A9-9BB7-456B-91EE-C475B37DDA57"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "setupView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2C8BA96-41B4-432C-BD06-E210AA6CC91A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/ContentSplitView/ContentSplitViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "loadView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "783F9CEE-E941-4034-A49C-A5A0CBB0498F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "popoverAddInfoWnd(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "36971DC5-B74F-4A0A-AF6E-94B8B0863E4A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8DA23B2-A471-4E9B-B760-9533478ACEB9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "44070738-9CC4-450D-AD54-F12E507D9A4E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/UserOrderViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "UserOrderViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
