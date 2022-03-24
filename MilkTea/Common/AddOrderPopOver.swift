@@ -41,7 +41,7 @@ class AddOrderViewController:NSViewController,OrderViewControllerDelegate{
     
     func clearValue(){
         customerNameField.stringValue = ""
-        buyingJuiceField.stringValue = "------"
+        buyingJuiceField.title = "------"
         orderingTimeField.title = "------"
         juiceNumberField.stringValue = ""
         totalSellingPriceField.stringValue = ""
@@ -114,8 +114,8 @@ class AddOrderViewController:NSViewController,OrderViewControllerDelegate{
     @objc func addOrder(_ sender:NSButton){
         var order = CustomerOrder.init(
             customerName: customerNameField.stringValue,
-            buyingjuice: buyingJuiceField.stringValue,
-            orderingTime: orderingTimeField.stringValue,
+            buyingjuice: buyingJuiceField.title,
+            orderingTime: orderingTimeField.title,
             juiceNumber: juiceNumberField.stringValue,
             totalSellingPrice: totalSellingPriceField.stringValue,
             curEvaluate: curEvaluateField.stringValue

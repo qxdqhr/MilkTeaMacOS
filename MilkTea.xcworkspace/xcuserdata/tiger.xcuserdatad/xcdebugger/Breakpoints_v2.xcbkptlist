@@ -142,10 +142,10 @@
             filePath = "MilkTea/Common/OrderMutiSelePopOver.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "JuiceSeleTableViewController"
-            landmarkType = "21">
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "addSelection(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -158,8 +158,8 @@
             filePath = "MilkTea/Common/OrderMutiSelePopOver.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "updateSelection(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -167,32 +167,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3E9FEC8D-3C71-4BD2-8AD0-E818FD94D56E"
+            uuid = "0329CCC3-C4BC-43E5-A502-75C7F9ADF554"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MilkTea/Common/OrderMutiSelePopOver.swift"
+            filePath = "MilkTea/Common/AddOrderPopOver.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "updateSelection(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7C6D9C07-38A7-451B-A043-441228DECEF5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MilkTea/Common/OrderMutiSelePopOver.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "updateSelection(_:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "sendJuicesStringToBtn(juiceString:juiceNum:juicePrice:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

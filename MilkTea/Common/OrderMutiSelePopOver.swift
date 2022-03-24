@@ -25,40 +25,75 @@ extension JuiceSeleTableViewController :NSTableViewDataSource{
 
 }
 extension JuiceSeleTableViewController :NSTableViewDelegate{
+
+    
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         //获取当前列的标识符
         let key = (tableColumn?.identifier)!
         //创建单元格cell视图
         var view = tableView.makeView(withIdentifier: key, owner: self)
+    
         if (view == nil){
             view = NSView()
-            
         }
         //判断当前列的标识符是哪一列
         let item = juiceTypeArr[row]
+        //子视图控件
+        var juiceTypeComboBox = NSButton(title: item.juiceName, target: self, action: #selector(getNum))
+        var addJuiceBtn = NSButton(title: "增加饮品", target: self, action: #selector(addSelection))
+        var removeJuiceBtn = NSButton(title: "减少饮品", target: self, action: #selector(removeSelection))
+        juiceTypeComboBox.stringValue = item.juiceName
+        juiceTypeComboBox.tag = row
+        addJuiceBtn.tag = row
+        removeJuiceBtn.tag = row
 
-        var juiceTypeComboBox :NSButton = {
-            var juiceTypeComboBox = NSButton(title: (item as!JuiceType).juiceName, target: self, action: #selector(addSelection))
-            return juiceTypeComboBox
-        }()
         view?.addSubview(juiceTypeComboBox)
+        view?.addSubview(addJuiceBtn)
+        view?.addSubview(removeJuiceBtn)
         juiceTypeComboBox.snp.makeConstraints{
-            $0.center.equalToSuperview()
-            $0.size.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.top.equalToSuperview()
+        }
+        addJuiceBtn.snp.makeConstraints{
+            $0.leading.equalTo(juiceTypeComboBox.snp.trailing)
+            $0.top.equalToSuperview()
+        }
+        removeJuiceBtn.snp.makeConstraints{
+            $0.leading.equalTo(addJuiceBtn.snp.trailing)
+            $0.top.equalToSuperview()
         }
         return view
     }
+    @objc func getNum(_ sender:NSButton){
+        let ele = juiceTypeArr[sender.tag].juiceName
+        if self.selectJuiceNames[ele] != nil{
+            sender.title = "\(ele): \(self.selectJuiceNames[ele]!)"
+        }
+     
+    }
     @objc func addSelection(_ sender:NSButton){
-        let ele = "\(sender.title)"
-        if selectJuiceNames.contains(ele){
-            selectJuiceNames.remove(ele)
-        }else{
-            selectJuiceNames.insert(ele)
+        let ele = juiceTypeArr[sender.tag].juiceName
+        
+        if(self.selectJuiceNames[ele] == nil||self.selectJuiceNames[ele] == 0){
+            self.selectJuiceNames[ele] = 1
+        }
+        else{
+            self.selectJuiceNames[ele]! += 1
+        }
+    }
+    @objc func removeSelection(_ sender:NSButton){
+        let ele = juiceTypeArr[sender.tag].juiceName
+        if self.selectJuiceNames[ele] == nil||self.selectJuiceNames[ele] == 0 {
+            self.selectJuiceNames[ele] = 0
+        }
+        else{
+            self.selectJuiceNames[ele]! -= 1
         }
     }
 
 }
 class JuiceSeleTableViewController: NSViewController {
+ 
     lazy var comfirmBtn: NSButton = {
         var comfirmBtn = NSButton(title: "确认选择", target: self, action: #selector(updateSelection))
         return comfirmBtn
@@ -69,11 +104,11 @@ class JuiceSeleTableViewController: NSViewController {
         .detailViewController.tabViewItems[3].viewController as! JuiceTypeSplitViewController)
         .juiceTypeSummaryViewController.data
     
-    var selectJuiceNames = Set<String>()
-    lazy var selectJuices :Set<JuiceType> = {
-        var selectJuices = Set<JuiceType>()
-        for juice in juiceTypeArr{
-            selectJuices.insert(juice)
+    var selectJuiceNames = Dictionary<String,Int>()
+    lazy var selectJuices :Array<JuiceType> = {
+        var selectJuices = Array<JuiceType>()
+        for (index,juice) in juiceTypeArr.enumerated(){
+            selectJuices.insert(juice, at: index)
         }
         return selectJuices
     }()
@@ -96,7 +131,7 @@ class JuiceSeleTableViewController: NSViewController {
     }()
     // - MARK: - 生命周期
     override func loadView() {
-        view = NSView(frame: NSRect(x: 200, y: 200, width: 400, height: 400))
+        view = NSView(frame: NSRect(x: 0, y: 0, width: 225, height: 150))
         self.juiceMaterialTable.addTableColumn(getColumn(title: ""))
 
         
@@ -117,13 +152,16 @@ class JuiceSeleTableViewController: NSViewController {
         var totalJuicePrice :Double = 0.0
         var juiceNum = 0
         for ele in self.selectJuiceNames{
-            selectJuice.append("\(ele) ")
-            juiceNum+=1
-            for juice in self.juiceTypeArr{
-                if(juice.juiceName == ele){
-                    totalJuicePrice += Double(juice.price)!
+            if(ele.value != 0){
+                for juice in self.juiceTypeArr{
+                    if(juice.juiceName == ele.key){
+                        totalJuicePrice += Double(juice.price)! * Double(ele.value)
+                        juiceNum += ele.value
+                        selectJuice.append("\(ele.key):\(ele.value);")
+                    }
                 }
             }
+      
         }
         delegate.sendJuicesStringToBtn(juiceString:selectJuice,juiceNum:juiceNum,juicePrice:totalJuicePrice)
 
@@ -142,20 +180,23 @@ class JuiceSeleTableViewController: NSViewController {
 
     // - MARK: - 加入视图以及布局
     func setupView(){
-   
+        view.addSubview(comfirmBtn)
+        comfirmBtn.snp.makeConstraints{
+            $0.bottom.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.height.equalTo(30)
+        }
+        
         view.addSubview(scroll)
         scroll.snp.makeConstraints{
             $0.top.equalToSuperview()
             $0.leading.equalToSuperview()
-            $0.height.equalTo(300)
             $0.trailing.equalToSuperview()
+            $0.bottom.equalTo(comfirmBtn.snp.top).offset(5)
+
         }
-        view.addSubview(comfirmBtn)
-        comfirmBtn.snp.makeConstraints{
-            $0.top.equalTo(scroll.snp.bottom)
-            $0.leading.equalToSuperview()
-            $0.height.equalTo(100)
-        }
+
     }
 }
 
