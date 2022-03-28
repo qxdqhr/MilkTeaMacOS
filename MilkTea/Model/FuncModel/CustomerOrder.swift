@@ -8,6 +8,7 @@
 import Foundation
 
 class CustomerOrder : BaseModel {
+    @objc var userId:String = ""  //分店账号
     @objc var customerName:String = ""          //顾客名称
     @objc var buyingjuice :String = ""          //购买饮品
     @objc var orderingTime :String = ""         //下单时间
@@ -44,6 +45,7 @@ class CustomerOrder : BaseModel {
         for property in propertyList(){
             var uiName :String
             switch property{
+            case "userId": uiName = "分店账号"
             case "customerName": uiName = "顾客名"
             case "buyingjuice": uiName = "购买饮品"
             case "orderingTime": uiName = "下单时间"
@@ -60,6 +62,7 @@ class CustomerOrder : BaseModel {
     }
     override func toKeyValue() -> [String : String] {
         [
+            "userid":self.userId,
             "customerid":self.customerName,
             "orderingtime":self.orderingTime,
             "buyingjuice":self.buyingjuice,

@@ -139,7 +139,7 @@ class RegisterViewController: NSViewController {
             #else
             var user = UserModel(name: name,userid: "", telephone: telephone, Password: password, role: "ExOwner")
             #endif
-            BaseNetWork.sendRequest(url: "http://localhost:8086/admin/register",
+            BaseNetWork.sendModelDataRequest(url: "http://localhost:8086/admin/register",
                                     method: .post,
                                     parameters: user){ code,data,msg in
                

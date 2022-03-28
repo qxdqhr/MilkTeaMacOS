@@ -44,7 +44,7 @@ class QueryViewController:NSViewController{
     }()
     
     private lazy var queryBtn: NSButton = {
-        var ctrl = NSButton(title: "查询", target: self, action: nil)
+        var ctrl = NSButton(title: "查询", target: self, action:  #selector(queryOrder))
         return ctrl
     }()
     // - MARK: - 生命周期
@@ -56,17 +56,59 @@ class QueryViewController:NSViewController{
         setupView()
     }
     // - MARK: - 重写代理函数
-    
+    func clearValue(){
+        queryName.stringValue = ""
+        queryValue.stringValue = ""
+    }
     // - MARK: - 重写其他函数
     func getCallClsPropertyName(clsName:BaseModel.Type){
         queryName.removeAllItems()
         queryName.addItems(withObjectValues: clsName.getUIName())
         queryName.removeItem(withObjectValue: "操作")
-                
+        queryName.removeItem(withObjectValue: "分店账号")
+
     }
-   
+
     // - MARK: - 事件函数
-    
+    @objc func queryOrder(_ sender:NSButton){
+       print(queryName.stringValue)
+        print(queryValue.stringValue)
+        let queryMap = [
+            "func":"order",
+            "userid":LoginUserInfo.getLoginUser().userId,
+            "query_name":  queryName.stringValue,
+            "query_value":  queryValue.stringValue
+        ]
+        BaseNetWork.sendDataRequest(url: "http://localhost:8086/order/query", method: .post,parameters: queryMap){ code,datas,msg in
+            print(datas)
+            if(code == 200){
+                MsgHelper.showMsg(message:"查询成功: \(msg)")
+                (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+                    .contentViewControllerItem.viewController as! ContentSplitViewController)
+                  .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr.removeAll()//清空数据源
+                
+                for ele in datas{
+                    var order = CustomerOrder(
+                      customerName: (ele as!NSDictionary).object(forKey: "customerid") as! String,
+                      buyingjuice: (ele as!NSDictionary).object(forKey: "buyingjuice") as! String,
+                      orderingTime: (ele as!NSDictionary).object(forKey: "orderingtime") as! String,
+                      juiceNumber: (ele as!NSDictionary).object(forKey: "juicenumber") as! String,
+                      totalSellingPrice: (ele as!NSDictionary).object(forKey: "totalsellingprice") as! String,
+                      curEvaluate: (ele as!NSDictionary).object(forKey: "curevaluate") as! String
+                      )
+                    (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+                        .contentViewControllerItem.viewController as! ContentSplitViewController)
+                      .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr.append(order)//添加新数据
+                }
+                (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+                   .contentViewControllerItem.viewController as! ContentSplitViewController)
+                 .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userOrderTable.reloadData()//重载数据
+            }
+             else {
+                 MsgHelper.showMsg(message:"查询失败: \(msg)")
+             }
+        }
+    }
     // - MARK: - 加入视图以及布局
     func setupView(){
         view.addSubview(queryNameLabel)

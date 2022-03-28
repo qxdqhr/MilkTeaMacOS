@@ -127,7 +127,7 @@ class LoginViewController: NSViewController,RegisterViewControllerDelegate {
             var user = UserModel(name: "", userid:workNum, telephone: "", Password: password, role: "ExOwner")
             #endif
             print(user)
-            BaseNetWork.sendRequest(url: "http://localhost:8086/admin/login",
+            BaseNetWork.sendModelDataRequest(url: "http://localhost:8086/admin/login",
                                     method: .post,
                                     parameters: user){ code,data,msg in
                print(data)
@@ -137,6 +137,8 @@ class LoginViewController: NSViewController,RegisterViewControllerDelegate {
                     let username = data.object(forKey: "name") as! String
                     //获取 ID
                     let userId = data.object(forKey: "userId") as! String
+                    //设置用户信息
+                    LoginUserInfo.setLoginUser(userName: username, userId: userId)
                     //协议写 name
                     self.delegate?.sendUserIdtoTitleBarDelegate?(username: username)
                     self.delegate =

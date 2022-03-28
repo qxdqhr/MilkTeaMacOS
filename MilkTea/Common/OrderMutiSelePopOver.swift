@@ -157,13 +157,14 @@ class JuiceSeleTableViewController: NSViewController {
                     if(juice.juiceName == ele.key){
                         totalJuicePrice += Double(juice.price)! * Double(ele.value)
                         juiceNum += ele.value
-                        selectJuice.append("\(ele.key):\(ele.value);")
+                        selectJuice.append("\(ele.key):\(ele.value)|")
                     }
                 }
             }
       
         }
-        delegate.sendJuicesStringToBtn(juiceString:selectJuice,juiceNum:juiceNum,juicePrice:totalJuicePrice)
+        
+        delegate.sendJuicesStringToBtn(juiceString:String(selectJuice.dropLast()),juiceNum:juiceNum,juicePrice:totalJuicePrice)
 
     }
     // - MARK: - 其他函数

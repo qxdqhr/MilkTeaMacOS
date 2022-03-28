@@ -12,4 +12,21 @@ func addSubviews(targetView:NSView,views:[NSView]){
         targetView.addSubview(view)
     }
 }
+class LoginUserInfo{
+    static let userDefault = UserDefaults.standard
+    //设置登录用户名
+    class func setLoginUser(userName:String, userId:String){
+        userDefault.set(userId, forKey: "userid")
+        userDefault.set(userName, forKey: "userName")
+    }
+    class func removeLoginUser(){
+        userDefault.removeObject(forKey: "userid")
+        userDefault.removeObject(forKey: "userName")
+    }
+    class func getLoginUser() -> (userName:String, userId:String){
+        return (userDefault.string(forKey: "userName") ?? "aaa",userDefault.string(forKey: "userid") ?? "aaa")
+    }
+    
+
+}
 
