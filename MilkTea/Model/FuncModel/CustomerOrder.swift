@@ -8,6 +8,7 @@
 import Foundation
 
 class CustomerOrder : BaseModel {
+    @objc var orderId:String = ""  //主键
     @objc var userId:String = ""  //分店账号
     @objc var customerName:String = ""          //顾客名称
     @objc var buyingjuice :String = ""          //购买饮品
@@ -40,11 +41,15 @@ class CustomerOrder : BaseModel {
             }
         }
     }
+    override func getOrderID() -> String {
+        return ("o_\(Date().timeIntervalSince1970)" as NSString).substring(to: 10)
+    }
     override class func getUIName()->[String]{
         var uiNames :[String] = []
         for property in propertyList(){
             var uiName :String
             switch property{
+            case "orderId": uiName = "主键"
             case "userId": uiName = "分店账号"
             case "customerName": uiName = "顾客名"
             case "buyingjuice": uiName = "购买饮品"
@@ -62,6 +67,7 @@ class CustomerOrder : BaseModel {
     }
     override func toKeyValue() -> [String : String] {
         [
+            "orderid":self.orderId,
             "userid":self.userId,
             "customerid":self.customerName,
             "orderingtime":self.orderingTime,

@@ -15,7 +15,15 @@ class MsgHelper: NSObject {
         alert.window.title = "提示"
         alert.runModal()
    }
-    // - MARK: - 显示查询数据窗口
+    class func judgeMsg(message:String,window:NSWindow,operation:@escaping ((NSApplication.ModalResponse) -> Void)){
+        let alert = NSAlert()
+        alert.messageText = message
+        alert.window.title = "警告"
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+        alert.alertStyle = .warning
+        alert.beginSheetModal(for: window, completionHandler:operation)
+    }
 
 
 }

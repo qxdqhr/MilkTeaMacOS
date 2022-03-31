@@ -115,6 +115,8 @@
 		1988FD7E27D99DE0001E6CB5 /* JuiceTypeCollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988FD7D27D99DE0001E6CB5 /* JuiceTypeCollectionItemView.swift */; };
 		19A2AFEF27D6FA9800039226 /* String+subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A2AFEE27D6FA9800039226 /* String+subscript.swift */; };
 		19B9F63227D700AB003BFA42 /* MsgHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B9F63127D700AB003BFA42 /* MsgHelper.swift */; };
+		19D0B10427F4544D00643A08 /* OrderFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D0B10327F4544D00643A08 /* OrderFunc.swift */; };
+		19D0B10527F4544D00643A08 /* OrderFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D0B10327F4544D00643A08 /* OrderFunc.swift */; };
 		19D86FDD27DA2A4C00503EAE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D86FDC27DA2A4C00503EAE /* Notifications.swift */; };
 		19D86FDE27DA2A4C00503EAE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D86FDC27DA2A4C00503EAE /* Notifications.swift */; };
 		19DB52D427BD27E6007FBED2 /* MainMenuWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB52D327BD27E6007FBED2 /* MainMenuWindowController.swift */; };
@@ -189,6 +191,7 @@
 		19A2AFEE27D6FA9800039226 /* String+subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+subscript.swift"; sourceTree = "<group>"; };
 		19A82DF327D62BAB00E9DEF2 /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		19B9F63127D700AB003BFA42 /* MsgHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgHelper.swift; sourceTree = "<group>"; };
+		19D0B10327F4544D00643A08 /* OrderFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFunc.swift; sourceTree = "<group>"; };
 		19D86FDC27DA2A4C00503EAE /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		19DB52D327BD27E6007FBED2 /* MainMenuWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuWindowController.swift; sourceTree = "<group>"; };
 		19DB9E1427DB3F4A00EAADED /* EXOwnerInputExpensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EXOwnerInputExpensesViewController.swift; path = MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/EXOwnerInputExpensesViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -305,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				193A9E0527CF895800858ED6 /* BaseNetWork.swift */,
+				19D0B10327F4544D00643A08 /* OrderFunc.swift */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -685,6 +689,7 @@
 				19DB52D427BD27E6007FBED2 /* MainMenuWindowController.swift in Sources */,
 				193A9DFB27CE0B5E00858ED6 /* JuiceMaterial.swift in Sources */,
 				193A9DFD27CE0B7100858ED6 /* OwnerInputExpenses.swift in Sources */,
+				19D0B10427F4544D00643A08 /* OrderFunc.swift in Sources */,
 				191CF5EB27E4B208009440A1 /* RegisterProtocol.swift in Sources */,
 				19DB9E2227DB6D6200EAADED /* DetailOwnerPieChart.swift in Sources */,
 				1988FD3E27D8B0F4001E6CB5 /* Utils.swift in Sources */,
@@ -750,6 +755,7 @@
 				1988FD5427D8B4AB001E6CB5 /* MainMenuWindowController.swift in Sources */,
 				1988FD5527D8B4AB001E6CB5 /* JuiceMaterial.swift in Sources */,
 				1988FD5627D8B4AB001E6CB5 /* OwnerInputExpenses.swift in Sources */,
+				19D0B10527F4544D00643A08 /* OrderFunc.swift in Sources */,
 				191CF5EC27E4B208009440A1 /* RegisterProtocol.swift in Sources */,
 				19DB9E2327DB6D6200EAADED /* DetailOwnerPieChart.swift in Sources */,
 				1988FD5727D8B4AB001E6CB5 /* Utils.swift in Sources */,

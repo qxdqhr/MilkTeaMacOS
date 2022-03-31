@@ -80,38 +80,12 @@ class CustomerOrderViewController: NSViewController {
     // - MARK: - 生命周期
     override func loadView() {
         view = NSView()
-        for property in CustomerOrder.getUIName().dropFirst(){
+        print(CustomerOrder.getUIName())
+        for property in CustomerOrder.getUIName().dropFirst().dropFirst(){
             print(property)
             self.userOrderTable.addTableColumn(getColumn(title: property))
         }
-        BaseNetWork.sendDataRequest(url: "http://localhost:8086/order/refresh", method: .post, parameters:["userid":LoginUserInfo.getLoginUser().userId] ){ code,datas,msg in
-//            print(datas)
-             if(code == 200){
-                 (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-                     .contentViewControllerItem.viewController as! ContentSplitViewController)
-                   .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr.removeAll()//清空数据源
-                 for ele in datas{
-                     var order = CustomerOrder(
-                       customerName: (ele as!NSDictionary).object(forKey: "customerid") as! String,
-                       buyingjuice: (ele as!NSDictionary).object(forKey: "buyingjuice") as! String,
-                       orderingTime: (ele as!NSDictionary).object(forKey: "orderingtime") as! String,
-                       juiceNumber: (ele as!NSDictionary).object(forKey: "juicenumber") as! String,
-                       totalSellingPrice: (ele as!NSDictionary).object(forKey: "totalsellingprice") as! String,
-                       curEvaluate: (ele as!NSDictionary).object(forKey: "curevaluate") as! String
-                       )
-                     (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-                         .contentViewControllerItem.viewController as! ContentSplitViewController)
-                       .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr.append(order)//添加新数据
-                     (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-                        .contentViewControllerItem.viewController as! ContentSplitViewController)
-                      .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userOrderTable.reloadData()//重载数据
-                 }
-             }
-             else {
-                 MsgHelper.showMsg(message:"刷新失败: \(msg)")
-             }
-        }
-        
+        OrderFunc.refresh()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,7 +106,13 @@ class CustomerOrderViewController: NSViewController {
     }
     // - MARK: - 事件函数
     @objc func modifyOrder(_ sender:NSButton){
-        editRow = sender.tag//获取选中行
+        if editRow == -1 {
+            editRow = sender.tag
+        }
+        else if editRow != sender.tag{
+            editflag = true //已编辑过
+        }
+         //获取选中行
         var textFields = [
             (self.userOrderTable.view(atColumn: 0, row: editRow, makeIfNecessary: true)?.subviews[0] as! NSTextField),
             (self.userOrderTable.view(atColumn: 1, row: editRow, makeIfNecessary: true)?.subviews[0] as! NSTextField),
@@ -142,9 +122,21 @@ class CustomerOrderViewController: NSViewController {
             (self.userOrderTable.view(atColumn: 5, row: editRow, makeIfNecessary: true)?.subviews[0] as! NSTextField)
         ]
         if sender.title == "提交" {
-            print(sender.tag+1)
+
+            OrderFunc.modify(para: [
+                "orderid":userInfoDataArr[sender.tag].orderId,
+                "userid":LoginUserInfo.getLoginUser().userId,
+                "customerid":textFields[0].stringValue,
+                "orderingtime":textFields[2].stringValue,
+                "buyingjuice":textFields[1].stringValue,
+                "juicenumber":textFields[3].stringValue,
+                "totalsellingprice":textFields[4].stringValue,
+                "curevaluate":textFields[5].stringValue,
+            ])
+            
+            //界面变回原样
             for (index,textField) in textFields.enumerated() {
-                if (index == 1 || index == 3 || index == 4){
+                if (index == 0 || index == 1 || index == 3 || index == 4){
                     continue
                 }
                 textField.textColor = NSColor.black
@@ -158,35 +150,36 @@ class CustomerOrderViewController: NSViewController {
             textFields.removeAll()
             return
         }
-
-        if (editflag == true && editRow != -1){ //选中某行
+        if(editflag == true){
             MsgHelper.showMsg(message: "您已选中某行,请重新选择")
             for (index,textField) in textFields.enumerated() {
-                if (index == 1 || index == 3 || index == 4) {
+                if (index == 0 || index == 1 || index == 3 || index == 4) {
                     continue
                 }
                 textField.textColor = NSColor.black
                 textField.isEditable = false
                 textField.stringValue = self.texts[index]
             }
-            sender.title = "修改"
+            (self.userOrderTable.view(atColumn: 6, row: editRow, makeIfNecessary: true)?.subviews[0] as! NSButton).title = "修改"
+
             editRow = -1
             self.editflag = false
             self.texts.removeAll()
             textFields.removeAll()
             return
         }
+    
         if sender.title == "修改"{
             self.texts = [
                 textFields[0].stringValue,
-//                textFields[1].stringValue,
+                textFields[1].stringValue,
                 textFields[2].stringValue,
-//                textFields[3].stringValue,
-//                textFields[4].stringValue,
+                textFields[3].stringValue,
+                textFields[4].stringValue,
                 textFields[5].stringValue
             ]
             for (index,textField) in textFields.enumerated() {
-                if (index == 1 || index == 3 || index == 4 ){
+                if (index == 0 || index == 1 || index == 3 || index == 4 ){
                     continue
                 }
                 textField.textColor = NSColor.red
@@ -196,48 +189,16 @@ class CustomerOrderViewController: NSViewController {
             self.editflag = true
         }
 
- 
-        
-        
-        
-//        let queryMap = [
-//            "func":"order",
-//            "userid":LoginUserInfo.getLoginUser().userId,
-//            "query_name":  queryName.stringValue,
-//            "query_value":  queryValue.stringValue
-//        ]
-//        BaseNetWork.sendDataRequest(url: "http://localhost:8086/order/modify", method: .post, parameters:["userid":LoginUserInfo.getLoginUser().userId] ){ code,datas,msg in
-////            print(datas)
-//             if(code == 200){
-//                 MsgHelper.showMsg(message:"刷新成功")
-//                 (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-//                     .contentViewControllerItem.viewController as! ContentSplitViewController)
-//                   .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr.removeAll()//清空数据源
-//                 for ele in datas{
-//                     var order = CustomerOrder(
-//                       customerName: (ele as!NSDictionary).object(forKey: "customerid") as! String,
-//                       buyingjuice: (ele as!NSDictionary).object(forKey: "buyingjuice") as! String,
-//                       orderingTime: (ele as!NSDictionary).object(forKey: "orderingtime") as! String,
-//                       juiceNumber: (ele as!NSDictionary).object(forKey: "juicenumber") as! String,
-//                       totalSellingPrice: (ele as!NSDictionary).object(forKey: "totalsellingprice") as! String,
-//                       curEvaluate: (ele as!NSDictionary).object(forKey: "curevaluate") as! String
-//                       )
-//                     (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-//                         .contentViewControllerItem.viewController as! ContentSplitViewController)
-//                       .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr.append(order)//添加新数据
-//                     (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-//                        .contentViewControllerItem.viewController as! ContentSplitViewController)
-//                      .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userOrderTable.reloadData()//重载数据
-//                 }
-//             }
-//             else {
-//                 MsgHelper.showMsg(message:"刷新失败: \(msg)")
-//             }
-//        }
-
     }
     @objc func deleteOrder(_ sender:NSButton){
+        MsgHelper.judgeMsg(message: "确认删除?", window: self.view.window!) { response in
+            if (response == .alertFirstButtonReturn){
+                print("ok")
+            }else if(response == .alertSecondButtonReturn){
+                print("cancel")
 
+            }
+        }
     }
     @objc func popoverAddInfoWnd(_ sender:NSButton){
         (popoverAddOrder.contentViewController as!AddOrderViewController).clearValue()
@@ -250,35 +211,7 @@ class CustomerOrderViewController: NSViewController {
         
     }
     @objc func refresh(){
-        BaseNetWork.sendDataRequest(url: "http://localhost:8086/order/refresh", method: .post, parameters:["userid":LoginUserInfo.getLoginUser().userId] ){ code,datas,msg in
-//            print(datas)
-             if(code == 200){
-                 MsgHelper.showMsg(message:"刷新成功")
-                 (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-                     .contentViewControllerItem.viewController as! ContentSplitViewController)
-                   .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr.removeAll()//清空数据源
-                 for ele in datas{
-                     var order = CustomerOrder(
-                       customerName: (ele as!NSDictionary).object(forKey: "customerid") as! String,
-                       buyingjuice: (ele as!NSDictionary).object(forKey: "buyingjuice") as! String,
-                       orderingTime: (ele as!NSDictionary).object(forKey: "orderingtime") as! String,
-                       juiceNumber: (ele as!NSDictionary).object(forKey: "juicenumber") as! String,
-                       totalSellingPrice: (ele as!NSDictionary).object(forKey: "totalsellingprice") as! String,
-                       curEvaluate: (ele as!NSDictionary).object(forKey: "curevaluate") as! String
-                       )
-                     (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-                         .contentViewControllerItem.viewController as! ContentSplitViewController)
-                       .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr.append(order)//添加新数据
-                     (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-                        .contentViewControllerItem.viewController as! ContentSplitViewController)
-                      .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userOrderTable.reloadData()//重载数据
-                 }
-             }
-             else {
-                 MsgHelper.showMsg(message:"刷新失败: \(msg)")
-             }
-        }
-       
+        OrderFunc.refresh()
     }
     // - MARK: - 加入视图以及布局
     func setupView(){

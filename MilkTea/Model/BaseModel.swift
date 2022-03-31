@@ -27,6 +27,9 @@ class BaseModel : NSObject,Encodable{
     class func getUIName()->[String]{
         return []
     }
+    func getOrderID()-> String {
+        return ""
+    }
     func toKeyValue()->[String:String]{
         return [:]
     }

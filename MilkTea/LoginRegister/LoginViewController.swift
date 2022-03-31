@@ -69,16 +69,6 @@ class LoginViewController: NSViewController,RegisterViewControllerDelegate {
         ctrl.placeholderString = "请输入密码"
         return ctrl
     }()
-//    private lazy var  radioOwner : NSButton = {
-//        var ctrl = NSButton(radioButtonWithTitle: "加盟商", target: self , action: nil)
-//        ctrl.tag = 1
-//        return ctrl
-//    }()
-//    private lazy var  radioExOwner : NSButton = {
-//        var ctrl = NSButton(radioButtonWithTitle: "区域经销商", target: self , action: nil)
-//        ctrl.tag = 1
-//        return ctrl
-//    }()
 
     private lazy var registerBtn : NSButton = {
         var ctrl = NSButton(title: "登录", target: self, action: #selector(loginRequest))

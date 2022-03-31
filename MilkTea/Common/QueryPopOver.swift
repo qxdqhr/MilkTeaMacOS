@@ -66,6 +66,7 @@ class QueryViewController:NSViewController{
         queryName.addItems(withObjectValues: clsName.getUIName())
         queryName.removeItem(withObjectValue: "操作")
         queryName.removeItem(withObjectValue: "分店账号")
+        queryName.removeItem(withObjectValue: "主键")
 
     }
 
@@ -79,35 +80,7 @@ class QueryViewController:NSViewController{
             "query_name":  queryName.stringValue,
             "query_value":  queryValue.stringValue
         ]
-        BaseNetWork.sendDataRequest(url: "http://localhost:8086/order/query", method: .post,parameters: queryMap){ code,datas,msg in
-            print(datas)
-            if(code == 200){
-                MsgHelper.showMsg(message:"查询成功: \(msg)")
-                (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-                    .contentViewControllerItem.viewController as! ContentSplitViewController)
-                  .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr.removeAll()//清空数据源
-                
-                for ele in datas{
-                    var order = CustomerOrder(
-                      customerName: (ele as!NSDictionary).object(forKey: "customerid") as! String,
-                      buyingjuice: (ele as!NSDictionary).object(forKey: "buyingjuice") as! String,
-                      orderingTime: (ele as!NSDictionary).object(forKey: "orderingtime") as! String,
-                      juiceNumber: (ele as!NSDictionary).object(forKey: "juicenumber") as! String,
-                      totalSellingPrice: (ele as!NSDictionary).object(forKey: "totalsellingprice") as! String,
-                      curEvaluate: (ele as!NSDictionary).object(forKey: "curevaluate") as! String
-                      )
-                    (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-                        .contentViewControllerItem.viewController as! ContentSplitViewController)
-                      .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr.append(order)//添加新数据
-                }
-                (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-                   .contentViewControllerItem.viewController as! ContentSplitViewController)
-                 .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userOrderTable.reloadData()//重载数据
-            }
-             else {
-                 MsgHelper.showMsg(message:"查询失败: \(msg)")
-             }
-        }
+        OrderFunc.query(para: queryMap)
     }
     // - MARK: - 加入视图以及布局
     func setupView(){

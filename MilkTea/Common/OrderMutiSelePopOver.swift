@@ -14,9 +14,7 @@ class OrderMutiSelePopOver:NSPopover{
     }
 
 }
-class OrderMutiSeleViewController:NSViewController{
-    
-}
+
 
 extension JuiceSeleTableViewController :NSTableViewDataSource{
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -80,6 +78,7 @@ extension JuiceSeleTableViewController :NSTableViewDelegate{
         else{
             self.selectJuiceNames[ele]! += 1
         }
+        getNum(self.juiceMaterialTable.view(atColumn: 0, row: sender.tag, makeIfNecessary: true)?.subviews[0] as!NSButton)
     }
     @objc func removeSelection(_ sender:NSButton){
         let ele = juiceTypeArr[sender.tag].juiceName
@@ -89,6 +88,8 @@ extension JuiceSeleTableViewController :NSTableViewDelegate{
         else{
             self.selectJuiceNames[ele]! -= 1
         }
+        getNum(self.juiceMaterialTable.view(atColumn: 0, row: sender.tag, makeIfNecessary: true)?.subviews[0] as!NSButton)
+
     }
 
 }
