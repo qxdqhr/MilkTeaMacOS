@@ -9,32 +9,63 @@ import AppKit
 import Charts
 class DefaultOwnerBarChart :NSViewController, ChartViewDelegate {
     // - MARK: - 数据
-    let datas: [[Double]] = [
-        [70, 32, 23, 35, 78, 15],
-        [12, 22, 57, 8, 56, 28]
-    ]
+    var datas: [[Double]] = []
+#if OWNER
 
+    var inexDatas =  (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+                            .contentViewControllerItem.viewController as! ContentSplitViewController)
+                        .detailViewController.tabViewItems[6].viewController as! OwnerInputExpensesViewController).userInfoDataArr
+#else
+    var inexDatas =  (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+                            .contentViewControllerItem.viewController as! ContentSplitViewController)
+                        .detailViewController.tabViewItems[6].viewController as! ExOwnerInputExpensesViewController).userInfoDataArr
+#endif
+    var inArr:[Double] = []
+    var exArr:[Double] = []
+    var dataSetMax: Double = 0
+    let groupSpace = 0.4
+    let barSpace = 0.01
+    //柱子宽度（(barSpace + barWidth) * 系列数 + groupSpace = 1.00 -> interval per "group"）
+    let barWidth = 0.29
 
-    func setDatas(){
+    var dataSets = [BarChartDataSet]()
+    
+    override func viewWillAppear() {
+#if OWNER
+        self.inexDatas =  (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+                                .contentViewControllerItem.viewController as! ContentSplitViewController)
+                            .detailViewController.tabViewItems[6].viewController as! OwnerInputExpensesViewController).userInfoDataArr
+#else
+        self.inexDatas = (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+                            .contentViewControllerItem.viewController as! ContentSplitViewController)
+                        .detailViewController.tabViewItems[6].viewController as! ExOwnerInputExpensesViewController).userInfoDataArr
+#endif
+        self.datas.removeAll()
+        self.inArr.removeAll()
+        self.exArr.removeAll()
+        for (_,inex) in inexDatas.enumerated(){
+            print(inex)
+            inArr.append(Double(inex.totalIncome) ?? 0.00)
+            exArr.append(Double(inex.totalExpence) ?? 0.00)
+        }
+        datas.append(inArr)
+        datas.append(exArr)
         
-        var dataSetMax: Double = 0
-        let groupSpace = 0.4
-        let barSpace = 0.01
-        //柱子宽度（(barSpace + barWidth) * 系列数 + groupSpace = 1.00 -> interval per "group"）
-        let barWidth = 0.29
-
-        var dataSets = [BarChartDataSet]()
-        for i in 0..<datas.count { //遍历两个数组
+        self.setDatas()
+    }
+    func setDatas(){
+        dataSets.removeAll()
+     
+        for (i,val) in datas.enumerated() { //遍历两个数组
            var yValues = [BarChartDataEntry]()//创建 chart序对 的数组
            var set = BarChartDataSet()//创建序对集合
            
-           let data = datas[i]
-           for index in 0..<data.count {//遍历第一个数组
-               let value = data[index]//获得第一个数据值
+           let data = val
+            for (index,value) in data.enumerated() {//遍历第一个数组
                dataSetMax = max(value, dataSetMax)
                yValues.append(BarChartDataEntry(x: Double(index), y: value))
                
-               set = BarChartDataSet(entries: yValues, label: "第\(i)个图例")
+               set = BarChartDataSet(entries: yValues, label: "第\(index)个图例")
                set.setColor(NSUIColor(red: CGFloat(arc4random() % 256) / 255.0, green: CGFloat(arc4random() % 256) / 255.0, blue: CGFloat(arc4random() % 256) / 255.0, alpha: 1.0))
                set.valueColors = [.red]
            }
@@ -44,12 +75,13 @@ class DefaultOwnerBarChart :NSViewController, ChartViewDelegate {
         dataSetMax = (dataSetMax + dataSetMax * 0.0)
         dataSets[0].label = "月度总体收入数据"
         dataSets[1].label = "月度总体支出数据"
-        overViewBarChartView.leftAxis.axisMaximum = dataSetMax
-        overViewBarChartView.leftAxis.axisMinimum = 0
-
+        overViewBarChartView.leftAxis.axisMaximum = dataSetMax+50
+        overViewBarChartView.leftAxis.axisMinimum = 1
+        overViewBarChartView.xAxis.axisMinimum = 0.5
+        overViewBarChartView.xAxis.axisMaximum = dataSetMax+50
         let data = BarChartData(dataSets: dataSets)
         data.barWidth = barWidth
-        data.groupBars(fromX: -0.5, groupSpace: groupSpace, barSpace: barSpace)
+        data.groupBars(fromX: 0.5, groupSpace: groupSpace, barSpace: barSpace)
 
         overViewBarChartView.data = data
 
@@ -68,7 +100,6 @@ class DefaultOwnerBarChart :NSViewController, ChartViewDelegate {
         ctrl.backgroundColor = .clear
         return ctrl
     }()
-
     
     private lazy var overViewBarChartView: BarChartView = {
         var overViewBarChartView = BarChartView()
@@ -90,10 +121,12 @@ class DefaultOwnerBarChart :NSViewController, ChartViewDelegate {
         yAxis.labelTextColor = NSColor.black//label文字颜色
         //设定 X轴
         var xAxis = overViewBarChartView.xAxis
-        xAxis.enabled = true
-        xAxis.axisLineWidth = 1 //X轴线宽
-        xAxis.labelPosition = .bottom  //X轴显示位置,默认在上面
-        xAxis.labelTextColor = NSColor.black//label文字颜色
+        xAxis.enabled = false
+        var handler = overViewBarChartView.viewPortHandler
+        handler?.setMinimumScaleX(1.5)
+//        xAxis.axisLineWidth = 1 //X轴线宽
+//        xAxis.labelPosition = .bottom  //X轴显示位置,默认在上面
+//        xAxis.labelTextColor = NSColor.black//label文字颜色
 
         return overViewBarChartView
     }()
@@ -102,14 +135,26 @@ class DefaultOwnerBarChart :NSViewController, ChartViewDelegate {
     // - MARK: - 生命周期
     override func loadView() {
         view = NSView()
+        for (_,inex) in inexDatas.enumerated(){
+            inArr.append(Double(inex.totalIncome) ?? 0.00)
+            exArr.append(Double(inex.totalExpence) ?? 0.00)
+        }
+        datas.append(inArr)
+        datas.append(exArr)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
     }
     // - MARK: - 重写代理函数
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print(entry)
+        var month = ""
+        for (_,inex) in inexDatas.enumerated(){
+            if Double(inex.totalIncome) == entry.y {
+                month = inex.month
+            }
+        }
     }
     // - MARK: - 重写其他函数
     
@@ -134,6 +179,5 @@ class DefaultOwnerBarChart :NSViewController, ChartViewDelegate {
             $0.bottom.equalToSuperview()
 
         }
-        setDatas()
     }
 }

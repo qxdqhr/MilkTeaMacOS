@@ -41,7 +41,9 @@ class JuiceTypeDetailViewController: NSViewController {
     }()
     
     lazy var juiceImage : NSImageView = {
-        return NSImageView(image: NSImage(named: "aaa")!)
+        let imageView =  NSImageView()
+        imageView.frame = .init(x: 0, y: 0, width: 0, height: 0)
+        return imageView
     }()
     lazy var juiceName : NSTextField = {
         return NSTextField(labelWithString: "aaa")
@@ -120,17 +122,17 @@ extension JuiceTypeDetailViewController{
         ])
    
         juiceImage.snp.makeConstraints{
-            $0.trailing.equalToSuperview()
-            $0.top.equalToSuperview()
+            $0.trailing.lessThanOrEqualToSuperview()
+            $0.top.lessThanOrEqualToSuperview()
 
         }
         juiceImageLbl.snp.makeConstraints{
-            $0.trailing.equalTo(juiceImage.snp.leading).offset(-50)
-            $0.centerY.equalTo(juiceImage)
+            $0.trailing.lessThanOrEqualTo(juiceImage.snp.leading).offset(-10)
+            $0.centerY.lessThanOrEqualTo(juiceImage)
         }
         juiceNameLbl.snp.makeConstraints{
-            $0.centerX.equalTo(juiceImageLbl)
-            $0.top.equalTo(juiceImage.snp.bottom).offset(50)
+            $0.centerX.lessThanOrEqualTo(juiceImageLbl)
+            $0.top.lessThanOrEqualTo(juiceImage.snp.bottom)
 
         }
         juiceName.snp.makeConstraints{

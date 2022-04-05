@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class OrderFunc{
+class OrderNetwork{
     class func refresh(){
         BaseNetWork.sendDataRequest(url: "http://localhost:8086/order/refresh", method: .post, parameters: [
             "userid":LoginUserInfo.getLoginUser().userId
@@ -49,7 +49,7 @@ class OrderFunc{
             print(datas)
              if(code == 200){
                  MsgHelper.showMsg(message:"修改成功")
-                 OrderFunc.refresh()
+                 OrderNetwork.refresh()
              }
              else {
                  MsgHelper.showMsg(message:"修改失败: \(msg)")
@@ -64,7 +64,7 @@ class OrderFunc{
              if(code == 200){
                  MsgHelper.showMsg(message:"数据添加成功")
                  //确定后自动刷新
-                 OrderFunc.refresh()
+                 OrderNetwork.refresh()
              }
              else {
                  MsgHelper.showMsg(message:"数据添加失败: \(msg)")
@@ -115,25 +115,7 @@ class OrderFunc{
                 (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
                     .contentViewControllerItem.viewController as! ContentSplitViewController)
                   .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr.removeAll()//清空数据源
-                
-                for ele in datas{
-                    var order = CustomerOrder(
-                      customerName: (ele as!NSDictionary).object(forKey: "customerid") as! String,
-                      buyingjuice: (ele as!NSDictionary).object(forKey: "buyingjuice") as! String,
-                      orderingTime: (ele as!NSDictionary).object(forKey: "orderingtime") as! String,
-                      juiceNumber: (ele as!NSDictionary).object(forKey: "juicenumber") as! String,
-                      totalSellingPrice: (ele as!NSDictionary).object(forKey: "totalsellingprice") as! String,
-                      curEvaluate: (ele as!NSDictionary).object(forKey: "curevaluate") as! String
-                      )
-                    order.orderId = (ele as!NSDictionary).object(forKey: "orderid") as! String
-
-                    (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-                        .contentViewControllerItem.viewController as! ContentSplitViewController)
-                      .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr.append(order)//添加新数据
-                }
-                (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-                   .contentViewControllerItem.viewController as! ContentSplitViewController)
-                 .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userOrderTable.reloadData()//重载数据
+                OrderNetwork.refresh()
             }
              else {
                  MsgHelper.showMsg(message:"删除失败: \(msg)")

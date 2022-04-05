@@ -42,21 +42,21 @@ class FuncBarOutLineView:NSOutlineView{
         #else
         switch funcModel?.name{
         case "饮品种类管理":
-            detailPages.tabView.selectTabViewItem(at: 1)
-        case "饮品原料管理":
-            detailPages.tabView.selectTabViewItem(at: 2)
-        case "饮品榜单管理":
             detailPages.tabView.selectTabViewItem(at: 3)
-        case "月度收支管理":
+        case "饮品原料管理":
             detailPages.tabView.selectTabViewItem(at: 4)
-        case "报表管理":
+        case "饮品榜单管理":
             detailPages.tabView.selectTabViewItem(at: 5)
-        case "图表管理":
+        case "月度收支管理":
             detailPages.tabView.selectTabViewItem(at: 6)
-        case "告警信息管理":
+        case "报表管理":
             detailPages.tabView.selectTabViewItem(at: 7)
-        case "商户管理":
+        case "图表管理":
             detailPages.tabView.selectTabViewItem(at: 8)
+        case "告警信息管理":
+            detailPages.tabView.selectTabViewItem(at: 9)
+        case "商户管理":
+            detailPages.tabView.selectTabViewItem(at: 10)
         default://欢迎界面
             detailPages.tabView.selectTabViewItem(at: 0)
         }

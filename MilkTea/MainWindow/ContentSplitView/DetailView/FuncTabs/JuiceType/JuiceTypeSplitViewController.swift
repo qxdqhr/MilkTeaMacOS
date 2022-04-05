@@ -18,7 +18,6 @@ class JuiceTypeSplitViewController: NSSplitViewController {
 
     @objc func pushDownJuiceTypeItemNotification(notifi:Notification){
         //收到通知
-        
         self.splitView.setPosition(400, ofDividerAt: 0)
     }
     @objc func collapseDetailVieNotification(notifi:Notification){
@@ -58,7 +57,10 @@ class JuiceTypeSplitViewController: NSSplitViewController {
         }
 
     }
- 
+    override func viewWillAppear() {
+        JuiceTypeNetwork.refresh()
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,13 +7,7 @@
 
 import Cocoa
 class JuiceTypeSummaryViewController: NSViewController,NSCollectionViewDataSource,NSCollectionViewDelegate {
-    var data  = [
-            JuiceType(juiceName: "aaa", juiceType: "a", lastOrderingTime: "a", price: "10.0", profit: "a", cost: "a", curEvaluate: "a"),
-
-            JuiceType(juiceName: "bbb", juiceType: "a", lastOrderingTime: "a", price: "15.2", profit: "a", cost: "a", curEvaluate: "a"),
-            JuiceType(juiceName: "ccc", juiceType: "a", lastOrderingTime: "a", price: "13.2", profit: "a", cost: "a", curEvaluate: "a"),
-            JuiceType(juiceName: "ddd", juiceType: "a", lastOrderingTime: "a", price: "9.9", profit: "a", cost: "a", curEvaluate: "a"),
-    ]
+    var data : [JuiceType] = []
     
     lazy var scrollView: NSScrollView = {
         let view = NSScrollView()
@@ -21,7 +15,7 @@ class JuiceTypeSummaryViewController: NSViewController,NSCollectionViewDataSourc
         view.documentView = self.collectionView
         return view
     }()
-    private lazy var collectionView: NSCollectionView = {
+    lazy var collectionView: NSCollectionView = {
         var ctrl = NSCollectionView()
         ctrl.delegate = self
         ctrl.dataSource = self

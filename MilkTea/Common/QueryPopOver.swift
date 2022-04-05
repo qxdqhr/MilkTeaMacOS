@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+
 class QueryPopOver:NSPopover{
     init(viewController:NSViewController) {
         super.init()
@@ -19,14 +20,17 @@ class QueryPopOver:NSPopover{
     }
     
 }
+typealias queryAction = (_ sender:NSButton) -> Void
+
 class QueryViewController:NSViewController{
+    var queryAction :queryAction = {btn in };
     // - MARK: - 控件
     private lazy var queryNameLabel: NSTextField = {
         var ctrl = NSTextField(labelWithString: "查询属性名称")
         return ctrl
     }()
 
-    private lazy var queryName : NSComboBox = {
+    lazy var queryName : NSComboBox = {
         var queryName = NSComboBox()
         queryName.isEditable = false
         return queryName
@@ -38,13 +42,13 @@ class QueryViewController:NSViewController{
     }()
     
     
-    private lazy var queryValue: NSTextField = {
+    lazy var queryValue: NSTextField = {
         var ctrl = NSTextField()
         return ctrl
     }()
     
     private lazy var queryBtn: NSButton = {
-        var ctrl = NSButton(title: "查询", target: self, action:  #selector(queryOrder))
+        var ctrl = NSButton(title: "查询", target: self, action:  #selector(query))
         return ctrl
     }()
     // - MARK: - 生命周期
@@ -71,16 +75,12 @@ class QueryViewController:NSViewController{
     }
 
     // - MARK: - 事件函数
-    @objc func queryOrder(_ sender:NSButton){
-       print(queryName.stringValue)
-        print(queryValue.stringValue)
-        let queryMap = [
-            "func":"order",
-            "userid":LoginUserInfo.getLoginUser().userId,
-            "query_name":  queryName.stringValue,
-            "query_value":  queryValue.stringValue
-        ]
-        OrderFunc.query(para: queryMap)
+    @objc func query(_ sender:NSButton){
+        self.queryAction(sender)
+    }
+    
+    func sendQueryAction(act:@escaping queryAction){
+        self.queryAction = act
     }
     // - MARK: - 加入视图以及布局
     func setupView(){

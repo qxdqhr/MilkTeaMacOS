@@ -23,35 +23,11 @@ extension ExOwnerInputExpensesViewController :NSTableViewDelegate{
         if (view == nil){
             view = NSView()
         }
-        //判断当前列的标识符是哪一列
-        if(key.rawValue != "操作"){
-            let item = userInfoDataArr[row]
-            let textField = NSTextField(labelWithString: item[key.rawValue] as! String )
-            view?.addSubview(textField)
-        }else{
-            var modifyBtn = NSButton(title: "修改", target: self, action: #selector(popoverAddInfoWnd))
-            modifyBtn.isBordered = false
-            modifyBtn.tag = row
-            var deleteBtn = NSButton(title: "删除", target: self, action: #selector(popoverAddInfoWnd))
-            deleteBtn.isBordered = false
-            deleteBtn.tag = row
-            var detailBtn = NSButton(title: "查看详情", target: self, action: #selector(popoverAddInfoWnd))
-            detailBtn.isBordered = false
-            detailBtn.tag = row
 
-            view?.addSubview(modifyBtn)
-            view?.addSubview(deleteBtn)
-            view?.addSubview(detailBtn)
-            modifyBtn.snp.makeConstraints{
-                $0.leading.equalToSuperview()
-            }
-            deleteBtn.snp.makeConstraints{
-                $0.leading.equalTo(modifyBtn.snp.trailing)
-            }
-            detailBtn.snp.makeConstraints{
-                $0.leading.equalTo(deleteBtn.snp.trailing)
-            }
-        }
+        let item = userInfoDataArr[row]
+        let textField = NSTextField(labelWithString: item[key.rawValue] as! String )
+        view?.addSubview(textField)
+        
         return view
     }
 }
@@ -60,7 +36,6 @@ class ExOwnerInputExpensesViewController: NSViewController {
         EXOwnerInputExpenses(month: "a", totalIncome: "a", totalExpence: "a", ownerName: "a", ownerId: "a")
     ]
     // - MARK: - 控件
-    private var addInfoBtn = NSButton(title: "添加收支信息", target: self, action: #selector(popoverAddInfoWnd))
     private lazy var queryInfoBtn = NSButton(title: "查询收支信息", target: self, action: #selector(popoverAddInfoWnd))
     private lazy var refreshBtn = NSButton(title: "刷新", target: self, action: #selector(popoverAddInfoWnd))
     private lazy var popover1 = QueryPopOver(viewController: QueryViewController())
@@ -113,16 +88,9 @@ class ExOwnerInputExpensesViewController: NSViewController {
     }
     // - MARK: - 加入视图以及布局
     func setupView(){
-        view.addSubview(addInfoBtn)
-        addInfoBtn.snp.makeConstraints{
-            $0.leading.equalToSuperview()
-            $0.top.equalToSuperview()
-            $0.height.equalTo(30)
-        }
-        
         view.addSubview(refreshBtn)
         refreshBtn.snp.makeConstraints{
-            $0.leading.equalTo(addInfoBtn.snp.trailing)
+            $0.leading.equalToSuperview()
             $0.top.equalToSuperview()
             $0.height.equalTo(30)
         }

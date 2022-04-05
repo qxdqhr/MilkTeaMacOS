@@ -20,7 +20,7 @@ class AddOrderPopOver:NSPopover{
     
 }
 
-class AddOrderViewController:NSViewController,OrderViewControllerDelegate{
+class AddOrderViewController:NSViewController,OrderViewControllerDelegate, NSPopoverDelegate{
     func sendTimeStringToBtn(timeString: String) {
         orderingTimeField.title = timeString
     }
@@ -106,9 +106,12 @@ class AddOrderViewController:NSViewController,OrderViewControllerDelegate{
    
     // - MARK: - 事件函数
     @objc func calendarPop(_ sender:NSTextField){
+      
         calendarPopOver.show(relativeTo: self.orderingTimeField.bounds, of: orderingTimeField, preferredEdge: .minX)
     }
     @objc func tablePop(_ sender:NSTextField){
+        JuiceTypeNetwork.refresh()
+        
         juiceSelePopOver.show(relativeTo: self.orderingTimeField.bounds, of: orderingTimeField, preferredEdge: .minX)
     }
     @objc func addOrder(_ sender:NSButton){
@@ -122,7 +125,7 @@ class AddOrderViewController:NSViewController,OrderViewControllerDelegate{
         )
         order.userId = LoginUserInfo.getLoginUser().userId
         order.orderId = order.getOrderID()
-        OrderFunc.add(para: order)
+        OrderNetwork.add(para: order)
     }
     // - MARK: - 加入视图以及布局
     func setupView(){

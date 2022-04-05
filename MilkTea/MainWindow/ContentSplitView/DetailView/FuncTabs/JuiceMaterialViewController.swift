@@ -8,7 +8,7 @@
 import Cocoa
 extension JuiceMaterialViewController :NSTableViewDataSource{
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return userInfoDataArr.count
+        return datas.count
     }
 
 }
@@ -23,14 +23,14 @@ extension JuiceMaterialViewController :NSTableViewDelegate{
         }
         //判断当前列的标识符是哪一列
         if(key.rawValue != "操作"){
-            let item = userInfoDataArr[row]
+            let item = datas[row]
             let textField = NSTextField(labelWithString: item[key.rawValue] as! String )
             view?.addSubview(textField)
         }else{
-            var modifyBtn = NSButton(title: "修改", target: self, action: #selector(popoverAddInfoWnd))
+            let modifyBtn = NSButton(title: "修改", target: self, action: #selector(modify))
             modifyBtn.isBordered = false
             modifyBtn.tag = row
-            var deleteBtn = NSButton(title: "删除", target: self, action: #selector(popoverAddInfoWnd))
+            let deleteBtn = NSButton(title: "删除", target: self, action: #selector(delete))
             deleteBtn.isBordered = false
             deleteBtn.tag = row
 
@@ -49,17 +49,17 @@ extension JuiceMaterialViewController :NSTableViewDelegate{
 }
 class JuiceMaterialViewController: NSViewController {
     // - MARK: - 数据
-    var userInfoDataArr : [JuiceMaterial] = [
-        JuiceMaterial(juiceMaterialName: "aaa", materialNumber: "aaa", materialPerPrice: "aaa", materialMonthBuyingTime: "aaa", materialMonthTotalPrice: "aaa")
-    ]
-
+    var datas : [JuiceMaterial] = []
+    var editRow = -1
+    var editflag = false
+    var texts :[String] = []
     // - MARK: - 控件
     private lazy var addInfoBtn = NSButton(title: "添加原料购入信息", target: self, action: #selector(popoverAddInfoWnd))
-    private lazy var queryInfoBtn = NSButton(title: "查询原料购入信息", target: self, action: #selector(popoverAddInfoWnd))
-    private lazy var refreshBtn = NSButton(title: "刷新", target: self, action: #selector(popoverAddInfoWnd))
+    private lazy var queryInfoBtn = NSButton(title: "查询原料购入信息", target: self, action: #selector(query))
+    private lazy var refreshBtn = NSButton(title: "刷新", target: self, action: #selector(refresh))
     private lazy var popover1 = QueryPopOver(viewController: QueryViewController())
-
-    private lazy var juiceMaterialTable : NSTableView = {
+    lazy var popoverAddMaterial = AddMaterialPopOver(viewController: AddMaterialViewController())
+    lazy var juiceMaterialTable : NSTableView = {
         var userInfoTable = NSTableView()
         userInfoTable.delegate = self
         userInfoTable.dataSource = self
@@ -77,7 +77,7 @@ class JuiceMaterialViewController: NSViewController {
     // - MARK: - 生命周期
     override func loadView() {
         view = NSView()
-        for property in JuiceMaterial.getUIName(){
+        for property in JuiceMaterial.getUIName().dropFirst().dropFirst(){
             self.juiceMaterialTable.addTableColumn(getColumn(title: property))
         }
         
@@ -85,6 +85,9 @@ class JuiceMaterialViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    override func viewWillAppear() {
+        MaterialNetwork.refresh()
     }
     // - MARK: - 重写代理函数
     
@@ -100,9 +103,127 @@ class JuiceMaterialViewController: NSViewController {
         return column1
     }
     // - MARK: - 事件函数
-    @objc func popoverAddInfoWnd(_ sender:NSButton){
-        (popover1.contentViewController as! QueryViewController).getCallClsPropertyName(clsName: CustomerInfo.self)
+    @objc func refresh(_ sender:NSButton){
+        MaterialNetwork.refresh()
+    }
+    @objc func modify(_ sender:NSButton){
+        if editRow == -1 {
+            editRow = sender.tag
+        }
+        else if editRow != sender.tag{
+            editflag = true //已编辑过
+        }
+         //获取选中行
+        var textFields = [
+            (self.juiceMaterialTable.view(atColumn: 0, row: editRow, makeIfNecessary: true)?.subviews[0] as! NSTextField),
+            (self.juiceMaterialTable.view(atColumn: 1, row: editRow, makeIfNecessary: true)?.subviews[0] as! NSTextField),
+            (self.juiceMaterialTable.view(atColumn: 2, row: editRow, makeIfNecessary: true)?.subviews[0] as! NSTextField),
+            (self.juiceMaterialTable.view(atColumn: 3, row: editRow, makeIfNecessary: true)?.subviews[0] as! NSTextField),
+            (self.juiceMaterialTable.view(atColumn: 4, row: editRow, makeIfNecessary: true)?.subviews[0] as! NSTextField)
+        ]
+        if sender.title == "提交" {
+
+            MaterialNetwork.modify(para: [
+                "material_id":datas[sender.tag].id,
+                "user_id":LoginUserInfo.getLoginUser().userId,
+                "material_name":textFields[0].stringValue,
+                "material_number":textFields[2].stringValue,
+                "per_price":textFields[1].stringValue,
+                "material_month_buying_time":textFields[3].stringValue,
+                "material_month_total_price":textFields[4].stringValue,
+            ])
+            
+            //界面变回原样
+            for (index,textField) in textFields.enumerated() {
+                if (index == 1 || index == 2 || index == 4) {
+                    continue
+                }
+                textField.textColor = NSColor.black
+                textField.isEditable = false
+
+            }
+            sender.title = "修改"
+            editRow = -1
+            self.editflag = false
+            self.texts.removeAll()
+            textFields.removeAll()
+            return
+        }
+        if(editflag == true){
+            MsgHelper.showMsg(message: "您已选中某行,请重新选择")
+            for (index,textField) in textFields.enumerated() {
+                if (index == 1 || index == 2 || index == 4) {
+                    continue
+                }
+                textField.textColor = NSColor.black
+                textField.isEditable = false
+                textField.stringValue = self.texts[index]
+            }
+            (self.juiceMaterialTable.view(atColumn: 5, row: editRow, makeIfNecessary: true)?.subviews[0] as! NSButton).title = "修改"
+
+            editRow = -1
+            self.editflag = false
+            self.texts.removeAll()
+            textFields.removeAll()
+            return
+        }
+    
+        if sender.title == "修改"{
+            self.texts = [
+                textFields[0].stringValue,
+                textFields[1].stringValue,
+                textFields[2].stringValue,
+                textFields[3].stringValue,
+                textFields[4].stringValue,
+            ]
+            for (index,textField) in textFields.enumerated() {
+                if (index == 1 || index == 2 || index == 4) {
+                    continue
+                }
+                textField.textColor = NSColor.red
+                textField.isEditable = true
+            }
+            sender.title = "提交"
+            self.editflag = true
+        }
+
+    }
+    @objc func delete(_ sender:NSButton){
+        MsgHelper.judgeMsg(message: "确认删除?", window: self.view.window!) { response in
+            if (response == .alertFirstButtonReturn){
+                MaterialNetwork.delete(para: [
+                    "user_id":LoginUserInfo.getLoginUser().userId,
+                    "material_id":self.datas[sender.tag].id,
+                    "material_name":self.datas[sender.tag].juiceMaterialName,
+                    "material_number":self.datas[sender.tag].materialNumber,
+                    "per_price":self.datas[sender.tag].materialPerPrice,
+                    "material_month_buying_time":self.datas[sender.tag].materialMonthBuyingTime,
+                    "material_month_total_price":self.datas[sender.tag].materialMonthTotalPrice
+                ])
+              
+            }else if(response == .alertSecondButtonReturn){
+                print("cancel")
+
+            }
+        }
+    }
+    @objc func query(_ sender:NSButton){
+        (popover1.contentViewController as!QueryViewController).clearValue()
+        (popover1.contentViewController as! QueryViewController).queryAction = { btn in
+            let queryMap = [
+                "func":"material",
+                "user_id":LoginUserInfo.getLoginUser().userId,
+                "query_name":  (self.popover1.contentViewController as! QueryViewController).queryName.stringValue,
+                "query_value":  (self.popover1.contentViewController as! QueryViewController).queryValue.stringValue
+            ]
+            MaterialNetwork.query(para: queryMap)
+        }
+        (popover1.contentViewController as! QueryViewController).getCallClsPropertyName(clsName: JuiceMaterial.self)
         popover1.show(relativeTo: self.queryInfoBtn.bounds, of: self.queryInfoBtn, preferredEdge: .maxX)
+    }
+    @objc func popoverAddInfoWnd(_ sender:NSButton){
+        (popoverAddMaterial.contentViewController as!AddMaterialViewController).clearValue()
+        popoverAddMaterial.show(relativeTo: self.addInfoBtn.bounds, of: self.addInfoBtn, preferredEdge: .maxX)
         
     }
     // - MARK: - 加入视图以及布局

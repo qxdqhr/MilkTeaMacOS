@@ -7,6 +7,8 @@
 
 import Foundation
 class JuiceMaterial : BaseModel {
+    @objc var id:String = ""      //主键
+    @objc var userId:String = ""  //分店账号
     @objc var juiceMaterialName:String = ""      //原料名称
     @objc var materialNumber :String = ""        //本次购入原料数量
     @objc var materialPerPrice :String = ""      //原料单价
@@ -39,11 +41,16 @@ class JuiceMaterial : BaseModel {
             }
         }
     }
+    override func getMaterialID() -> String {
+        ("m_\(Int(Date().timeIntervalSince1970))")
+    }
     override class func getUIName()->[String]{
         var uiNames :[String] = []
         for property in propertyList(){
             var uiName :String
             switch property{
+            case "id": uiName = "主键"
+            case "userId": uiName = "分店账号"
             case "juiceMaterialName": uiName = "原料名称"
             case "materialNumber": uiName = "购入数量"
             case "materialPerPrice": uiName = "原料单价"
@@ -56,6 +63,18 @@ class JuiceMaterial : BaseModel {
             uiNames.append(uiName)
         }
         return uiNames
+    }
+
+    override func toKeyValue() -> [String : String] {
+        [
+            "material_id":self.id,
+            "user_id":self.userId,
+            "material_name":self.juiceMaterialName,
+            "material_number":self.materialNumber,
+            "per_price":self.materialPerPrice,
+            "material_month_buying_time":self.materialMonthBuyingTime,
+            "material_month_total_price":self.materialMonthTotalPrice,
+        ]
     }
 
 }

@@ -24,48 +24,21 @@ extension OwnerInputExpensesViewController :NSTableViewDelegate{
             view = NSView()
         }
         //判断当前列的标识符是哪一列
-        if(key.rawValue != "操作"){
-            let item = userInfoDataArr[row]
-            let textField = NSTextField(labelWithString: item[key.rawValue] as! String )
-            view?.addSubview(textField)
-        }else{
-            var modifyBtn = NSButton(title: "修改", target: self, action: #selector(popoverAddInfoWnd))
-            modifyBtn.isBordered = false
-            modifyBtn.tag = row
-            var deleteBtn = NSButton(title: "删除", target: self, action: #selector(popoverAddInfoWnd))
-            deleteBtn.isBordered = false
-            deleteBtn.tag = row
-            var detailBtn = NSButton(title: "查看详情", target: self, action: #selector(popoverAddInfoWnd))
-            detailBtn.isBordered = false
-            detailBtn.tag = row
-
-            view?.addSubview(modifyBtn)
-            view?.addSubview(deleteBtn)
-            view?.addSubview(detailBtn)
-            modifyBtn.snp.makeConstraints{
-                $0.leading.equalToSuperview()
-            }
-            deleteBtn.snp.makeConstraints{
-                $0.leading.equalTo(modifyBtn.snp.trailing)
-            }
-            detailBtn.snp.makeConstraints{
-                $0.leading.equalTo(deleteBtn.snp.trailing)
-            }
-        }
+        let item = userInfoDataArr[row]
+        let textField = NSTextField(labelWithString: item[key.rawValue] as! String )
+        view?.addSubview(textField)
+  
         return view
     }
 }
 class OwnerInputExpensesViewController: NSViewController {
-    var userInfoDataArr : [OwnerInputExpenses] = [
-        OwnerInputExpenses(month: "1", totalIncome: "1", totalExpence: "1", milkTeaIncome: "2", milkTeaExpence: "1", fruitTeaIncome: "1", fruitTeaExpence: "12", vegetableTeaIncome: "2", vegetableTeaExpence: "2", otherExpence: "3")
-    ]
+    var userInfoDataArr : [OwnerInputExpenses] = []
     // - MARK: - 控件
-    private var addInfoBtn = NSButton(title: "添加收支信息", target: self, action: #selector(popoverAddInfoWnd))
-    private lazy var queryInfoBtn = NSButton(title: "查询收支信息", target: self, action: #selector(popoverAddInfoWnd))
-    private lazy var refreshBtn = NSButton(title: "刷新", target: self, action: #selector(popoverAddInfoWnd))
+    private lazy var queryInfoBtn = NSButton(title: "查询收支信息", target: self, action: #selector(popoverQueryInfoWnd))
+    private lazy var refreshBtn = NSButton(title: "刷新", target: self, action: #selector(refresh))
     private lazy var popover1 = QueryPopOver(viewController: QueryViewController())
 
-    private lazy var InputExpensesTable : NSTableView = {
+     lazy var InputExpensesTable : NSTableView = {
         var userInfoTable = NSTableView()
         userInfoTable.delegate = self
         userInfoTable.dataSource = self
@@ -92,6 +65,11 @@ class OwnerInputExpensesViewController: NSViewController {
         super.viewDidLoad()
         setupView()
     }
+    override func viewWillAppear() {
+        InputExpenseNetwork.add()
+        InputExpenseNetwork.refresh()
+
+    }
     // - MARK: - 重写代理函数
     
     // - MARK: - 重写其他函数
@@ -106,22 +84,30 @@ class OwnerInputExpensesViewController: NSViewController {
         return column1
     }
     // - MARK: - 事件函数
-    @objc func popoverAddInfoWnd(_ sender:NSButton){
+    @objc func popoverQueryInfoWnd(_ sender:NSButton){
+        (popover1.contentViewController as!QueryViewController).clearValue()
+        (popover1.contentViewController as! QueryViewController).queryAction = { btn in
+            let queryMap = [
+                "func":"inexpense",
+                "user_id":LoginUserInfo.getLoginUser().userId,
+                "query_name":  (self.popover1.contentViewController as! QueryViewController).queryName.stringValue,
+                "query_value":  (self.popover1.contentViewController as! QueryViewController).queryValue.stringValue
+            ]
+            MaterialNetwork.query(para: queryMap)
+        }
         (popover1.contentViewController as! QueryViewController).getCallClsPropertyName(clsName: OwnerInputExpenses.self)
         popover1.show(relativeTo: self.queryInfoBtn.bounds, of: self.queryInfoBtn, preferredEdge: .maxX)
-            }
+    }
+    @objc func refresh(_ sender:NSButton){
+        InputExpenseNetwork.refresh()
+    }
+
     // - MARK: - 加入视图以及布局
     func setupView(){
-        view.addSubview(addInfoBtn)
-        addInfoBtn.snp.makeConstraints{
-            $0.leading.equalToSuperview()
-            $0.top.equalToSuperview()
-            $0.height.equalTo(30)
-        }
-        
+
         view.addSubview(refreshBtn)
         refreshBtn.snp.makeConstraints{
-            $0.leading.equalTo(addInfoBtn.snp.trailing)
+            $0.leading.equalToSuperview()
             $0.top.equalToSuperview()
             $0.height.equalTo(30)
         }

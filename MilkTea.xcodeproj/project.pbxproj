@@ -16,12 +16,28 @@
 		190150EF27C75B62002D826A /* AlertViewController(Exowner).swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150EE27C75B62002D826A /* AlertViewController(Exowner).swift */; };
 		190150F127C75B75002D826A /* OwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150F027C75B75002D826A /* OwnerViewController.swift */; };
 		190150F327C75CDD002D826A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190150F227C75CDD002D826A /* WelcomeViewController.swift */; };
+		1901AC8B27F5E372002744CE /* CustomerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1901AC8A27F5E372002744CE /* CustomerNetwork.swift */; };
+		1901AC8C27F5E372002744CE /* CustomerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1901AC8A27F5E372002744CE /* CustomerNetwork.swift */; };
 		1902455F27DE08C0006EF982 /* OwnerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902455E27DE08C0006EF982 /* OwnerInfo.swift */; };
 		1902456027DE08C0006EF982 /* OwnerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902455E27DE08C0006EF982 /* OwnerInfo.swift */; };
 		1902456227DE0BF1006EF982 /* AlertViewController(owner).swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902456127DE0BF1006EF982 /* AlertViewController(owner).swift */; };
 		1902456327DE0BF1006EF982 /* AlertViewController(owner).swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902456127DE0BF1006EF982 /* AlertViewController(owner).swift */; };
 		1902456627DE1650006EF982 /* QueryPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902456527DE1650006EF982 /* QueryPopOver.swift */; };
 		1902456727DE1650006EF982 /* QueryPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902456527DE1650006EF982 /* QueryPopOver.swift */; };
+		191B067D27F9327100886B53 /* JuiceTypeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B067C27F9327100886B53 /* JuiceTypeNetwork.swift */; };
+		191B067E27F9327100886B53 /* JuiceTypeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B067C27F9327100886B53 /* JuiceTypeNetwork.swift */; };
+		191B068027F945C200886B53 /* JuiceRankNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B067F27F945C200886B53 /* JuiceRankNetwork.swift */; };
+		191B068127F945C200886B53 /* JuiceRankNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B067F27F945C200886B53 /* JuiceRankNetwork.swift */; };
+		191B068327F945D100886B53 /* JuiceMaterialNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B068227F945D100886B53 /* JuiceMaterialNetWork.swift */; };
+		191B068427F945D100886B53 /* JuiceMaterialNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B068227F945D100886B53 /* JuiceMaterialNetWork.swift */; };
+		191B068627F945E700886B53 /* InputExpenseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B068527F945E700886B53 /* InputExpenseNetwork.swift */; };
+		191B068727F945E700886B53 /* InputExpenseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B068527F945E700886B53 /* InputExpenseNetwork.swift */; };
+		191B068927F9461B00886B53 /* excelNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B068827F9461B00886B53 /* excelNetwork.swift */; };
+		191B068A27F9461B00886B53 /* excelNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B068827F9461B00886B53 /* excelNetwork.swift */; };
+		191B068C27F9463300886B53 /* GraphicNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B068B27F9463300886B53 /* GraphicNetwork.swift */; };
+		191B068D27F9463300886B53 /* GraphicNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B068B27F9463300886B53 /* GraphicNetwork.swift */; };
+		191B068F27F9464300886B53 /* AlterNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B068E27F9464300886B53 /* AlterNetwork.swift */; };
+		191B069027F9464300886B53 /* AlterNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B068E27F9464300886B53 /* AlterNetwork.swift */; };
 		191CF5E727E4A781009440A1 /* Array+encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5E627E4A781009440A1 /* Array+encoding.swift */; };
 		191CF5E827E4A781009440A1 /* Array+encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5E627E4A781009440A1 /* Array+encoding.swift */; };
 		191CF5EB27E4B208009440A1 /* RegisterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CF5EA27E4B208009440A1 /* RegisterProtocol.swift */; };
@@ -115,8 +131,8 @@
 		1988FD7E27D99DE0001E6CB5 /* JuiceTypeCollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988FD7D27D99DE0001E6CB5 /* JuiceTypeCollectionItemView.swift */; };
 		19A2AFEF27D6FA9800039226 /* String+subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A2AFEE27D6FA9800039226 /* String+subscript.swift */; };
 		19B9F63227D700AB003BFA42 /* MsgHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B9F63127D700AB003BFA42 /* MsgHelper.swift */; };
-		19D0B10427F4544D00643A08 /* OrderFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D0B10327F4544D00643A08 /* OrderFunc.swift */; };
-		19D0B10527F4544D00643A08 /* OrderFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D0B10327F4544D00643A08 /* OrderFunc.swift */; };
+		19D0B10427F4544D00643A08 /* OrderNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D0B10327F4544D00643A08 /* OrderNetwork.swift */; };
+		19D0B10527F4544D00643A08 /* OrderNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D0B10327F4544D00643A08 /* OrderNetwork.swift */; };
 		19D86FDD27DA2A4C00503EAE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D86FDC27DA2A4C00503EAE /* Notifications.swift */; };
 		19D86FDE27DA2A4C00503EAE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D86FDC27DA2A4C00503EAE /* Notifications.swift */; };
 		19DB52D427BD27E6007FBED2 /* MainMenuWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB52D327BD27E6007FBED2 /* MainMenuWindowController.swift */; };
@@ -147,9 +163,17 @@
 		190150EE27C75B62002D826A /* AlertViewController(Exowner).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertViewController(Exowner).swift"; sourceTree = "<group>"; };
 		190150F027C75B75002D826A /* OwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerViewController.swift; sourceTree = "<group>"; };
 		190150F227C75CDD002D826A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		1901AC8A27F5E372002744CE /* CustomerNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerNetwork.swift; sourceTree = "<group>"; };
 		1902455E27DE08C0006EF982 /* OwnerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerInfo.swift; sourceTree = "<group>"; };
 		1902456127DE0BF1006EF982 /* AlertViewController(owner).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertViewController(owner).swift"; sourceTree = "<group>"; };
 		1902456527DE1650006EF982 /* QueryPopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryPopOver.swift; sourceTree = "<group>"; };
+		191B067C27F9327100886B53 /* JuiceTypeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceTypeNetwork.swift; sourceTree = "<group>"; };
+		191B067F27F945C200886B53 /* JuiceRankNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceRankNetwork.swift; sourceTree = "<group>"; };
+		191B068227F945D100886B53 /* JuiceMaterialNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMaterialNetWork.swift; sourceTree = "<group>"; };
+		191B068527F945E700886B53 /* InputExpenseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputExpenseNetwork.swift; sourceTree = "<group>"; };
+		191B068827F9461B00886B53 /* excelNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = excelNetwork.swift; sourceTree = "<group>"; };
+		191B068B27F9463300886B53 /* GraphicNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicNetwork.swift; sourceTree = "<group>"; };
+		191B068E27F9464300886B53 /* AlterNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlterNetwork.swift; sourceTree = "<group>"; };
 		191CF5E627E4A781009440A1 /* Array+encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+encoding.swift"; sourceTree = "<group>"; };
 		191CF5EA27E4B208009440A1 /* RegisterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocol.swift; sourceTree = "<group>"; };
 		191CF5ED27E4BD9F009440A1 /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
@@ -191,7 +215,7 @@
 		19A2AFEE27D6FA9800039226 /* String+subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+subscript.swift"; sourceTree = "<group>"; };
 		19A82DF327D62BAB00E9DEF2 /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		19B9F63127D700AB003BFA42 /* MsgHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgHelper.swift; sourceTree = "<group>"; };
-		19D0B10327F4544D00643A08 /* OrderFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFunc.swift; sourceTree = "<group>"; };
+		19D0B10327F4544D00643A08 /* OrderNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNetwork.swift; sourceTree = "<group>"; };
 		19D86FDC27DA2A4C00503EAE /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		19DB52D327BD27E6007FBED2 /* MainMenuWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuWindowController.swift; sourceTree = "<group>"; };
 		19DB9E1427DB3F4A00EAADED /* EXOwnerInputExpensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EXOwnerInputExpensesViewController.swift; path = MilkTea/MainWindow/ContentSplitView/DetailView/FuncTabs/EXOwnerInputExpensesViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -308,7 +332,15 @@
 			isa = PBXGroup;
 			children = (
 				193A9E0527CF895800858ED6 /* BaseNetWork.swift */,
-				19D0B10327F4544D00643A08 /* OrderFunc.swift */,
+				1901AC8A27F5E372002744CE /* CustomerNetwork.swift */,
+				19D0B10327F4544D00643A08 /* OrderNetwork.swift */,
+				191B067C27F9327100886B53 /* JuiceTypeNetwork.swift */,
+				191B067F27F945C200886B53 /* JuiceRankNetwork.swift */,
+				191B068227F945D100886B53 /* JuiceMaterialNetWork.swift */,
+				191B068527F945E700886B53 /* InputExpenseNetwork.swift */,
+				191B068827F9461B00886B53 /* excelNetwork.swift */,
+				191B068B27F9463300886B53 /* GraphicNetwork.swift */,
+				191B068E27F9464300886B53 /* AlterNetwork.swift */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -675,6 +707,7 @@
 				190150E927C75ACC002D826A /* OwnerInputExpensesViewController.swift in Sources */,
 				19D86FDD27DA2A4C00503EAE /* Notifications.swift in Sources */,
 				190150ED27C75B4C002D826A /* GraphicViewController.swift in Sources */,
+				191B068627F945E700886B53 /* InputExpenseNetwork.swift in Sources */,
 				1926ACD627BCDFF100DDBA64 /* LoginViewController.swift in Sources */,
 				193407A527C38B57009DD096 /* FunctionBarViewController.swift in Sources */,
 				190150E327C7599B002D826A /* CustomerOrderViewController.swift in Sources */,
@@ -689,10 +722,12 @@
 				19DB52D427BD27E6007FBED2 /* MainMenuWindowController.swift in Sources */,
 				193A9DFB27CE0B5E00858ED6 /* JuiceMaterial.swift in Sources */,
 				193A9DFD27CE0B7100858ED6 /* OwnerInputExpenses.swift in Sources */,
-				19D0B10427F4544D00643A08 /* OrderFunc.swift in Sources */,
+				19D0B10427F4544D00643A08 /* OrderNetwork.swift in Sources */,
 				191CF5EB27E4B208009440A1 /* RegisterProtocol.swift in Sources */,
 				19DB9E2227DB6D6200EAADED /* DetailOwnerPieChart.swift in Sources */,
 				1988FD3E27D8B0F4001E6CB5 /* Utils.swift in Sources */,
+				191B067D27F9327100886B53 /* JuiceTypeNetwork.swift in Sources */,
+				191B068027F945C200886B53 /* JuiceRankNetwork.swift in Sources */,
 				1926ACD827BCE0EA00DDBA64 /* RegisterViewController.swift in Sources */,
 				193A9E0C27D5E3E200858ED6 /* Alert.swift in Sources */,
 				193A9DF527CE08F000858ED6 /* CustomerOrder.swift in Sources */,
@@ -700,11 +735,13 @@
 				19F4FE1827C4DDB900D96FD1 /* CustomerInfoViewController.swift in Sources */,
 				19DB9E1C27DB6C6F00EAADED /* DefaultExOwnerBarChart.swift in Sources */,
 				193A9E0627CF895800858ED6 /* BaseNetWork.swift in Sources */,
+				1901AC8B27F5E372002744CE /* CustomerNetwork.swift in Sources */,
 				191CF60027E86DFC009440A1 /* OrderMutiSelePopOver.swift in Sources */,
 				193A9DF727CE091C00858ED6 /* JuiceType.swift in Sources */,
 				193A9E0827D0FAC900858ED6 /* UserModel.swift in Sources */,
 				19EA1DC027C60F27001C09A3 /* JuiceTypeSplitViewController.swift in Sources */,
 				1926ACBB27BCDB9600DDBA64 /* AppDelegate.swift in Sources */,
+				191B068927F9461B00886B53 /* excelNetwork.swift in Sources */,
 				193407A327C38AE1009DD096 /* DetailViewController.swift in Sources */,
 				1988FD3827D89AF9001E6CB5 /* JuiceTypeSummaryViewController.swift in Sources */,
 				19DB9E1527DB3F4A00EAADED /* EXOwnerInputExpensesViewController.swift in Sources */,
@@ -715,6 +752,8 @@
 				193407A127C33965009DD096 /* MainMenuViewController.swift in Sources */,
 				191CF5EE27E4BD9F009440A1 /* LoginProtocol.swift in Sources */,
 				1902455F27DE08C0006EF982 /* OwnerInfo.swift in Sources */,
+				191B068C27F9463300886B53 /* GraphicNetwork.swift in Sources */,
+				191B068327F945D100886B53 /* JuiceMaterialNetWork.swift in Sources */,
 				193A9DEF27CD050100858ED6 /* ContentSplitViewController.swift in Sources */,
 				1926ACCA27BCDC2000DDBA64 /* WindowManager.swift in Sources */,
 				1926ACD027BCDCA100DDBA64 /* LRViewController.swift in Sources */,
@@ -727,6 +766,7 @@
 				191CF5FA27E850F8009440A1 /* CalendarPopOver.swift in Sources */,
 				1926ACCE27BCDC7700DDBA64 /* LRWindowController.swift in Sources */,
 				191CF5FD27E8680F009440A1 /* OrderProtocol.swift in Sources */,
+				191B068F27F9464300886B53 /* AlterNetwork.swift in Sources */,
 				193A9DF927CE094300858ED6 /* JuiceRank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -741,6 +781,7 @@
 				1988FD4827D8B4AB001E6CB5 /* OwnerInputExpensesViewController.swift in Sources */,
 				19D86FDE27DA2A4C00503EAE /* Notifications.swift in Sources */,
 				1988FD4927D8B4AB001E6CB5 /* GraphicViewController.swift in Sources */,
+				191B068727F945E700886B53 /* InputExpenseNetwork.swift in Sources */,
 				1988FD4A27D8B4AB001E6CB5 /* LoginViewController.swift in Sources */,
 				1988FD4B27D8B4AB001E6CB5 /* FunctionBarViewController.swift in Sources */,
 				1988FD4C27D8B4AB001E6CB5 /* CustomerOrderViewController.swift in Sources */,
@@ -755,10 +796,12 @@
 				1988FD5427D8B4AB001E6CB5 /* MainMenuWindowController.swift in Sources */,
 				1988FD5527D8B4AB001E6CB5 /* JuiceMaterial.swift in Sources */,
 				1988FD5627D8B4AB001E6CB5 /* OwnerInputExpenses.swift in Sources */,
-				19D0B10527F4544D00643A08 /* OrderFunc.swift in Sources */,
+				19D0B10527F4544D00643A08 /* OrderNetwork.swift in Sources */,
 				191CF5EC27E4B208009440A1 /* RegisterProtocol.swift in Sources */,
 				19DB9E2327DB6D6200EAADED /* DetailOwnerPieChart.swift in Sources */,
 				1988FD5727D8B4AB001E6CB5 /* Utils.swift in Sources */,
+				191B067E27F9327100886B53 /* JuiceTypeNetwork.swift in Sources */,
+				191B068127F945C200886B53 /* JuiceRankNetwork.swift in Sources */,
 				1988FD5827D8B4AB001E6CB5 /* RegisterViewController.swift in Sources */,
 				1988FD5927D8B4AB001E6CB5 /* Alert.swift in Sources */,
 				1988FD5A27D8B4AB001E6CB5 /* CustomerOrder.swift in Sources */,
@@ -766,11 +809,13 @@
 				1988FD5B27D8B4AB001E6CB5 /* CustomerInfoViewController.swift in Sources */,
 				19DB9E1D27DB6C6F00EAADED /* DefaultExOwnerBarChart.swift in Sources */,
 				1988FD5C27D8B4AB001E6CB5 /* BaseNetWork.swift in Sources */,
+				1901AC8C27F5E372002744CE /* CustomerNetwork.swift in Sources */,
 				191CF60127E86DFC009440A1 /* OrderMutiSelePopOver.swift in Sources */,
 				1988FD5D27D8B4AB001E6CB5 /* JuiceType.swift in Sources */,
 				1988FD5E27D8B4AB001E6CB5 /* UserModel.swift in Sources */,
 				1988FD5F27D8B4AB001E6CB5 /* JuiceTypeSplitViewController.swift in Sources */,
 				1988FD6027D8B4AB001E6CB5 /* AppDelegate.swift in Sources */,
+				191B068A27F9461B00886B53 /* excelNetwork.swift in Sources */,
 				1988FD6127D8B4AB001E6CB5 /* DetailViewController.swift in Sources */,
 				1988FD6227D8B4AB001E6CB5 /* JuiceTypeSummaryViewController.swift in Sources */,
 				19DB9E1627DB3F4A00EAADED /* EXOwnerInputExpensesViewController.swift in Sources */,
@@ -781,6 +826,8 @@
 				1988FD6527D8B4AB001E6CB5 /* MainMenuViewController.swift in Sources */,
 				191CF5EF27E4BD9F009440A1 /* LoginProtocol.swift in Sources */,
 				1902456027DE08C0006EF982 /* OwnerInfo.swift in Sources */,
+				191B068D27F9463300886B53 /* GraphicNetwork.swift in Sources */,
+				191B068427F945D100886B53 /* JuiceMaterialNetWork.swift in Sources */,
 				1988FD6627D8B4AB001E6CB5 /* ContentSplitViewController.swift in Sources */,
 				1988FD6827D8B4AB001E6CB5 /* WindowManager.swift in Sources */,
 				1988FD6927D8B4AB001E6CB5 /* LRViewController.swift in Sources */,
@@ -793,6 +840,7 @@
 				191CF5FB27E850F8009440A1 /* CalendarPopOver.swift in Sources */,
 				1988FD6F27D8B4AB001E6CB5 /* LRWindowController.swift in Sources */,
 				191CF5FE27E8680F009440A1 /* OrderProtocol.swift in Sources */,
+				191B069027F9464300886B53 /* AlterNetwork.swift in Sources */,
 				1988FD7027D8B4AB001E6CB5 /* JuiceRank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

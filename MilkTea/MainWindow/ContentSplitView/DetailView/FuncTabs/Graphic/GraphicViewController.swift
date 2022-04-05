@@ -21,11 +21,9 @@ class GraphicViewController: NSTabViewController {
     // - MARK: - 生命周期
     override func loadView() {
         view = NSView()
-        #if EXOWNER
-        self.addTabViewItem(NSTabViewItem(viewController: DefaultExOwnerBarChart()))
-        #endif
         self.addTabViewItem(NSTabViewItem(viewController: DefaultOwnerBarChart()))
         self.addTabViewItem(NSTabViewItem(viewController: DetailOwnerPieChart()))
+        self.addTabViewItem(NSTabViewItem(viewController: DefaultExOwnerBarChart()))
         view.addSubview(self.tabView)
         self.tabView.snp.makeConstraints{
             $0.size.equalToSuperview()

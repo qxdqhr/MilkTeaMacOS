@@ -22,12 +22,15 @@ class DetailViewController: NSTabViewController {
             OwnerInputExpensesViewController(), //月度收支管理
             ExcelViewController(),         //报表管理
             GraphicViewController(),       //图表管理
-            AlertViewController(),         //告警信息管理
+            AlertViewController(),         //告警信息管
+            OwnerViewController(),
         ]
       
         #else
         controllers = [
             WelcomeViewController(),//欢迎界面
+            WelcomeViewController(),  //顾客信息管理
+            WelcomeViewController(), //顾客订单管理
             JuiceTypeSplitViewController(),
             JuiceMaterialViewController(),
             JuiceRankViewController(),

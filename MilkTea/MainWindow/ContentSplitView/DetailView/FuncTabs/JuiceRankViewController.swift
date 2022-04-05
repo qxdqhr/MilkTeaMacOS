@@ -8,11 +8,40 @@
 import Cocoa
 extension JuiceRankViewController :NSTableViewDataSource{
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return userInfoDataArr.count
+        return juiceRankArr.count
     }
 
 }
 extension JuiceRankViewController :NSTableViewDelegate{
+//    func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
+//      var arr =  NSMutableArray(array: juiceRankArr)
+//        arr.sort(using: tableView.sortDescriptors)
+//        juiceRankArr = arr as! [JuiceRank]
+//        tableView.reloadData()
+//    }
+    func tableView(_ tableView: NSTableView, didClick tableColumn: NSTableColumn) {
+        switch tableColumn.headerCell.stringValue{
+            case "饮品历史销售数量":
+            self.juiceRankArr.sort(by: { juice1,juice2 in
+                juice1.juiceSoldNumber>juice2.juiceSoldNumber
+            })
+                break
+            case "总销售额":
+            self.juiceRankArr.sort(by: { juice1,juice2 in
+                juice1.sellingTotalPrice>juice2.sellingTotalPrice
+            })
+                break
+            case "好评数":
+            self.juiceRankArr.sort(by: { juice1,juice2 in
+                juice1.goodEvaluateNum>juice2.goodEvaluateNum
+            })
+                break
+            default:
+                break
+        }
+        tableView.reloadData()
+       
+    }
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         //获取当前列的标识符
         let key = (tableColumn?.identifier)!
@@ -22,18 +51,17 @@ extension JuiceRankViewController :NSTableViewDelegate{
             view = NSView()
         }
         //判断当前列的标识符是哪一列
-        let item = userInfoDataArr[row]
+        let item = juiceRankArr[row]
         let textField = NSTextField(labelWithString: item[key.rawValue] as! String )
         view?.addSubview(textField)
         return view
     }
 }
 class JuiceRankViewController: NSViewController {
-    var userInfoDataArr : [JuiceRank] = [
-        JuiceRank(juiceName: "aaa", juiceSoldNumber: "aaa", sellingTotalPrice: "aaa", goodEvaluateNum: "aaa")
-    ]
+   
+    var juiceRankArr : [JuiceRank] = []
     // - MARK: - 控件
-    private lazy var juiceRankTable : NSTableView = {
+     lazy var juiceRankTable : NSTableView = {
         var userInfoTable = NSTableView()
         userInfoTable.delegate = self
         userInfoTable.dataSource = self
@@ -51,7 +79,7 @@ class JuiceRankViewController: NSViewController {
     // - MARK: - 生命周期
     override func loadView() {
         view = NSView()
-        for property in JuiceRank.getUIName(){
+        for property in JuiceRank.getUIName().dropFirst(){
             self.juiceRankTable.addTableColumn(getColumn(title: property))
 
         }
@@ -59,6 +87,12 @@ class JuiceRankViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    override func viewWillAppear() {
+        JuiceTypeNetwork.refresh()
+        juiceRankArr.removeAll()
+     
+   
     }
     // - MARK: - 重写代理函数
     

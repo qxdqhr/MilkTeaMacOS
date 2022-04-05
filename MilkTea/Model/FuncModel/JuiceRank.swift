@@ -7,6 +7,7 @@
 
 import Foundation
 class JuiceRank : BaseModel {
+    @objc var juiceId:String = ""  //主键
     @objc var juiceName:String = ""              //饮品名称
     @objc var juiceSoldNumber :String = ""       //饮品历史销售数量
     @objc var sellingTotalPrice :String = ""     //总销售额

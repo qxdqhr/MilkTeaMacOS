@@ -21,13 +21,17 @@ class CalendarPopOver:NSPopover{
 
 }
 class CalendarPopOverViewController:NSViewController{
+    
     var dateTime = ""
-    #if OWNER
-    var delegate =
-    (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+    var delegateOrder = ((((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
         .contentViewControllerItem.viewController as! ContentSplitViewController)
         .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController)
-        .popoverAddOrder.contentViewController as! AddOrderViewController
+        .popoverAddOrder.contentViewController as! AddOrderViewController)
+    var delegateMaterial = ((((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+                                        .contentViewControllerItem.viewController as! ContentSplitViewController)
+                                        .detailViewController.tabViewItems[4].viewController as! JuiceMaterialViewController)
+                                        .popoverAddMaterial.contentViewController as!AddMaterialViewController)
+#if OWNER
     #endif
     lazy var orderingTimeField : NSDatePicker = {
         var ctrl = NSDatePicker(frame: NSMakeRect(0, 0, 300, 300))
@@ -39,9 +43,10 @@ class CalendarPopOverViewController:NSViewController{
     }()
     @objc func updateDate(_ sender:NSDatePicker){
         var date = sender.dateValue
-        delegate.sendTimeStringToBtn(timeString: date.formatted(date: .numeric, time: .omitted))
-        
-        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        delegateMaterial.sendTimeStringToBtn(timeString: formatter.string(from: date))
+        delegateOrder.sendTimeStringToBtn(timeString: formatter.string(from: date))
     }
     override func loadView() {
         view = NSView(frame: NSRect(x: 0, y: 0, width: 300, height: 300))

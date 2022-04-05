@@ -7,10 +7,11 @@
 
 import Foundation
 class CustomerInfo : BaseModel {
+    @objc var Id:String = ""  //主键
     @objc var customerName:String = ""
     @objc var buyingTime :String = ""
     @objc var recentEvaluate :String = ""
-    @objc var operate :String = ""
+//    @objc var operate :String = ""
     
     init(customerName:String,buyingTime:String,recentEvaluate:String){
         self.customerName = customerName
@@ -33,10 +34,11 @@ class CustomerInfo : BaseModel {
         for property in CustomerInfo.propertyList(){
             var uiName :String
             switch property{
+            case "Id": uiName = "主键"
             case "customerName": uiName = "顾客名"
             case "buyingTime": uiName = "最近购买时间"
             case "recentEvaluate": uiName = "用户最近评价"
-            case "operate": uiName = "操作"
+//            case "operate": uiName = "操作"
             default:
                 uiName = ""
             }

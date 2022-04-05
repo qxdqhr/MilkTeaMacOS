@@ -30,6 +30,9 @@ class BaseModel : NSObject,Encodable{
     func getOrderID()-> String {
         return ""
     }
+    func getMaterialID()-> String {
+        return ""
+    }
     func toKeyValue()->[String:String]{
         return [:]
     }

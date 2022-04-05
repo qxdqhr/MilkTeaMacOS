@@ -42,7 +42,7 @@ class CustomerOrder : BaseModel {
         }
     }
     override func getOrderID() -> String {
-        return ("o_\(Date().timeIntervalSince1970)" as NSString).substring(to: 10)
+        ("o_\(Int(Date().timeIntervalSince1970))")
     }
     override class func getUIName()->[String]{
         var uiNames :[String] = []

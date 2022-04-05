@@ -38,8 +38,8 @@ extension JuiceSeleTableViewController :NSTableViewDelegate{
         let item = juiceTypeArr[row]
         //子视图控件
         var juiceTypeComboBox = NSButton(title: item.juiceName, target: self, action: #selector(getNum))
-        var addJuiceBtn = NSButton(title: "增加饮品", target: self, action: #selector(addSelection))
-        var removeJuiceBtn = NSButton(title: "减少饮品", target: self, action: #selector(removeSelection))
+        var addJuiceBtn = NSButton(title: "增加", target: self, action: #selector(addSelection))
+        var removeJuiceBtn = NSButton(title: "减少", target: self, action: #selector(removeSelection))
         juiceTypeComboBox.stringValue = item.juiceName
         juiceTypeComboBox.tag = row
         addJuiceBtn.tag = row
@@ -99,11 +99,7 @@ class JuiceSeleTableViewController: NSViewController {
         var comfirmBtn = NSButton(title: "确认选择", target: self, action: #selector(updateSelection))
         return comfirmBtn
     }()
-    lazy var juiceTypeArr:[JuiceType] =
-    (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-        .contentViewControllerItem.viewController as! ContentSplitViewController)
-        .detailViewController.tabViewItems[3].viewController as! JuiceTypeSplitViewController)
-        .juiceTypeSummaryViewController.data
+    lazy var juiceTypeArr:[JuiceType] = []
     
     var selectJuiceNames = Dictionary<String,Int>()
     lazy var selectJuices :Array<JuiceType> = {
@@ -113,7 +109,7 @@ class JuiceSeleTableViewController: NSViewController {
         }
         return selectJuices
     }()
-    private lazy var juiceMaterialTable : NSTableView = {
+     lazy var juiceMaterialTable : NSTableView = {
         var userInfoTable = NSTableView()
         userInfoTable.delegate = self
         userInfoTable.dataSource = self
@@ -141,6 +137,10 @@ class JuiceSeleTableViewController: NSViewController {
         super.viewDidLoad()
         setupView()
     }
+    override func viewWillAppear() {
+        JuiceTypeNetwork.refresh()
+        self.juiceMaterialTable.reloadData()
+    }
     #if OWNER
     var delegate =
     (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
@@ -164,9 +164,9 @@ class JuiceSeleTableViewController: NSViewController {
             }
       
         }
-        
+#if OWNER
         delegate.sendJuicesStringToBtn(juiceString:String(selectJuice.dropLast()),juiceNum:juiceNum,juicePrice:totalJuicePrice)
-
+#endif
     }
     // - MARK: - 其他函数
     func getColumn(title:String) ->NSTableColumn{

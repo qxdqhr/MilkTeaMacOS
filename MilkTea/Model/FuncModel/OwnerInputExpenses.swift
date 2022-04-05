@@ -19,10 +19,9 @@ class OwnerInputExpenses : BaseModel {
     
     @objc var vegetableTeaIncome:String = ""          //青汁收入
     @objc var vegetableTeaExpence:String = ""          //青汁支出
+    @objc var materialExpense:String = ""          //原料支出
 
 
-    @objc var otherExpence:String = ""          //其他支出(房租水电)
-    @objc var operate :String = ""
 
     init(month:String,
          totalIncome:String,
@@ -33,7 +32,7 @@ class OwnerInputExpenses : BaseModel {
          fruitTeaExpence:String,
          vegetableTeaIncome:String,
          vegetableTeaExpence:String,
-         otherExpence:String
+         materialExpense:String
     ){
         self.month = month
         self.totalIncome = totalIncome
@@ -44,7 +43,7 @@ class OwnerInputExpenses : BaseModel {
         self.fruitTeaExpence = fruitTeaExpence
         self.vegetableTeaIncome = vegetableTeaIncome
         self.vegetableTeaExpence = vegetableTeaExpence
-        self.otherExpence = otherExpence
+        self.materialExpense = materialExpense
     }
     
         
@@ -61,7 +60,7 @@ class OwnerInputExpenses : BaseModel {
                 case "果茶支出": return self.fruitTeaExpence
                 case "青汁收入": return self.vegetableTeaIncome
                 case "青汁支出": return self.vegetableTeaExpence
-                case "其他支出(房租水电)": return self.otherExpence
+                case "原料支出": return self.materialExpense
                 default: return ""
             }
         }
@@ -81,8 +80,7 @@ class OwnerInputExpenses : BaseModel {
             case "fruitTeaExpence": uiName = "果茶支出"
             case "vegetableTeaIncome": uiName = "青汁收入"
             case "vegetableTeaExpence": uiName = "青汁支出"
-            case "otherExpence": uiName = "其他支出(房租水电)"
-            case "operate": uiName = "操作"
+            case "materialExpense": uiName = "原料支出"
             default:
                 uiName = ""
             }

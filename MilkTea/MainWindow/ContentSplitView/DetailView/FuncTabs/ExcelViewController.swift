@@ -58,13 +58,96 @@ class ExcelViewController: NSViewController {
 
     }
     func contentExcel(filename:String,path:String){
+        var data:[Any] = []
         let book = workbook_new(path)
         let sheet = workbook_add_worksheet(book, "sheet1")
-        worksheet_write_string(sheet, 0, 0, "level", nil)
-        worksheet_write_string(sheet, 0, 1, "hint", nil)
-        worksheet_write_string(sheet, 0, 2, "answer", nil)
-        worksheet_write_string(sheet, 0, 3, "answerSize", nil)
-        worksheet_write_string(sheet, 0, 4, "piecesSize", nil)
+        switch filename{
+        case "顾客信息表":
+            data = (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+                        .contentViewControllerItem.viewController as! ContentSplitViewController)
+                      .detailViewController.tabViewItems[1].viewController as! CustomerInfoViewController).userInfoDataArr
+            
+            //title
+            for (index,name) in CustomerInfo.getUIName().dropFirst().enumerated(){
+                worksheet_write_string(sheet, 0, lxw_col_t(index), name, nil)
+            }
+            for (index,info) in data.enumerated(){
+                worksheet_write_string(sheet, lxw_row_t(index+1), 0, (info as!CustomerInfo).customerName, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 1, (info as!CustomerInfo).buyingTime, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 2, (info as!CustomerInfo).recentEvaluate, nil)
+            }
+            break
+        case "顾客订单表":
+            data = (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+            .contentViewControllerItem.viewController as! ContentSplitViewController)
+          .detailViewController.tabViewItems[2].viewController as! CustomerOrderViewController).userInfoDataArr
+            for (index,name) in CustomerOrder.getUIName().dropFirst().dropFirst().enumerated(){
+                worksheet_write_string(sheet, 0, lxw_col_t(index), name, nil)
+            }
+            for (index,info) in data.enumerated(){
+                worksheet_write_string(sheet, lxw_row_t(index+1), 0, (info as!CustomerOrder).customerName, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 1, (info as!CustomerOrder).buyingjuice, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 2, (info as!CustomerOrder).orderingTime, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 3, (info as!CustomerOrder).juiceNumber, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 4, (info as!CustomerOrder).totalSellingPrice, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 5, (info as!CustomerOrder).curEvaluate, nil)
+            }
+            break
+        case "饮品原料表":
+            data = (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+                .contentViewControllerItem.viewController as! ContentSplitViewController)
+                        .detailViewController.tabViewItems[4].viewController as! JuiceMaterialViewController).datas
+            for (index,name) in JuiceMaterial.getUIName().dropFirst().dropFirst().dropLast().enumerated(){
+                worksheet_write_string(sheet, 0, lxw_col_t(index), name, nil)
+            }
+            for (index,info) in data.enumerated(){
+                worksheet_write_string(sheet, lxw_row_t(index+1), 0, (info as!JuiceMaterial).juiceMaterialName, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 1, (info as!JuiceMaterial).materialNumber, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 2, (info as!JuiceMaterial).materialPerPrice, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 3, (info as!JuiceMaterial).materialMonthBuyingTime, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 4, (info as!JuiceMaterial).materialMonthTotalPrice, nil)
+            }
+            break
+        case "月度收支表":
+            data = (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+                        .contentViewControllerItem.viewController as! ContentSplitViewController)
+                        .detailViewController.tabViewItems[6].viewController as! OwnerInputExpensesViewController).userInfoDataArr
+            for (index,name) in OwnerInputExpenses.getUIName().enumerated(){
+                worksheet_write_string(sheet, 0, lxw_col_t(index), name, nil)
+            }
+            for (index,info) in data.enumerated(){
+                worksheet_write_string(sheet, lxw_row_t(index+1), 0, (info as!OwnerInputExpenses).month, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 1, (info as!OwnerInputExpenses).totalIncome, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 2, (info as!OwnerInputExpenses).totalExpence, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 3, (info as!OwnerInputExpenses).milkTeaIncome, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 4, (info as!OwnerInputExpenses).milkTeaExpence, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 5, (info as!OwnerInputExpenses).fruitTeaIncome, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 6, (info as!OwnerInputExpenses).fruitTeaExpence, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 7, (info as!OwnerInputExpenses).vegetableTeaIncome, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 8, (info as!OwnerInputExpenses).vegetableTeaExpence, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 9, (info as!OwnerInputExpenses).materialExpense, nil)
+            }
+
+            break
+//        case "告警信息表":
+//            data = (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+//                        .contentViewControllerItem.viewController as! ContentSplitViewController)
+//                      .detailViewController.tabViewItems[6].viewController as! OwnerInputExpensesViewController)
+
+//            break
+//        case "商户信息表":
+//            data = (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+//                        .contentViewControllerItem.viewController as! ContentSplitViewController)
+//                      .detailViewController.tabViewItems[6].viewController as! OwnerInputExpensesViewController)
+
+//            break
+        default:
+            let sheet = workbook_add_worksheet(book, "sheet1")
+            worksheet_write_string(sheet, 0, 0, "level", nil)
+            worksheet_write_string(sheet, 0, 1, "hint", nil)
+            break
+        }
+      
 
         if workbook_close(book).rawValue != 0{
             excelErr()
@@ -145,3 +228,4 @@ class ExcelViewController: NSViewController {
     }
     
 }
+

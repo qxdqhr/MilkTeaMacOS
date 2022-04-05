@@ -85,7 +85,9 @@ class CustomerOrderViewController: NSViewController {
             print(property)
             self.userOrderTable.addTableColumn(getColumn(title: property))
         }
-        OrderFunc.refresh()
+    }
+    override func viewWillAppear() {
+        OrderNetwork.refresh()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,7 +125,7 @@ class CustomerOrderViewController: NSViewController {
         ]
         if sender.title == "提交" {
 
-            OrderFunc.modify(para: [
+            OrderNetwork.modify(para: [
                 "orderid":userInfoDataArr[sender.tag].orderId,
                 "userid":LoginUserInfo.getLoginUser().userId,
                 "customerid":textFields[0].stringValue,
@@ -193,7 +195,17 @@ class CustomerOrderViewController: NSViewController {
     @objc func deleteOrder(_ sender:NSButton){
         MsgHelper.judgeMsg(message: "确认删除?", window: self.view.window!) { response in
             if (response == .alertFirstButtonReturn){
-                print("ok")
+                OrderNetwork.delete(para: [
+                    "orderid":self.userInfoDataArr[sender.tag].orderId,
+                    "userid":LoginUserInfo.getLoginUser().userId,
+                    "customerid":self.userInfoDataArr[sender.tag].customerName,
+                    "orderingtime":self.userInfoDataArr[sender.tag].orderingTime,
+                    "buyingjuice":self.userInfoDataArr[sender.tag].buyingjuice,
+                    "juicenumber":self.userInfoDataArr[sender.tag].juiceNumber,
+                    "totalsellingprice":self.userInfoDataArr[sender.tag].totalSellingPrice,
+                    "curevaluate":self.userInfoDataArr[sender.tag].curEvaluate,
+                ])
+              
             }else if(response == .alertSecondButtonReturn){
                 print("cancel")
 
@@ -206,12 +218,22 @@ class CustomerOrderViewController: NSViewController {
     }
     @objc func popoverQueryInfoWnd(_ sender:NSButton){
         (popover1.contentViewController as!QueryViewController).clearValue()
+        
+        (popover1.contentViewController as! QueryViewController).queryAction = { btn in
+            let queryMap = [
+                "func":"order",
+                "userid":LoginUserInfo.getLoginUser().userId,
+                "query_name":  (self.popover1.contentViewController as! QueryViewController).queryName.stringValue,
+                "query_value":  (self.popover1.contentViewController as! QueryViewController).queryValue.stringValue
+            ]
+            OrderNetwork.query(para: queryMap)
+        }
         (popover1.contentViewController as! QueryViewController).getCallClsPropertyName(clsName: CustomerOrder.self)
         popover1.show(relativeTo: self.queryInfoBtn.bounds, of: self.queryInfoBtn, preferredEdge: .maxX)
         
     }
     @objc func refresh(){
-        OrderFunc.refresh()
+        OrderNetwork.refresh()
     }
     // - MARK: - 加入视图以及布局
     func setupView(){

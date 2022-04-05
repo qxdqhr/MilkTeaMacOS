@@ -7,6 +7,8 @@
 
 import Foundation
 class JuiceType : BaseModel {
+    @objc var juiceId:String = ""  //主键
+    @objc var juiceIcon:String = ""  //图片数据
     @objc var juiceName:String = ""          //饮品名称
     @objc var juiceType:String = ""          //饮品类型 奶茶/果茶/青汁
     @objc var lastOrderingTime :String = ""  //最近下单时间
@@ -14,6 +16,11 @@ class JuiceType : BaseModel {
     @objc var profit :String = ""      //利润
     @objc var cost   :String = ""      //成本
     @objc var curEvaluate :String = ""       //最近评价
+    
+//-----
+    @objc var juiceSoldNumber :String = ""       //饮品历史销售数量
+    @objc var sellingTotalPrice :String = ""     //总销售额
+    @objc var goodEvaluateNum :String = ""       //好评数
 
     init(juiceName:String,
          juiceType:String,
@@ -21,7 +28,11 @@ class JuiceType : BaseModel {
          price  :String,
          profit :String,
          cost   :String,
-         curEvaluate:String
+         curEvaluate:String,
+         
+         juiceSoldNumber:String,
+         sellingTotalPrice:String,
+         goodEvaluateNum:String
     ){
         self.juiceName = juiceName
         self.juiceType = juiceType
@@ -30,6 +41,10 @@ class JuiceType : BaseModel {
         self.profit = profit
         self.cost = cost
         self.curEvaluate = curEvaluate
+
+        self.juiceSoldNumber = juiceSoldNumber
+        self.sellingTotalPrice  = sellingTotalPrice
+        self.goodEvaluateNum = goodEvaluateNum
     }
     
     subscript(index: String) -> String {
