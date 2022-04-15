@@ -6,14 +6,14 @@
 //
 
 import Foundation
-class InputExpenseNetwork{
+class OwnerInputExpenseNetwork{
     class func refresh(){
         let controller =  (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
                                 .contentViewControllerItem.viewController as! ContentSplitViewController)
                               .detailViewController.tabViewItems[6].viewController as! OwnerInputExpensesViewController)
         
         BaseNetWork.sendDataRequest(url: "http://localhost:8086/inexpense/refresh", method: .post, parameters: [
-            "userid":LoginUserInfo.getLoginUser().userId
+            "user_id":LoginUserInfo.getLoginUser().userId
         ]){ code,datas,msg in
         print(datas)
          if(code == 200){
@@ -46,7 +46,7 @@ class InputExpenseNetwork{
     class func add(){
         
         BaseNetWork.sendDataRequest(url: "http://localhost:8086/inexpense/add", method: .post, parameters: [
-            "userid":LoginUserInfo.getLoginUser().userId
+            "user_id":LoginUserInfo.getLoginUser().userId
         ]){ code,datas,msg in
         print(datas)
          if(code == 200){

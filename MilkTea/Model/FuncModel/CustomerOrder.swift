@@ -68,7 +68,7 @@ class CustomerOrder : BaseModel {
     override func toKeyValue() -> [String : String] {
         [
             "orderid":self.orderId,
-            "userid":self.userId,
+            "user_id":self.userId,
             "customerid":self.customerName,
             "orderingtime":self.orderingTime,
             "buyingjuice":self.buyingjuice,

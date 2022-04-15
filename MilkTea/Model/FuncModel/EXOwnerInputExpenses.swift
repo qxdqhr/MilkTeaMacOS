@@ -12,7 +12,6 @@ class EXOwnerInputExpenses : BaseModel {
     @objc var ownerId:String = ""            //加盟商账号
     @objc var totalIncome:String = ""          //总收入
     @objc var totalExpence:String = ""         //总支出
-    @objc var operate :String = ""
 
 
     init(month:String,
@@ -51,7 +50,6 @@ class EXOwnerInputExpenses : BaseModel {
             case "month": uiName = "月份数"
             case "totalIncome": uiName = "总收入"
             case "totalExpence": uiName = "总支出"
-            case "operate": uiName = "操作"
             default:
                 uiName = ""
             }

@@ -23,24 +23,23 @@ extension JuiceRankViewController :NSTableViewDelegate{
         switch tableColumn.headerCell.stringValue{
             case "饮品历史销售数量":
             self.juiceRankArr.sort(by: { juice1,juice2 in
-                juice1.juiceSoldNumber>juice2.juiceSoldNumber
+                Float(juice1.juiceSoldNumber)! > Float(juice2.juiceSoldNumber)! ? true:false
             })
                 break
             case "总销售额":
             self.juiceRankArr.sort(by: { juice1,juice2 in
-                juice1.sellingTotalPrice>juice2.sellingTotalPrice
+                Float(juice1.sellingTotalPrice)!>Float(juice2.sellingTotalPrice)! ? true:false
             })
                 break
             case "好评数":
             self.juiceRankArr.sort(by: { juice1,juice2 in
-                juice1.goodEvaluateNum>juice2.goodEvaluateNum
+                Float(juice1.goodEvaluateNum)!>Float(juice2.goodEvaluateNum)! ? true:false
             })
                 break
             default:
                 break
         }
         tableView.reloadData()
-       
     }
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         //获取当前列的标识符
@@ -81,7 +80,6 @@ class JuiceRankViewController: NSViewController {
         view = NSView()
         for property in JuiceRank.getUIName().dropFirst(){
             self.juiceRankTable.addTableColumn(getColumn(title: property))
-
         }
     }
     override func viewDidLoad() {

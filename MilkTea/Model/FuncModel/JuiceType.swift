@@ -8,7 +8,7 @@
 import Foundation
 class JuiceType : BaseModel {
     @objc var juiceId:String = ""  //主键
-    @objc var juiceIcon:String = ""  //图片数据
+    @objc var userid:String = ""  //图片数据
     @objc var juiceName:String = ""          //饮品名称
     @objc var juiceType:String = ""          //饮品类型 奶茶/果茶/青汁
     @objc var lastOrderingTime :String = ""  //最近下单时间

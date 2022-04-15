@@ -12,6 +12,7 @@ class JuiceRank : BaseModel {
     @objc var juiceSoldNumber :String = ""       //饮品历史销售数量
     @objc var sellingTotalPrice :String = ""     //总销售额
     @objc var goodEvaluateNum :String = ""       //好评数
+    
 
     init(juiceName:String,
          juiceSoldNumber:String,

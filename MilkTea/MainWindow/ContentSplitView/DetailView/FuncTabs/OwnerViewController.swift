@@ -29,29 +29,17 @@ extension OwnerViewController :NSTableViewDelegate{
             let textField = NSTextField(labelWithString: item[key.rawValue] )
             view?.addSubview(textField)
         }else{
-            var modifyBtn = NSButton(title: "修改信息", target: self, action: #selector(popoverAddInfoWnd))
-            modifyBtn.isBordered = false
-            modifyBtn.tag = row
-            var deleteBtn = NSButton(title: "辞退", target: self, action: #selector(popoverAddInfoWnd))
+            var deleteBtn = NSButton(title: "辞退", target: self, action: #selector(delete))
             deleteBtn.isBordered = false
             deleteBtn.tag = row
-            var alterBtn = NSButton(title: " 告警", target: self, action: #selector(popoverAddInfoWnd))
-            alterBtn.isBordered = false
-            alterBtn.tag = row
 
-
-            view?.addSubview(modifyBtn)
             view?.addSubview(deleteBtn)
-            view?.addSubview(alterBtn)
-            modifyBtn.snp.makeConstraints{
-                $0.leading.equalToSuperview()
-            }
+  
             deleteBtn.snp.makeConstraints{
-                $0.leading.equalTo(modifyBtn.snp.trailing)
+                $0.size.equalToSuperview()
+                $0.center.equalToSuperview()
             }
-            alterBtn.snp.makeConstraints{
-                $0.leading.equalTo(deleteBtn.snp.trailing)
-            }
+  
         }
         return view
     }
@@ -60,19 +48,14 @@ class OwnerViewController: NSViewController {
 
     // - MARK: - 控件
     // - MARK: - 数据
-    var userInfoDataArr : [OwnerInfo] = [
-        OwnerInfo(ownerName:"aa",ownerId:"String",alertTimes:"String",recentAlertReason:"String"),
-        OwnerInfo(ownerName:"aa",ownerId:"String",alertTimes:"String",recentAlertReason:"String"),
-        OwnerInfo(ownerName:"aa",ownerId:"String",alertTimes:"String",recentAlertReason:"String"),
-        OwnerInfo(ownerName:"aa",ownerId:"String",alertTimes:"String",recentAlertReason:"String"),
-    ]
+    var userInfoDataArr : [OwnerInfo] = []
 
     // - MARK: - 控件
     private lazy var queryInfoBtn = NSButton(title: "查询商户信息", target: self, action: #selector(popoverAddInfoWnd))
-    private lazy var refreshBtn = NSButton(title: "刷新", target: self, action: #selector(popoverAddInfoWnd))
+    private lazy var refreshBtn = NSButton(title: "刷新", target: self, action: #selector(refresh))
     private lazy var popover1 = QueryPopOver(viewController: QueryViewController())
 
-    private lazy var userInfoTable : NSTableView = {
+    lazy var userInfoTable : NSTableView = {
         var userInfoTable = NSTableView()
         userInfoTable.delegate = self
         userInfoTable.dataSource = self
@@ -108,6 +91,12 @@ class OwnerViewController: NSViewController {
         (popover1.contentViewController as! QueryViewController).getCallClsPropertyName(clsName: OwnerInfo.self)
         popover1.show(relativeTo: self.queryInfoBtn.bounds, of: self.queryInfoBtn, preferredEdge: .maxX)
     }
+    @objc func refresh(_ sender:NSButton){
+        OwnerNetwork.refresh()
+    }
+    @objc func delete(_ sender:NSButton){
+       // OwnerNetwork.refresh()
+    }
     func getColumn(title:String) ->NSTableColumn{
         var column1 = NSTableColumn()
         column1.headerCell.type = .textCellType
@@ -120,8 +109,6 @@ class OwnerViewController: NSViewController {
     }
     // - MARK: - 加入视图以及布局
     func setupView(){
-  
-        
         view.addSubview(refreshBtn)
         refreshBtn.snp.makeConstraints{
             $0.leading.equalToSuperview()

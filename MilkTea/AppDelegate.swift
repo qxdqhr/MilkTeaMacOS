@@ -14,9 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
 
-        // WindowManager.shared.showLoginWindow()
+        WindowManager.shared.showLoginWindow()
         //初始化数据
-        WindowManager.shared.showMainMenu()
+        //WindowManager.shared.showMainMenu()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

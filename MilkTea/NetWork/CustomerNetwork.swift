@@ -9,7 +9,7 @@ import Foundation
 class CustomerNetwork{
     class func refresh(){
         BaseNetWork.sendDataRequest(url: "http://localhost:8086/customer/refresh", method: .post, parameters: [
-            "userid":LoginUserInfo.getLoginUser().userId
+            "user_id":LoginUserInfo.getLoginUser().userId
         ]){ code,datas,msg in
         print(datas)
          if(code == 200){

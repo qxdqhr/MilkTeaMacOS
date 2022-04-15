@@ -32,15 +32,13 @@ extension ExOwnerInputExpensesViewController :NSTableViewDelegate{
     }
 }
 class ExOwnerInputExpensesViewController: NSViewController {
-    var userInfoDataArr : [EXOwnerInputExpenses] = [
-        EXOwnerInputExpenses(month: "a", totalIncome: "a", totalExpence: "a", ownerName: "a", ownerId: "a")
-    ]
+    var userInfoDataArr : [EXOwnerInputExpenses] = []
     // - MARK: - 控件
     private lazy var queryInfoBtn = NSButton(title: "查询收支信息", target: self, action: #selector(popoverAddInfoWnd))
-    private lazy var refreshBtn = NSButton(title: "刷新", target: self, action: #selector(popoverAddInfoWnd))
+    private lazy var refreshBtn = NSButton(title: "刷新", target: self, action: #selector(refresh))
     private lazy var popover1 = QueryPopOver(viewController: QueryViewController())
 
-    private lazy var InputExpensesTable : NSTableView = {
+    lazy var InputExpensesTable : NSTableView = {
         var userInfoTable = NSTableView()
         userInfoTable.delegate = self
         userInfoTable.dataSource = self
@@ -67,6 +65,10 @@ class ExOwnerInputExpensesViewController: NSViewController {
         super.viewDidLoad()
         setupView()
     }
+    override func viewWillAppear() {
+        ExOwnerInputExpenseNetwork.refresh()
+
+    }
     // - MARK: - 重写代理函数
     
     // - MARK: - 重写其他函数
@@ -82,9 +84,22 @@ class ExOwnerInputExpensesViewController: NSViewController {
     }
     // - MARK: - 事件函数
     @objc func popoverAddInfoWnd(_ sender:NSButton){
+        (popover1.contentViewController as!QueryViewController).clearValue()
+        (popover1.contentViewController as! QueryViewController).queryAction = { btn in
+            let queryMap = [
+                "func":"inexpense",
+                "user_id":LoginUserInfo.getLoginUser().userId,
+                "query_name":  (self.popover1.contentViewController as! QueryViewController).queryName.stringValue,
+                "query_value":  (self.popover1.contentViewController as! QueryViewController).queryValue.stringValue
+            ]
+            MaterialNetwork.query(para: queryMap)
+        }
         (popover1.contentViewController as! QueryViewController).getCallClsPropertyName(clsName: EXOwnerInputExpenses.self)
         popover1.show(relativeTo: self.queryInfoBtn.bounds, of: self.queryInfoBtn, preferredEdge: .maxX)
         
+    }
+    @objc func refresh(_ sender:NSButton){
+        ExOwnerInputExpenseNetwork.refresh()
     }
     // - MARK: - 加入视图以及布局
     func setupView(){

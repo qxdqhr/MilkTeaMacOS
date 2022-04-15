@@ -98,12 +98,16 @@ class FunctionBarViewController: NSViewController {
         //子节点
         let juiceTypeNode = FunctionModel()
         juiceTypeNode.name = "饮品种类管理"
+#if OWNER
         let materialNode = FunctionModel()
         materialNode.name = "饮品原料管理"
+#endif
         let juiceRankNode = FunctionModel()
         juiceRankNode.name = "饮品榜单管理"
         juiceManagmentModule.childNodes.append(juiceTypeNode)
+#if OWNER
         juiceManagmentModule.childNodes.append(materialNode)
+#endif
         juiceManagmentModule.childNodes.append(juiceRankNode)
 
         //营销管理模块

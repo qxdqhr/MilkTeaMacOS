@@ -66,8 +66,8 @@ class OwnerInputExpensesViewController: NSViewController {
         setupView()
     }
     override func viewWillAppear() {
-        InputExpenseNetwork.add()
-        InputExpenseNetwork.refresh()
+        OwnerInputExpenseNetwork.add()
+        OwnerInputExpenseNetwork.refresh()
 
     }
     // - MARK: - 重写代理函数
@@ -99,7 +99,7 @@ class OwnerInputExpensesViewController: NSViewController {
         popover1.show(relativeTo: self.queryInfoBtn.bounds, of: self.queryInfoBtn, preferredEdge: .maxX)
     }
     @objc func refresh(_ sender:NSButton){
-        InputExpenseNetwork.refresh()
+        OwnerInputExpenseNetwork.refresh()
     }
 
     // - MARK: - 加入视图以及布局

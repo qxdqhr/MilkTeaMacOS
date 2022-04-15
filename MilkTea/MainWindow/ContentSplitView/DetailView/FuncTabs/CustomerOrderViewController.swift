@@ -127,7 +127,7 @@ class CustomerOrderViewController: NSViewController {
 
             OrderNetwork.modify(para: [
                 "orderid":userInfoDataArr[sender.tag].orderId,
-                "userid":LoginUserInfo.getLoginUser().userId,
+                "user_id":LoginUserInfo.getLoginUser().userId,
                 "customerid":textFields[0].stringValue,
                 "orderingtime":textFields[2].stringValue,
                 "buyingjuice":textFields[1].stringValue,
@@ -197,7 +197,7 @@ class CustomerOrderViewController: NSViewController {
             if (response == .alertFirstButtonReturn){
                 OrderNetwork.delete(para: [
                     "orderid":self.userInfoDataArr[sender.tag].orderId,
-                    "userid":LoginUserInfo.getLoginUser().userId,
+                    "user_id":LoginUserInfo.getLoginUser().userId,
                     "customerid":self.userInfoDataArr[sender.tag].customerName,
                     "orderingtime":self.userInfoDataArr[sender.tag].orderingTime,
                     "buyingjuice":self.userInfoDataArr[sender.tag].buyingjuice,
@@ -222,7 +222,7 @@ class CustomerOrderViewController: NSViewController {
         (popover1.contentViewController as! QueryViewController).queryAction = { btn in
             let queryMap = [
                 "func":"order",
-                "userid":LoginUserInfo.getLoginUser().userId,
+                "user_id":LoginUserInfo.getLoginUser().userId,
                 "query_name":  (self.popover1.contentViewController as! QueryViewController).queryName.stringValue,
                 "query_value":  (self.popover1.contentViewController as! QueryViewController).queryValue.stringValue
             ]

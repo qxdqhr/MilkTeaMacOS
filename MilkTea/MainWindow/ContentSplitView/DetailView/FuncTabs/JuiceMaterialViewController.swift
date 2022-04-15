@@ -127,8 +127,8 @@ class JuiceMaterialViewController: NSViewController {
                 "material_id":datas[sender.tag].id,
                 "user_id":LoginUserInfo.getLoginUser().userId,
                 "material_name":textFields[0].stringValue,
-                "material_number":textFields[2].stringValue,
-                "per_price":textFields[1].stringValue,
+                "material_number":textFields[1].stringValue,
+                "per_price":textFields[2].stringValue,
                 "material_month_buying_time":textFields[3].stringValue,
                 "material_month_total_price":textFields[4].stringValue,
             ])

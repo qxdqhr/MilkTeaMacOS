@@ -13,19 +13,19 @@ class AlertViewController: NSViewController {
     private var alertReasonLabel = NSTextField(labelWithString: "告警原因")
     private var alertMethodLabel = NSTextField(labelWithString: "告警措施")
     private var alertOwnerLabel  = NSTextField(labelWithString:"告警商户名")
-    private var alertBtn         = NSButton(title: "发送告警", target: self, action: #selector(popoverAddInfoWnd))
+    private var alertBtn         = NSButton(title: "发送告警", target: self, action: #selector(sendAlert))
 
-    private var alertOwnerName : NSTextField = {
+     var alertOwnerName : NSTextField = {
         var textField = NSTextField()
         textField.maximumNumberOfLines = 0
         return textField
     }()
-    private var alertReasonTextField : NSTextField = {
+     var alertReasonTextField : NSTextField = {
         var textField = NSTextField()
         textField.maximumNumberOfLines = 0
         return textField
     }()
-    private var alertMethodTextField : NSTextField = {
+     var alertMethodTextField : NSTextField = {
         var textField = NSTextField()
         textField.maximumNumberOfLines = 0
         return textField
@@ -44,8 +44,17 @@ class AlertViewController: NSViewController {
     // - MARK: - 重写其他函数
     
     // - MARK: - 事件函数
-    @objc func popoverAddInfoWnd(_ sender:NSButton){
-        print("aa")
+    @objc func sendAlert(_ sender:NSButton){
+        AlertNetwork.add(para: Alert(
+            Id:"EXALERT_\(LoginUserInfo.getLoginUser().userId)_\(String(Date().timeIntervalSince1970))",
+            alertReason: alertReasonTextField.stringValue,
+            alertMethod: alertMethodTextField.stringValue,
+            alertOwner: alertOwnerName.stringValue,
+            alertExOwner: LoginUserInfo.getLoginUser().userId,
+            alertTime: (String(Date().timeIntervalSince1970)),
+            alertReceived: "未接受"
+        )
+    )
     }
     // - MARK: - 加入视图以及布局
     func setupView(){

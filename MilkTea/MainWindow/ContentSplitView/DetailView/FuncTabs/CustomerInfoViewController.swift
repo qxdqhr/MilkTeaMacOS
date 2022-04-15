@@ -96,7 +96,7 @@ class CustomerInfoViewController: NSViewController {
         (popover1.contentViewController as! QueryViewController).queryAction = { btn in
             let queryMap = [
                 "func":"customer",
-                "userid":LoginUserInfo.getLoginUser().userId,
+                "user_id":LoginUserInfo.getLoginUser().userId,
                 "query_name":  (self.popover1.contentViewController as! QueryViewController).queryName.stringValue,
                 "query_value":  (self.popover1.contentViewController as! QueryViewController).queryValue.stringValue
             ]

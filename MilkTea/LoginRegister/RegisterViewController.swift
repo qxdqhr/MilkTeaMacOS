@@ -50,6 +50,15 @@ class RegisterViewController: NSViewController {
         var ctrl = NSTextField(labelWithAttributedString: titleAttributeStr)
         return ctrl
     }()
+    #if OWNER
+    private lazy var lblExOwnerID : NSTextField =  {
+        var titleAttributeStr = NSMutableAttributedString(string: "经销商工号")
+        //设定字体大小
+        titleAttributeStr.addAttribute(NSAttributedString.Key.font, value: NSFont.systemFont(ofSize: 20), range: NSRange(location: 0, length:titleAttributeStr.length))
+        var ctrl = NSTextField(labelWithAttributedString: titleAttributeStr)
+        return ctrl
+    }()
+    #endif
 //    private lazy var lblRole : NSTextField =  {
 //        var titleAttributeStr = NSMutableAttributedString(string: "角色")
 //        //设定字体大小
@@ -75,6 +84,14 @@ class RegisterViewController: NSViewController {
         ctrl.placeholderString = "请输入密码"
         return ctrl
     }()
+#if OWNER
+    private lazy var exOwnerIDField : NSTextField = {
+        var ctrl = NSTextField()
+        ctrl.placeholderString = "请输入经销商工号"
+        return ctrl
+    }()
+#endif
+
 //    private lazy var  radioOwner : NSButton = {
 //        var ctrl = NSButton(radioButtonWithTitle: "加盟商", target: self , action: nil)
 //        ctrl.tag = 1
@@ -109,7 +126,9 @@ class RegisterViewController: NSViewController {
         let name = nameField.stringValue
         let telephone = teleField.stringValue
         let password = passField.stringValue
-        
+        #if OWNER
+        let exownerid = exOwnerIDField.stringValue
+        #endif
         var validateString = ""
 
         if (name.isEmpty){
@@ -135,7 +154,8 @@ class RegisterViewController: NSViewController {
             teleField.backgroundColor = .clear
             passField.backgroundColor = .clear
             #if OWNER
-            var user = UserModel(name: name,userid: "", telephone: telephone, Password: password, role: "Owner")
+            exOwnerIDField.backgroundColor = .clear
+            var user = UserModel(name: name,userid: "", telephone: telephone, Password: password, role: "Owner",exOwnerID: exownerid)
             #else
             var user = UserModel(name: name,userid: "", telephone: telephone, Password: password, role: "ExOwner")
             #endif
@@ -189,13 +209,16 @@ class RegisterViewController: NSViewController {
 
         }
         
-//        view.addSubview(lblRole)
-//        lblRole.snp.makeConstraints{
-//            $0.top.equalTo(lblPass.snp.bottom).offset(25)
-//            $0.leading.equalTo(lblTitle)
-//            $0.height.equalTo(lblName)
-//
-//        }
+#if OWNER
+        view.addSubview(lblExOwnerID)
+        lblExOwnerID.snp.makeConstraints{
+            $0.top.equalTo(lblPass.snp.bottom).offset(25)
+            $0.leading.equalTo(lblTitle)
+            $0.height.equalTo(lblName)
+
+        }
+#endif
+
         
         view.addSubview(nameField)
         nameField.snp.makeConstraints{
@@ -218,18 +241,25 @@ class RegisterViewController: NSViewController {
             $0.leading.equalTo(lblPass.snp.trailing).offset(50)
             $0.trailing.equalTo(lblTitle)
         }
-//        view.addSubview(radioOwner)
-//        radioOwner.snp.makeConstraints{
-//            $0.top.equalTo(lblRole)
-//            $0.bottom.equalTo(lblRole)
-//            $0.leading.equalTo(lblPass.snp.trailing).offset(50)
-//        }
-//        view.addSubview(radioExOwner)
-//        radioExOwner.snp.makeConstraints{
-//            $0.top.equalTo(lblRole)
-//            $0.bottom.equalTo(lblRole)
-//            $0.leading.equalTo(radioOwner.snp.trailing)
-//        }
+#if OWNER
+        view.addSubview(exOwnerIDField)
+        exOwnerIDField.snp.makeConstraints{
+            $0.top.equalTo(lblExOwnerID)
+            $0.bottom.equalTo(lblExOwnerID)
+            $0.leading.equalTo(lblExOwnerID.snp.trailing).offset(7)
+            $0.trailing.equalTo(lblTitle)
+
+        }
+        view.addSubview(registerBtn)
+        registerBtn.snp.makeConstraints{
+            $0.top.equalTo(exOwnerIDField.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(100)
+            $0.height.equalTo(50)
+        }
+
+#else
+
         view.addSubview(registerBtn)
         registerBtn.snp.makeConstraints{
             $0.top.equalTo(passField.snp.bottom).offset(10)
@@ -237,6 +267,14 @@ class RegisterViewController: NSViewController {
             $0.width.equalTo(100)
             $0.height.equalTo(50)
         }
+#endif
+//        view.addSubview(radioExOwner)
+//        radioExOwner.snp.makeConstraints{
+//            $0.top.equalTo(lblRole)
+//            $0.bottom.equalTo(lblRole)
+//            $0.leading.equalTo(radioOwner.snp.trailing)
+//        }
+
         
     }
     

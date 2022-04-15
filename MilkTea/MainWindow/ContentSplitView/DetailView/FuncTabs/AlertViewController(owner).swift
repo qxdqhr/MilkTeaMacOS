@@ -24,22 +24,32 @@ class AlertViewController: NSViewController {
     }()
     private var alertReasonLabel = NSTextField(labelWithString: "告警原因")
     private var alertMethodLabel = NSTextField(labelWithString: "告警措施")
-    private var alertOwnerLabel  = NSTextField(labelWithString:"告警商户名")
-    private var alertOwnerName : NSTextField = {
+//    private var alertOwnerLabel  = NSTextField(labelWithString:"告警商户名")
+    private var alertTimeLabel  = NSTextField(labelWithString:"告警时间")
+//     var alertOwnerName : NSTextField = {
+//        var textField = NSTextField(labelWithString: "目前未收到告警")
+//        textField.maximumNumberOfLines = 0
+//        return textField
+//    }()
+     var alertReasonTextField : NSTextField = {
         var textField = NSTextField(labelWithString: "目前未收到告警")
         textField.maximumNumberOfLines = 0
         return textField
     }()
-    private var alertReasonTextField : NSTextField = {
+     var alertMethodTextField : NSTextField = {
         var textField = NSTextField(labelWithString: "目前未收到告警")
         textField.maximumNumberOfLines = 0
         return textField
     }()
-    private var alertMethodTextField : NSTextField = {
-        var textField = NSTextField(labelWithString: "目前未收到告警")
-        textField.maximumNumberOfLines = 0
-        return textField
-    }()
+    var alertTimeTextField : NSTextField = {
+       var textField = NSTextField(labelWithString: "目前未收到告警")
+       textField.maximumNumberOfLines = 0
+       return textField
+   }()
+    lazy var alertReceived : NSButton = {
+        var btn = NSButton(title: "确认收到", target: self, action: #selector(receiveAlert))
+       return btn
+   }()
 
     // - MARK: - 生命周期
     override func loadView() {
@@ -49,22 +59,34 @@ class AlertViewController: NSViewController {
         super.viewDidLoad()
         setupView()
     }
+    override func viewWillAppear() {
+        AlertNetwork.refresh()
+    }
     // - MARK: - 重写代理函数
     
     // - MARK: - 重写其他函数
     
     // - MARK: - 事件函数
-
+    @objc func receiveAlert(_ sender:NSButton){
+        if (alertMethodTextField.stringValue == "目前未收到告警" || alertReasonTextField.stringValue == "目前未收到告警" || alertTimeTextField.stringValue == "目前未收到告警"){
+            MsgHelper.showMsg(message: "您现在没有被告警")
+        }else{
+            AlertNetwork.receiveAlert()
+        }
+    }
     // - MARK: - 加入视图以及布局
     func setupView(){
         addSubviews(targetView: self.view, views: [
             titleLabel,
             alertReasonLabel,
             alertMethodLabel,
-            alertOwnerLabel ,
-            alertOwnerName  ,
+//            alertOwnerLabel ,
+//            alertOwnerName  ,
             alertReasonTextField,
-            alertMethodTextField
+            alertMethodTextField,
+            alertTimeLabel,
+            alertTimeTextField,
+            alertReceived
         ])
         titleLabel .snp.makeConstraints{
             $0.leading.equalToSuperview()
@@ -74,23 +96,10 @@ class AlertViewController: NSViewController {
 
         }
         
-        alertOwnerLabel .snp.makeConstraints{
-            $0.leading.equalToSuperview()
-            $0.top.equalToSuperview().offset(60)
-            $0.width.equalTo(150)
-            
-        }
-        alertOwnerName  .snp.makeConstraints{
-            $0.top.equalTo(alertOwnerLabel)
-            $0.leading.equalTo(alertOwnerLabel.snp.trailing)
-            $0.trailing.equalToSuperview().offset(-50)
-            $0.height.equalTo(100)
-
-        }
         alertReasonLabel.snp.makeConstraints{
     
             $0.leading.equalToSuperview()
-            $0.top.equalTo(alertOwnerLabel.snp.bottom).offset(100)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(100)
             $0.width.equalTo(150)
         }
         
@@ -116,7 +125,25 @@ class AlertViewController: NSViewController {
             $0.height.equalTo(100)
 
         }
-        
+        alertTimeLabel.snp.makeConstraints{
+          
+            $0.leading.equalToSuperview()
+            $0.top.equalTo(alertMethodLabel.snp.bottom).offset(100)
+            $0.width.equalTo(150)
+
+        }
+        alertTimeTextField.snp.makeConstraints{
+            $0.top.equalTo(alertTimeLabel)
+            $0.leading.equalTo(alertTimeLabel.snp.trailing)
+            $0.trailing.equalToSuperview().offset(-50)
+            $0.height.equalTo(100)
+
+        }
+        alertReceived.snp.makeConstraints{
+            $0.leading.equalToSuperview()
+            $0.top.equalTo(alertTimeLabel.snp.bottom).offset(100)
+
+        }
     
     }
     

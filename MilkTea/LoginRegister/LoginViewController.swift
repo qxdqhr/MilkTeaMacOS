@@ -17,9 +17,9 @@ class LoginViewController: NSViewController,RegisterViewControllerDelegate {
     // - MARK: - 控件
     private lazy var lblTitle : NSTextField = {
         #if OWNER
-        var titleAttributeStr = NSMutableAttributedString(string: "奶茶店营销管理系统-加盟商版")
+        var titleAttributeStr = NSMutableAttributedString(string: "饮品店营销管理系统-加盟商版")
         #else
-        var titleAttributeStr = NSMutableAttributedString(string: "奶茶店营销管理系统-经销商版")
+        var titleAttributeStr = NSMutableAttributedString(string: "饮品店营销管理系统-经销商版")
         #endif
         //设定 字体颜色
         titleAttributeStr.addAttribute(NSAttributedString.Key.foregroundColor, value: NSColor.blue, range: NSRange(location: 0, length:titleAttributeStr.length))
@@ -112,7 +112,7 @@ class LoginViewController: NSViewController,RegisterViewControllerDelegate {
             nameField.backgroundColor = .clear
             passField.backgroundColor = .clear
             #if OWNER
-            var user = UserModel(name: "", userid:workNum, telephone: "", Password: password, role: "Owner")
+            var user = UserModel(name: "", userid:workNum, telephone: "", Password: password, role: "Owner", exOwnerID: "")
             #else
             var user = UserModel(name: "", userid:workNum, telephone: "", Password: password, role: "ExOwner")
             #endif
@@ -126,7 +126,7 @@ class LoginViewController: NSViewController,RegisterViewControllerDelegate {
                     //获取 name
                     let username = data.object(forKey: "name") as! String
                     //获取 ID
-                    let userId = data.object(forKey: "userId") as! String
+                    let userId = data.object(forKey: "user_id") as! String
                     //设置用户信息
                     LoginUserInfo.setLoginUser(userName: username, userId: userId)
                     //协议写 name

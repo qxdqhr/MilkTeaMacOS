@@ -29,10 +29,10 @@ class DetailViewController: NSTabViewController {
         #else
         controllers = [
             WelcomeViewController(),//欢迎界面
-            WelcomeViewController(),  //顾客信息管理
-            WelcomeViewController(), //顾客订单管理
+            WelcomeViewController(),
+            WelcomeViewController(),
             JuiceTypeSplitViewController(),
-            JuiceMaterialViewController(),
+            WelcomeViewController(),
             JuiceRankViewController(),
             ExOwnerInputExpensesViewController(),
             ExcelViewController(),//报表管理

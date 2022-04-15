@@ -75,7 +75,16 @@ class TitleBarController: NSViewController {
 //    }
     //退出登录按钮
     @objc private func logOut(sender :NSButton){
-        print("AA")
+        MsgHelper.judgeMsg(message: "是否退出当前用户", window: self.view.window!){
+            response in
+            if (response == .alertFirstButtonReturn){
+                WindowManager.shared.MainWnd.close()
+                WindowManager.shared.showLoginWindow()
+            }else if(response == .alertSecondButtonReturn){
+                print("cancel")
+
+            }
+        }
     }
     // - MARK: - 加入视图以及布局
     func setupView(){

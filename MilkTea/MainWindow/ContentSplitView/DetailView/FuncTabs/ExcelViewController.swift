@@ -109,6 +109,7 @@ class ExcelViewController: NSViewController {
             }
             break
         case "月度收支表":
+            #if OWNER
             data = (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
                         .contentViewControllerItem.viewController as! ContentSplitViewController)
                         .detailViewController.tabViewItems[6].viewController as! OwnerInputExpensesViewController).userInfoDataArr
@@ -127,20 +128,21 @@ class ExcelViewController: NSViewController {
                 worksheet_write_string(sheet, lxw_row_t(index+1), 8, (info as!OwnerInputExpenses).vegetableTeaExpence, nil)
                 worksheet_write_string(sheet, lxw_row_t(index+1), 9, (info as!OwnerInputExpenses).materialExpense, nil)
             }
-
+            #endif
+#if EXOWNER
+            data = (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
+                        .contentViewControllerItem.viewController as! ContentSplitViewController)
+                        .detailViewController.tabViewItems[6].viewController as! ExOwnerInputExpensesViewController).userInfoDataArr
+            for (index,name) in OwnerInputExpenses.getUIName().enumerated(){
+                worksheet_write_string(sheet, 0, lxw_col_t(index), name, nil)
+            }
+            for (index,info) in data.enumerated(){
+                worksheet_write_string(sheet, lxw_row_t(index+1), 0, (info as!EXOwnerInputExpenses).month, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 1, (info as!EXOwnerInputExpenses).totalIncome, nil)
+                worksheet_write_string(sheet, lxw_row_t(index+1), 2, (info as!EXOwnerInputExpenses).totalExpence, nil)
+            }
+#endif
             break
-//        case "告警信息表":
-//            data = (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-//                        .contentViewControllerItem.viewController as! ContentSplitViewController)
-//                      .detailViewController.tabViewItems[6].viewController as! OwnerInputExpensesViewController)
-
-//            break
-//        case "商户信息表":
-//            data = (((WindowManager.shared.MainWnd.contentViewController as! MainMenuViewController)
-//                        .contentViewControllerItem.viewController as! ContentSplitViewController)
-//                      .detailViewController.tabViewItems[6].viewController as! OwnerInputExpensesViewController)
-
-//            break
         default:
             let sheet = workbook_add_worksheet(book, "sheet1")
             worksheet_write_string(sheet, 0, 0, "level", nil)

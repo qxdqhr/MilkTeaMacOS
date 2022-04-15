@@ -12,6 +12,27 @@ class UserModel: BaseModel {
     var telephone:String = ""
     var Password:String = ""
     var role:String = ""
+    #if OWNER
+    var exOwnerID:String = ""
+    init(name:String,userid:String,telephone:String,Password:String,role:String,exOwnerID:String){
+        self.name = name
+        self.userid = userid
+        self.telephone = telephone
+        self.Password = Password
+        self.role = role
+        self.exOwnerID = exOwnerID
+    }
+    override func toKeyValue() -> [String : String] {
+        [
+            "name":self.name,
+            "user_id":self.userid,
+            "telephone":self.telephone,
+            "password":self.Password,
+            "role":self.role,
+            "exownerid":self.exOwnerID
+        ]
+    }
+    #else
     init(name:String,userid:String,telephone:String,Password:String,role:String){
         self.name = name
         self.userid = userid
@@ -22,10 +43,11 @@ class UserModel: BaseModel {
     override func toKeyValue() -> [String : String] {
         [
             "name":self.name,
-            "userid":self.userid,
+            "user_id":self.userid,
             "telephone":self.telephone,
             "password":self.Password,
-            "role":self.role
+            "role":self.role,
         ]
     }
+    #endif
 }
