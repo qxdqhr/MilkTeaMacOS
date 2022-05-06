@@ -67,12 +67,21 @@ class AlertNetwork{
 #endif
     class func add(para:Alert){
         print(para)
-        BaseNetWork.sendModelDataRequest(url: "http://localhost:8086/alert/exOwner/add", method: .post, parameters: para){ code,data,msg in
+   
+
+        BaseNetWork.sendDataRequest(url: "http://localhost:8086/alert/exOwner/add", method: .post, parameters: [
+            "id":para.Id,
+            "alert_time":para.alertTime,
+            "alert_reason":para.alertReason,
+            "alert_method":para.alertMethod,
+            "alert_owner":para.alertOwner,
+            "alert_ex_owner":para.alertExOwner,
+            "alert_received":para.alertReceived,
+        ]){ code,data,msg in
             print("para:\(para)")
              if(code == 200){
                  MsgHelper.showMsg(message:"发送告警成功")
-                 //确定后自动刷新
-                 OrderNetwork.refresh()
+        
              }
              else {
                  MsgHelper.showMsg(message:"发送告警失败: \(msg)")

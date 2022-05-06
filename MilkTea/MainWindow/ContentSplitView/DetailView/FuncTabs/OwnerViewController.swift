@@ -85,6 +85,9 @@ class OwnerViewController: NSViewController {
         super.viewDidLoad()
         setupView()
     }
+    override func viewWillAppear() {
+        OwnerNetwork.refresh()
+    }
     // - MARK: - 事件函数
     @objc func popoverAddInfoWnd(_ sender:NSButton){
        // sendLoginRequest()
@@ -95,7 +98,9 @@ class OwnerViewController: NSViewController {
         OwnerNetwork.refresh()
     }
     @objc func delete(_ sender:NSButton){
-       // OwnerNetwork.refresh()
+        OwnerNetwork.delete(para:   [
+            "user_id":self.userInfoDataArr[sender.tag].ownerId,
+        ])
     }
     func getColumn(title:String) ->NSTableColumn{
         var column1 = NSTableColumn()

@@ -24,8 +24,7 @@ class func refresh(){
                         month: (ele as!NSDictionary).object(forKey: "month") as! String,
                         totalIncome:(ele as!NSDictionary).object(forKey: "total_income") as! String,
                         totalExpence: (ele as!NSDictionary).object(forKey: "total_expence") as! String,
-                        ownerName: LoginUserInfo.getLoginUser().userName,
-                        ownerId: LoginUserInfo.getLoginUser().userId
+                        ownerId: (ele as!NSDictionary).object(forKey: "user_id") as! String
                      )
                      controller.userInfoDataArr.append(inexpense)//添加新数据
                  }

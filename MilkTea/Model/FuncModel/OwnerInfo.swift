@@ -7,14 +7,12 @@
 //经销商的商户管理界面,这个界面下经销商能看到自己管理的所有商户
 import Foundation
 class OwnerInfo : BaseModel {
-    @objc var ownerName:String = ""
     @objc var ownerId:String = ""            //门店账号
     @objc var alertTimes :String = ""
     @objc var recentAlertReason :String = ""
     @objc var operate :String = ""
     
-    init(ownerName:String,ownerId:String,alertTimes:String,recentAlertReason:String){
-        self.ownerName = ownerName
+    init(ownerId:String,alertTimes:String,recentAlertReason:String){
         self.ownerId = ownerId
         self.alertTimes = alertTimes
         self.recentAlertReason = recentAlertReason
@@ -23,7 +21,6 @@ class OwnerInfo : BaseModel {
     subscript( index: String) -> String {
         get {
             switch index{
-            case "商户名": return self.ownerName
             case "商户账号": return self.ownerId
             case "已告警次数": return self.alertTimes
             case "最近告警原因": return self.recentAlertReason
@@ -36,7 +33,6 @@ class OwnerInfo : BaseModel {
         for property in propertyList(){
             var uiName :String
             switch property{
-            case "ownerName": uiName = "商户名"
             case "ownerId": uiName = "商户账号"
             case "alertTimes": uiName = "已告警次数"
             case "recentAlertReason": uiName = "最近告警原因"

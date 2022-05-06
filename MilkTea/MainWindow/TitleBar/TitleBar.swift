@@ -13,9 +13,9 @@ class TitleBarController: NSViewController {
     // - MARK: - 控件
     private lazy var titleLabel: NSTextField = {
         #if OWNER
-        var titleAttributeStr = NSMutableAttributedString(string: "奶茶店营销管理系统:商户版")
+        var titleAttributeStr = NSMutableAttributedString(string: "饮品店营销管理系统:商户版")
         #else
-        var titleAttributeStr = NSMutableAttributedString(string: "奶茶店营销管理系统:经销商版")
+        var titleAttributeStr = NSMutableAttributedString(string: "饮品店营销管理系统:经销商版")
         #endif
         //设定 字体颜色
         titleAttributeStr.addAttribute(NSAttributedString.Key.foregroundColor, value: NSColor.green, range: NSRange(location: 0, length:titleAttributeStr.length))
@@ -74,7 +74,7 @@ class TitleBarController: NSViewController {
 //
 //    }
     //退出登录按钮
-    @objc private func logOut(sender :NSButton){
+    @objc private func logOut(sender :NSMenuItem){
         MsgHelper.judgeMsg(message: "是否退出当前用户", window: self.view.window!){
             response in
             if (response == .alertFirstButtonReturn){

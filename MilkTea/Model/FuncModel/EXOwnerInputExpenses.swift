@@ -8,7 +8,7 @@
 import Foundation
 class EXOwnerInputExpenses : BaseModel {
     @objc var month:String = ""                //月份数
-    @objc var ownerName:String = ""            //门店名
+//    @objc var ownerName:String = ""            //门店名
     @objc var ownerId:String = ""            //加盟商账号
     @objc var totalIncome:String = ""          //总收入
     @objc var totalExpence:String = ""         //总支出
@@ -17,13 +17,13 @@ class EXOwnerInputExpenses : BaseModel {
     init(month:String,
          totalIncome:String,
          totalExpence:String,
-         ownerName:String,
+//         ownerName:String,
          ownerId:String
     ){
         self.month = month
         self.totalIncome = totalIncome
         self.totalExpence = totalExpence
-        self.ownerName = ownerName
+//        self.ownerName = ownerName
         self.ownerId = ownerId
     }
     
@@ -33,7 +33,7 @@ class EXOwnerInputExpenses : BaseModel {
                 case "月份数": return self.month
                 case "总收入": return self.totalIncome
                 case "总支出": return self.totalExpence
-                case "门店名": return self.ownerName
+//                case "门店名": return self.ownerName
                 case "门店账号": return self.ownerId
 
                 default: return ""
@@ -45,7 +45,7 @@ class EXOwnerInputExpenses : BaseModel {
         for property in propertyList(){
             var uiName :String
             switch property{
-            case "ownerName": uiName = "门店名"
+//            case "ownerName": uiName = "门店名"
             case "ownerId": uiName = "门店账号"
             case "month": uiName = "月份数"
             case "totalIncome": uiName = "总收入"

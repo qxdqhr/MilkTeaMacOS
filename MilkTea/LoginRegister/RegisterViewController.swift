@@ -12,9 +12,9 @@ class RegisterViewController: NSViewController {
     // - MARK: - 控件
     private lazy var lblTitle : NSTextField = {
         #if OWNER
-        var titleAttributeStr = NSMutableAttributedString(string: "奶茶店营销管理系统-加盟商版")
+        var titleAttributeStr = NSMutableAttributedString(string: "饮品店营销管理系统-加盟商版")
         #else
-        var titleAttributeStr = NSMutableAttributedString(string: "奶茶店营销管理系统-经销商版")
+        var titleAttributeStr = NSMutableAttributedString(string: "饮品店营销管理系统-经销商版")
         #endif
         //设定 字体颜色
         titleAttributeStr.addAttribute(NSAttributedString.Key.foregroundColor, value: NSColor.blue, range: NSRange(location: 0, length:titleAttributeStr.length))

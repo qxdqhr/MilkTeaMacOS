@@ -12,10 +12,10 @@ class AlertViewController: NSViewController {
     // - MARK: - 控件
     private var alertReasonLabel = NSTextField(labelWithString: "告警原因")
     private var alertMethodLabel = NSTextField(labelWithString: "告警措施")
-    private var alertOwnerLabel  = NSTextField(labelWithString:"告警商户名")
+    private var alertOwnerLabel  = NSTextField(labelWithString:"告警商户账号")
     private var alertBtn         = NSButton(title: "发送告警", target: self, action: #selector(sendAlert))
 
-     var alertOwnerName : NSTextField = {
+     var alertOwner : NSTextField = {
         var textField = NSTextField()
         textField.maximumNumberOfLines = 0
         return textField
@@ -45,13 +45,16 @@ class AlertViewController: NSViewController {
     
     // - MARK: - 事件函数
     @objc func sendAlert(_ sender:NSButton){
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM"
+        
         AlertNetwork.add(para: Alert(
-            Id:"EXALERT_\(LoginUserInfo.getLoginUser().userId)_\(String(Date().timeIntervalSince1970))",
+            Id:"EXALERT_\(LoginUserInfo.getLoginUser().userId)_\(df.string(from: Date()))",
             alertReason: alertReasonTextField.stringValue,
             alertMethod: alertMethodTextField.stringValue,
-            alertOwner: alertOwnerName.stringValue,
+            alertOwner: alertOwner.stringValue,
             alertExOwner: LoginUserInfo.getLoginUser().userId,
-            alertTime: (String(Date().timeIntervalSince1970)),
+            alertTime: df.string(from: Date()),
             alertReceived: "未接受"
         )
     )
@@ -63,7 +66,7 @@ class AlertViewController: NSViewController {
             alertMethodLabel,
             alertOwnerLabel ,
             alertBtn        ,
-            alertOwnerName  ,
+            alertOwner  ,
             alertReasonTextField,
             alertMethodTextField
         ])
@@ -73,7 +76,7 @@ class AlertViewController: NSViewController {
             $0.width.equalTo(150)
             
         }
-        alertOwnerName  .snp.makeConstraints{
+        alertOwner.snp.makeConstraints{
             $0.centerY.equalTo(alertOwnerLabel)
             $0.leading.equalTo(alertOwnerLabel.snp.trailing)
             $0.trailing.equalToSuperview().offset(-50)
@@ -81,7 +84,6 @@ class AlertViewController: NSViewController {
 
         }
         alertReasonLabel.snp.makeConstraints{
-    
             $0.leading.equalToSuperview()
             $0.top.equalTo(alertOwnerLabel.snp.bottom).offset(100)
             $0.width.equalTo(150)
