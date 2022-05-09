@@ -64,8 +64,8 @@ class LoginViewController: NSViewController,RegisterViewControllerDelegate {
         return ctrl
     }()
 
-    private lazy var passField : NSTextField = {
-        var ctrl = NSTextField()
+    private lazy var passField : NSSecureTextField = {
+        var ctrl = NSSecureTextField()
         ctrl.placeholderString = "请输入密码"
         return ctrl
     }()

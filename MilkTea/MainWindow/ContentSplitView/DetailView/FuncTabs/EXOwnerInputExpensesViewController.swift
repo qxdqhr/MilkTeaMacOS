@@ -92,7 +92,7 @@ class ExOwnerInputExpensesViewController: NSViewController {
                 "query_name":  (self.popover1.contentViewController as! QueryViewController).queryName.stringValue,
                 "query_value":  (self.popover1.contentViewController as! QueryViewController).queryValue.stringValue
             ]
-            MaterialNetwork.query(para: queryMap)
+            ExOwnerInputExpenseNetwork.query(para: queryMap)
         }
         (popover1.contentViewController as! QueryViewController).getCallClsPropertyName(clsName: EXOwnerInputExpenses.self)
         popover1.show(relativeTo: self.queryInfoBtn.bounds, of: self.queryInfoBtn, preferredEdge: .maxX)
